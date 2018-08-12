@@ -1,6 +1,6 @@
 <header id="app-header">
   <div class="container">
-    <div [ngClass]="{'is-user': user, 'is-anon': anon}">
+    <!-- <div [ngClass]="{'is-user': user, 'is-anon': anon}">
       <div *ngIf="loading">
         <span class="username text">loading...</span>
       </div>
@@ -12,6 +12,8 @@
         <a [routerLink]="['/login']">login</a>
         <a [routerLink]="['/signup']">signup</a>
       </div>
-    </div>
+    </div> -->
+    <a [routerLink]="['/login']">login</a>
+    <a [routerLink]="['/signup']">signup</a>
   </div>
 </header>
