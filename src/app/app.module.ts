@@ -29,7 +29,8 @@ import { SignupFormComponent } from './components/signup-form/signup-form.compon
 const routes: Routes = [
   { path: '',  component: LandingPageComponent, canActivate: [ InitAuthGuard ] },
   { path: 'profle',  component: ProfilePageComponent , canActivate: [ RequireUserGuard ] },
-  { path: '**', redirectTo: '' }
+  { path: 'help',  component: HelpPageComponent , canActivate: [ RequireUserGuard ] },
+  { path: '**', redirectTo: '' },
   // { path: '**', component: PageNotFoundComponent }
   ];
 
@@ -51,13 +52,13 @@ const routes: Routes = [
     HttpClientModule,
     FormsModule,
     MarkdownModule.forRoot({
-      loader: HttpClient, // optional, only if you use [src] attribute
+      loader: HttpClientModule, // optional, only if you use [src] attribute
       markedOptions: {
         provide: MarkedOptions,
         useValue: {
           gfm: true,
           tables: true,
-          breaks: false,
+          breaks: true,
           pedantic: false,
           sanitize: false,
           smartLists: true,
