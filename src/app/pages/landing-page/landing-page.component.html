@@ -1,3 +1,8 @@
 
-<app-signup-form></app-signup-form>
-<app-login-form></app-login-form>
+ <div *ngIf="!user">
+   <app-signup-form></app-signup-form>
+   <app-login-form></app-login-form>
+
+ </div>
+
+

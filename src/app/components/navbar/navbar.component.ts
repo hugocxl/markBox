@@ -10,22 +10,16 @@ import { AuthService } from '../../services/auth.service';
 })
 
 export class NavbarComponent implements OnInit {
-
-    loading = true;
-    anon: boolean;
-    user: any;
   
+  user: any;
     constructor(
       private authService: AuthService,
       private router: Router
     ) {}
   
     ngOnInit() {
-      this.authService.userChange$.subscribe((user) => {
-        this.loading = false;
-        this.user = user;
-        this.anon = !user;
-      });
+      this.user = this.authService.getUser(); 
+      console.log("navbar", this.user)
     }
   
     logout() {

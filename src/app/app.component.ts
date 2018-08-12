@@ -26,11 +26,12 @@ export class AppComponent implements OnInit {
       this.loading = false;
       this.user = user;
       this.anon = !user;
+      console.log('APP.COMPONENT: ', this.user)
     });
   }
 
   logout() {
     this.authService.logout()
-      .then(() => this.router.navigate(['/login']));
+      .then(() => this.router.navigate(['']));
   }
 }

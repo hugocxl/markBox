@@ -28,7 +28,8 @@ import { SignupFormComponent } from './components/signup-form/signup-form.compon
 
 const routes: Routes = [
   { path: '',  component: LandingPageComponent, canActivate: [ InitAuthGuard ] },
-  { path: 'profle',  component: ProfilePageComponent , canActivate: [ RequireUserGuard ] },
+  { path: 'home',  component: HomePageComponent, canActivate: [ InitAuthGuard ] },
+  { path: 'profile',  component: ProfilePageComponent , canActivate: [ RequireUserGuard ] },
   { path: 'help',  component: HelpPageComponent , canActivate: [ RequireUserGuard ] },
   { path: '**', redirectTo: '' },
   // { path: '**', component: PageNotFoundComponent }
