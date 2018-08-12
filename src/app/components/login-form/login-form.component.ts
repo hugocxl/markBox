@@ -2,16 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 
-
 @Component({
-  selector: 'app-signup',
-  templateUrl: './signup-page.component.html',
-  styleUrls: ['./signup-page.component.css']
+  selector: 'app-login-form',
+  templateUrl: './login-form.component.html',
+  styleUrls: ['./login-form.component.scss']
 })
-export class SignupPageComponent implements OnInit {
-  newUser = {
+export class LoginFormComponent implements OnInit {
+
+  user = {
     username: '',
-    email: '',
     password: ''
   }
 
@@ -24,7 +23,7 @@ export class SignupPageComponent implements OnInit {
   }
 
   submitForm(form) {
-    this.authService.signup(this.newUser)
+    this.authService.login(this.user)
     .then(() => {
         this.router.navigate(['/private']);
     })
@@ -32,5 +31,5 @@ export class SignupPageComponent implements OnInit {
         console.log(error);
     });
   }
-}
 
+}
