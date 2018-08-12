@@ -123,5 +123,10 @@
       }
     }
   },
-  "defaultProject": "markHub-client"
+  "defaultProject": "markHub-client",
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "scss"
+    }
+  }
 }
