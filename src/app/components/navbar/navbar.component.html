@@ -1,14 +1,11 @@
 <header id="app-header">
   <div class="container">
     <div [ngClass]="{'is-user': user, 'is-anon': anon}">
-      <div *ngIf="loading">
-        <span class="username text">loading...</span>
-      </div>
-      <div *ngIf="!loading && !!user">
+      <div *ngIf="!!user">
         <a [routerLink]="['/profile']">{{user.username}}</a>
         <a (click)="logout()">logout</a>
       </div>
-      <div *ngIf="!loading && anon">
+      <div *ngIf="anon">
         <a [routerLink]="['/login']">login</a>
         <a [routerLink]="['/signup']">signup</a>
       </div>
