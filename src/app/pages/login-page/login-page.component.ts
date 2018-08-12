@@ -9,8 +9,11 @@ import { AuthService } from '../../services/auth.service';
   styleUrls: ['./login-page.component.css']
 })
 export class LoginPageComponent implements OnInit {
-  username: string;
-  password: string;
+  
+  user = {
+    username: '',
+    password: ''
+  }
 
   constructor(
     private authService: AuthService,
@@ -21,10 +24,7 @@ export class LoginPageComponent implements OnInit {
   }
 
   submitForm(form) {
-    this.authService.login({
-        username: this.username,
-        password: this.password
-    })
+    this.authService.login(this.user)
     .then(() => {
         this.router.navigate(['/private']);
     })

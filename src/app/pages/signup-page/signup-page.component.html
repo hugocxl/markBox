@@ -2,10 +2,11 @@
 
   <div class="field" [ngClass]="{'has-error': feedbackEnabled && usernameField.errors}">
     <label>username</label>
-    <input type="text" name="username" [(ngModel)]="username" #usernameField="ngModel" required />
-
+    <input type="text" name="username" [(ngModel)]="newUser.username" #usernameField="ngModel" required />
+    <label>Email</label>
+    <input type="email" name="email" [(ngModel)]="newUser.email" #usernameField="ngModel" required />
     <label>password</label>
-    <input type="password" name="password" [(ngModel)]="password" #passwordField="ngModel" required />
+    <input type="password" name="password" [(ngModel)]="newUser.password" #passwordField="ngModel" required />
 
   </div>
 
