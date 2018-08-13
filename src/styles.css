@@ -1,1 +1,91 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* You can add global styles to this file, and also import other style files */
+
+a{
+  color: #3c5877;
+}
+
+
+/* -- forms -- */
+
+form.is-processing {
+	opacity: 0.5;
+}
+
+form input {
+  padding: 5px;
+  font-size: 16px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+form .submit {
+  margin-bottom: 5px;
+}
+
+form .submit button {
+  padding: 5px 20px;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  color: #3c5877;
+}
+
+form .submit button:hover{
+  cursor: pointer;
+  color: #282828;
+}
+
+form .field.has-error label {
+	color: red;
+}
+
+form .validation {
+	margin: 5px 0 10px;
+	color: red;
+}
+
+form .field.has-error input {
+	border: 1px solid  red;
+}
+
+.form-wrapper{
+  width: 400px;
+  border: 1px solid rgb(120,120,120);
+  padding: 20px;
+}
+
+@media (min-width:768px) {
+  .flex-row{
+    display: flex;
+  }
+  .flex-row.jc-center{
+    justify-content: center;
+  }
+}

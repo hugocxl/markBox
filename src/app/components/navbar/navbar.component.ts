@@ -15,11 +15,10 @@ export class NavbarComponent implements OnInit {
       private router: Router
     ) {}
   
-    loggedInUser: any;
+    user: any;
 
     ngOnInit() {
-      this.loggedInUser = this.authService.getUser();
-      console.log(this.loggedInUser);
+      this.user = this.authService.getUser();
     }
 
     navigateHome(){
