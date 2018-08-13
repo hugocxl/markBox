@@ -1,24 +1,24 @@
+<ul class="navbar">
 
-  <ul class="navbar">
-
-    <li [ngClass]="{'active': homePage }" (click)="navigateHome()" class="navbar-item">
+  <li [ngClass]="{'active': homePage }" (click)="navigateHome()" class="navbar-item" id="first-nav-item">
       <img class="icon" src="../../../assets/home-icon.png">
-    </li>
-  
-    <li class="navbar-item" [ngClass]="{'active': mdBooksPage }" (click)="navigateMdBooks()">
-      <img class="icon" src="../../../assets/notebook-icon.png">
-    </li>
-  
-    <li class="navbar-item" [ngClass]="{'active': profilePage }" (click)="navigateProfile()">
-      <img class="icon" src="../../../assets/user-icon.png">
-    </li>
+  </li>
 
-    <li class="navbar-item" [ngClass]="{'active': infoPage }" (click)="navigateHelp()">
-      <img class="icon" src="../../../assets/info-icon.png">
-    </li>
+  <li class="navbar-item" [ngClass]="{'active': mdBooksPage }" (click)="navigateMdBooks()">
+    <img class="icon" src="../../../assets/notebook-icon.png">
+  </li>
+
+  <li class="navbar-item" [ngClass]="{'active': profilePage }" (click)="navigateProfile()">
+    <img class="icon" src="../../../assets/user-icon.png">
+  </li>
+
+  <li class="navbar-item" [ngClass]="{'active': infoPage }" (click)="navigateHelp()">
+    <img class="icon" src="../../../assets/info-icon.png">
+  </li>
 
 
-    <li class="navbar-item" (click)="logout()">
-      <img class="icon" src="../../../assets/logout-icon.png">
-    </li>
-  </ul>
+  <li class="navbar-item" (click)="logout()" id="last-nav-item">
+    <img class="icon" src="../../../assets/logout-icon.png">
+  </li>
+</ul>
+

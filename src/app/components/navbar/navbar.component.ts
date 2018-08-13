@@ -90,3 +90,4 @@ export class NavbarComponent implements OnInit {
         .then(() => this.router.navigate(['/login']));
     }
   }
+  

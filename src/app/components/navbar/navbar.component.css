@@ -10,6 +10,8 @@
   list-style: none;
   text-align: center;
   padding: 0;
+  justify-content: center;
+  
 }
 
 
@@ -20,16 +22,28 @@
   margin: 30% 0;
 }
 
-.bottom{
-  position: relative;
-  bottom: 0;
+ul>li{
+  transition: background-color ease 0.5s;
 }
 
 
+ul>li:hover{
+  background: #a9a9a9;
+  width: 80px; 
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
 
 
 .navbar-item.active{
-  background: rgba(255, 255, 255, 0.2)
+  width: 80px;  
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  background:rgba(40, 40, 40); 
 }
 
+/* 
 
+.hugo{
+  height: 50%;
+} */
