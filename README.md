@@ -61,10 +61,11 @@ Online notebooks collection based on Markdown.
 |DELETE| api/mdBooks/:id| Delete mdBook and all notes (Body: id mdBook)|
 
 
+
 ### mdNotes
 |Method|Route|Functionality|
 |---|---|---|
-|POST|api/mdNotes|Create new mdNote (body: id, mdNote title, mdNote content)
+|POST|api/mdBooks/:id/new|Create new mdNote (body: id, mdNote title, mdNote content)
 |DELETE| api/mdNotes/:id| Delete mdNote (body: id mdNote )
 |PUT|api/mdNotes/:id| Edit mdNote (body: id, title, content)
 
