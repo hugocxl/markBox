@@ -1,4 +1,4 @@
-.navbar-container{
+.navbar{
   display: flex;
   flex-direction: column;
   background-color: #3c5877;
@@ -7,18 +7,29 @@
   height: 100%;
   top: 0;
   left: 0;
-  
+  list-style: none;
+  text-align: center;
+  padding: 0;
 }
+
 
 .icon{
   width: 35px;
   height: 35px;
   padding: 0;
+  margin: 30% 0;
 }
 
-ul{
-  list-style: none;
-  width: 100%;
-  text-align: center;
-  padding-left: 0;
+.bottom{
+  position: relative;
+  bottom: 0;
 }
+
+
+
+
+.navbar-item.active{
+  background: rgba(255, 255, 255, 0.2)
+}
+
+
