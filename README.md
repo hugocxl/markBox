@@ -34,46 +34,16 @@ Online notebooks collection based on Markdown.
 
 ## Backlogs:
 
-<<<<<<< HEAD
- - **Create mdBooks**- As a user I want to be able to create mdBooks so I can add mdNotes on it. 
- - **Delete mdBooks**- As a user I want to be able to delete my mdBooks.
- - **Create mdNotes**- As a user I want to be able to create mdNotes in md. format so I can write anything I want on it. 
- - **Edit mdNotes**- As a user I want to be able to edit my mdNotes so I can add or delete things on them. 
- - **Delete mdNotes**- As a user I want to be able to delete my mdNotes.
-
-
-
- - **404** - As a user I want to see a nice 404 page when I go to a page that doesn’t exist so I know it was my fault 
-- **500** - As a user I want to see a nice error page when the super team screws it up so I know that is not my fault
-
-
-
-## BACKLOGS:
-
-List of other features outside of the MVP scope:
-
-+ **GitHub** - Integration with API?
-=======
 - As a user I can share and edit notes with other users.
 
 **GitHub**
 **Socket.io**
->>>>>>> 161c22621319cb2ff49f60893571944b5c16e043
 
 ***
 
 ## Server
 ## API routes:
 
-<<<<<<< HEAD
-## API ROUTES:
-
-```javascript
-- POST - api/auth/signup - Body: username, password 
-- POST - api/auth/login - Body: username, password
-- POST api/auth/logout
-- GET api/auth/me - Check session status
-=======
 ### auth
 |Method|Route|Functionality|
 |---|---|---|
@@ -91,23 +61,12 @@ List of other features outside of the MVP scope:
 |PUT| api/mdBooks/:id| Edit mdBook (Body id, title)
 |DELETE| api/mdBooks/:id| Delete mdBook and all notes (Body: id mdBook)|
 |POST|api/mdBooks/:id/new|Create new mdNote (body: id, mdNote title, mdNote content)
->>>>>>> 161c22621319cb2ff49f60893571944b5c16e043
 
 - GET api/mdBooks -Get all books from user. (Id from session - Populate mdNotes id ) 
 - POST api/mdBooks/new - Body: title
 - POST api/mdBooks/:id/edit - POST: id, title
 - POST api/mdBooks/:id/delete - POST: id (delete all mdNotes too)
 
-<<<<<<< HEAD
-- POST api/mdBooks/:id/new - POST: id, mdNote title, mdNote content
-- POST api/mdNotes/:id/delete - POST: id
-- POST api/mdNotes/:id/edit - POST: id, title, content
-```
-
-
-
-## MODELS
-=======
 ### mdNotes
 |Method|Route|Functionality|
 |---|---|---|
@@ -123,7 +82,6 @@ List of other features outside of the MVP scope:
 
 
 ## Models
->>>>>>> 161c22621319cb2ff49f60893571944b5c16e043
 
 ```javascript
 User
@@ -209,20 +167,11 @@ MdNotes
 ### Trello
 
 https://trello.com/b/FSBUOL9C/markhub
-<<<<<<< HEAD
-
-
-
-### Git
-
-The url to your repository and to your deployed project
-=======
 
 ### Git
 
 Client: https://github.com/hcorta/markHub-client
 Server: https://github.com/hcorta/markHub-server
->>>>>>> 161c22621319cb2ff49f60893571944b5c16e043
 
 [Deploy Link](http://heroku.com)
 
@@ -230,14 +179,4 @@ Server: https://github.com/hcorta/markHub-server
 
 ### Slides.com
 
-<<<<<<< HEAD
-The url to your presentation slides
-
 [Slides Link](http://slides.com)
-
-
-
- 
-=======
-[Slides Link](http://slides.com)
->>>>>>> 161c22621319cb2ff49f60893571944b5c16e043
