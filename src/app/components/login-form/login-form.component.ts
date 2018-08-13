@@ -25,7 +25,7 @@ export class LoginFormComponent implements OnInit {
   submitForm(form) {
     this.authService.login(this.user)
     .then(() => {
-        this.router.navigate(['/private']);
+        this.router.navigate(['/home']);
     })
     .catch(error => {
         console.log(error);

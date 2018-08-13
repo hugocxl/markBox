@@ -26,7 +26,7 @@ export class SignupFormComponent implements OnInit {
   submitForm(form) {
     this.authService.signup(this.newUser)
     .then(() => {
-        this.router.navigate(['/private']);
+        this.router.navigate(['/home']);
     })
     .catch(error => {
         console.log(error);

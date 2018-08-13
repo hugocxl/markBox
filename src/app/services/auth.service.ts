@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Subject, Observable } from 'rxjs';
+import { Router } from '@angular/router';
 
 import { environment } from '../../environments/environment';
 
@@ -15,7 +16,10 @@ export class AuthService {
  
   userChange$: Observable<any> = this.userChange.asObservable();
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(
+    private httpClient: HttpClient, 
+    private router: Router
+  ) { }
 
   private setUser(user?: any) {
     this.user = user;
@@ -44,7 +48,7 @@ export class AuthService {
     };
     return this.httpClient.post(`${this.API_URL}/login`, user, options)
       .toPromise()
-      .then((data) => this.setUser(data));
+      .then((data) => {this.setUser(data)})
   }
 
   signup(user: any): Promise<any> {
