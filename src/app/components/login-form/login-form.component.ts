@@ -10,7 +10,7 @@ import { AuthService } from '../../services/auth.service';
 export class LoginFormComponent implements OnInit {
 
   user = {
-    username: '',
+    email: '',
     password: ''
   }
 

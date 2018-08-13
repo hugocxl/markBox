@@ -1,11 +1,8 @@
 <form (ngSubmit)="submitForm(form)" #form="ngForm">
 
-  <div class="field" [ngClass]="{'has-error': feedbackEnabled && usernameField.errors}">
-    <label>Username</label>
-    <input type="text" name="username" [(ngModel)]="user.username" #usernameField="ngModel" required />
-    <label>Password</label>
-    <input type="password" name="password" [(ngModel)]="user.password" #passwordField="ngModel" required />
-
+  <div class="field" [ngClass]="{'has-error': feedbackEnabled && emailField.errors}">
+    <input type="email" name="email" placeholder="Email" [(ngModel)]="user.email" #emailField="ngModel" required />
+    <input type="password" name="password" placeholder="Password" [(ngModel)]="user.password" #passwordField="ngModel" required />
   </div>
 
   <div class="field submit">

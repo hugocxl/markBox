@@ -27,7 +27,7 @@ import { LoginFormComponent } from './components/login-form/login-form.component
 import { SignupFormComponent } from './components/signup-form/signup-form.component';
 
 const routes: Routes = [
-  { path: '',  component: LandingPageComponent, canActivate: [ InitAuthGuard ] },
+  { path: '',  component: LandingPageComponent, canActivate: [ RequireAnonGuard ] },
   { path: 'home',  component: HomePageComponent, canActivate: [ InitAuthGuard ] },
   { path: 'profile',  component: ProfilePageComponent , canActivate: [ RequireUserGuard ] },
   { path: 'help',  component: HelpPageComponent , canActivate: [ RequireUserGuard ] },

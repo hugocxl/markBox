@@ -1,5 +1,12 @@
 
- <div *ngIf="!user">
-   <app-signup-form></app-signup-form>
-   <app-login-form></app-login-form>
- </div>
+  <div class="flex-row jc-center" id="landing">
+    <div class="form-wrapper">
+        <div *ngIf="on" class="signup-form">
+            <app-signup-form></app-signup-form>
+        </div>
+        <div *ngIf="!on" class="login-form">
+            <app-login-form></app-login-form>
+        </div>
+        <button (click)="toggle()">{{toggleText}}</button> 
+    </div>
+  </div>

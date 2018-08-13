@@ -10,7 +10,6 @@ import { AuthService } from '../../services/auth.service';
 export class SignupFormComponent implements OnInit {
 
   newUser = {
-    username: '',
     email: '',
     password: ''
   }
