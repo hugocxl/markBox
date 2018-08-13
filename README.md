@@ -5,7 +5,7 @@
 Online notebooks collection based on Markdown.
 
 
- ## USER STORIES
+ ## User stories
 
 ### Errors epic
  - **404** - As a user/anon I can see a nice 404 page when I go to a page that doesn’t exist so I know it was my fault 
@@ -39,8 +39,9 @@ Online notebooks collection based on Markdown.
 **GitHub**
 **Socket.io**
 
-## Server
+***
 
+## Server
 ## API routes:
 
 ### auth
@@ -76,7 +77,7 @@ Online notebooks collection based on Markdown.
 
 
 
-## MODELS
+## Models
 
 ```
 User
@@ -100,6 +101,8 @@ mdNotes
 - title: string
 - content: string
 ```
+
+***
 
 ## Client
 ## Routes
@@ -150,6 +153,8 @@ mdNotes
 
 - if logged in cannot access login/signup page
 - if not logged in cannot access all pages in app
+
+***
 
 ## Links
 
