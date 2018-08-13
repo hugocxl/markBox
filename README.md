@@ -27,7 +27,7 @@ Online notebooks collection based on Markdown.
  - **Edit mdNotes**- As a user I can edit my mdNotes. 
  - **Delete mdNotes**- As a user I can delete my mdNotes.
 
-
+### Profile
 - **View Profile** - As a user I can see my profile page where I can check and edit my info.
 - **View help** - As a user I can see a help page with info about how the application works.
 
@@ -73,6 +73,7 @@ Online notebooks collection based on Markdown.
 |---|---|---|
 |getUser()||Get info from currentUser in frontend|
 |PUT|api/user/:id|Edit current user info|
+
 
 
 ## MODELS
