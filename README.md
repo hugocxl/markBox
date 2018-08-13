@@ -2,7 +2,7 @@
 
 ## Description
 
-Online notebooks collection based on Markdown (and empowered by GitHub - BACKLOG).
+Online notebooks collection based on Markdown.
 
 
 
@@ -13,13 +13,11 @@ Online notebooks collection based on Markdown (and empowered by GitHub - BACKLOG
  - **Logout** - As a user I want to be able to log out from the webpage so that I can make sure no one will access my account
 
 
-
  - **Landing page** - As a user I want to be able to access to a landing page so I can see what the app is about and login and signup.
  - **Homepage** - As a user I want to be able to see my Homepage with a resume of all my mdBooks and mdNotes.
  - **View Profile** - As a user I want to see my profile so that I can check/edit my info.
  - **View mdBooks** - As a user I want to see my mdBooks collection so I can work on them.
 - **View help** - As a user I want to see a help page so I can look for any info in case I have doubts about how the web works.
-
 
 
  - **Create mdBooks**- As a user I want to be able to create mdBooks so I can add mdNotes on it. 
@@ -29,7 +27,6 @@ Online notebooks collection based on Markdown (and empowered by GitHub - BACKLOG
  - **Delete mdNotes**- As a user I want to be able to delete my mdNotes.
 
 
-
  - **404** - As a user I want to see a nice 404 page when I go to a page that doesn’t exist so I know it was my fault 
 - **500** - As a user I want to see a nice error page when the super team screws it up so I know that is not my fault
 
@@ -37,11 +34,10 @@ Online notebooks collection based on Markdown (and empowered by GitHub - BACKLOG
 
 ## BACKLOGS:
 
-List of other features outside of the MVP scope:
-
-
+- Share and edit notes with other users
 
 **GitHub**
+**Socket.io**
 
 
 
@@ -54,19 +50,14 @@ List of other features outside of the MVP scope:
 + **GET api/auth/me** - Check session status
 
 
++ **GET api/myMdBooks** -Get all books from user. (Id from session - Populate mdNotes id ) 
++ **POST api/mdBooks** - Body: title
++ **PUT api/mdBooks/:id** - POST: id, title
++ **DELETE api/mdBooks/:id** - POST: id (delete all mdNotes too)
 
-+ **GET api/mdBooks** -Get all books from user. (Id from session - Populate mdNotes id ) 
-+ **POST api/mdBooks/new** - Body: title
-+ **POST api/mdBooks/:id/edit** - POST: id, title
-+ **POST api/mdBooks/:id/delete** - POST: id (delete all mdNotes too)
-
-
-
-+ **POST api/mdBooks/:id/new** - POST: id, mdNote title, mdNote content
-
-+ **POST api/mdNotes/:id/delete** - POST: id
-
-+ **POST api/mdNotes/:id/edit** - POST: id, title, content
++ **POST api/mdNotes** - POST: id, mdNote title, mdNote content
++ **DELETE api/mdNotes/:id** - POST: id
++ **PUT api/mdNotes/:id** - POST: id, title, content
 
   
 

@@ -28,15 +28,10 @@ import { SignupFormComponent } from './components/signup-form/signup-form.compon
 
 const routes: Routes = [
   { path: '',  component: LandingPageComponent, canActivate: [ InitAuthGuard ] },
-<<<<<<< HEAD
   { path: 'home',  component: HomePageComponent, canActivate: [ InitAuthGuard ] },
   { path: 'profile',  component: ProfilePageComponent , canActivate: [ RequireUserGuard ] },
   { path: 'help',  component: HelpPageComponent , canActivate: [ RequireUserGuard ] },
   { path: '**', redirectTo: '' },
-=======
-  { path: 'profile',  component: ProfilePageComponent , canActivate: [ RequireUserGuard ] },
-  { path: '**', redirectTo: '' }
->>>>>>> 65f489a1ddf6b9d8c3fb8c135a128d1c70f9cf80
   // { path: '**', component: PageNotFoundComponent }
   ];
 
