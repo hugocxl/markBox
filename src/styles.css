@@ -26,11 +26,12 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 /* You can add global styles to this file, and also import other style files */
-
+.main{
+  margin-left: 65px;
+}
 a{
   color: #3c5877;
 }
-
 
 /* -- forms -- */
 
@@ -43,26 +44,32 @@ form input {
   font-size: 16px;
   width: 100%;
   margin-bottom: 10px;
+  background: transparent!important;
+  color: #fff;
+  border: 1px solid rgb(120,120,120);
 }
 
 form .submit {
   margin-bottom: 5px;
 }
 
-form .submit button {
+form button {
   padding: 5px 20px;
   text-align: center;
   font-size: 16px;
-  cursor: pointer;
-  color: #3c5877;
+  background:transparent;
+  color: rgb(120,120,120);
+  font-weight: 100;
+  font-size: 12px;
+  border: 1px solid rgb(120,120,120);
 }
 
-form .submit button:hover{
+form button:hover{
   cursor: pointer;
-  color: #282828;
+  cursor: pointer;
 }
 
-form .field.has-error label {
+ .field.has-error label {
 	color: red;
 }
 
@@ -80,7 +87,35 @@ form .field.has-error input {
   border: 1px solid rgb(120,120,120);
   padding: 20px;
 }
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  font-weight: 100;
+  font-size: 12px;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  font-weight: 100;
+  font-size: 12px;
 
+}
+:-ms-input-placeholder { /* IE 10+ */
+  font-weight: 100;
+  font-size: 12px;
+
+}
+:-moz-placeholder { /* Firefox 18- */
+  font-weight: 100;
+  font-size: 12px;
+
+}
+.toggle-form{
+  text-align: center;
+  font-size: 16px;
+  background:transparent;
+  color: rgb(120,120,120);
+  font-weight: 100;
+  font-size: 12px;
+  border: none;
+  margin-top: 15px;
+}
 @media (min-width:768px) {
   .flex-row{
     display: flex;
