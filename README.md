@@ -39,7 +39,7 @@ Online notebooks collection based on Markdown.
 **GitHub**
 **Socket.io**
 
-
+## Server
 
 ## API routes:
 
@@ -59,13 +59,12 @@ Online notebooks collection based on Markdown.
 |POST| api/mdBooks| Create new mdBook (Body: title)
 |PUT| api/mdBooks/:id| Edit mdBook (Body id, title)
 |DELETE| api/mdBooks/:id| Delete mdBook and all notes (Body: id mdBook)|
-
+|POST|api/mdBooks/:id/new|Create new mdNote (body: id, mdNote title, mdNote content)
 
 
 ### mdNotes
 |Method|Route|Functionality|
 |---|---|---|
-|POST|api/mdBooks/:id/new|Create new mdNote (body: id, mdNote title, mdNote content)
 |DELETE| api/mdNotes/:id| Delete mdNote (body: id mdNote )
 |PUT|api/mdNotes/:id| Edit mdNote (body: id, title, content)
 
@@ -81,9 +80,11 @@ Online notebooks collection based on Markdown.
 
 ```
 User
- - username: String
- - password: String
  - email: String
+ - password: String
+ - userMdBooks: [{
+   type: ObjectId, ref: mdBooks
+ }]
 ```
 
 ```
@@ -100,6 +101,55 @@ mdNotes
 - content: string
 ```
 
+## Client
+## Routes
+
+  - / - Home
+  - /mdBooks
+  - /profile
+  - /help
+
+## Pages
+
+- 404
+- Sign up/Sign in
+- Home
+- MdBooks
+- My Profile
+- Help
+
+## Components
+- Login/Signup form
+- Navbar/sidebar
+- Mdbooks-list
+- list-item (drop down)
+- mdNote markdown
+- mdNote Html
+- profile details
+- edit profile details
+
+## Services
+
+- Auth Service
+  - auth.login(user)
+  - auth.signup(user)
+  - auth.logout()
+  - auth.me()
+- Profile Service
+  - profile.me()
+- mdBooks Service
+  - mdBooks.getAll(userId)
+  - mdBooks.edit(id)
+  - mdBooks.delete(id)
+- mdNotes Service
+  - mdNotes.getOne(id)
+  - mdNotes.edit(id)
+  - mdNotes.delete(id)
+
+## Guards
+
+- if logged in cannot access login/signup page
+- if not logged in cannot access all pages in app
 
 ## Links
 
