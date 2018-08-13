@@ -71,7 +71,7 @@ Online notebooks collection based on Markdown.
 ### profile
 |Method|Route|Functionality|
 |---|---|---|
-|||Get info from currentUser in frontend|
+|getUser()||Get info from currentUser in frontend|
 |PUT|api/user/:id|Edit current user info|
 
 
