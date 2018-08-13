@@ -1,14 +1,13 @@
-<header id="app-header">
-  <div class="container">
-    <div [ngClass]="{'is-user': user, 'is-anon': anon}">
-      <div *ngIf="!!user">
-        <a [routerLink]="['/profile']">{{user.username}}</a>
-        <a (click)="logout()">logout</a>
-      </div>
-      <div *ngIf="anon">
-        <a [routerLink]="['/login']">login</a>
-        <a [routerLink]="['/signup']">signup</a>
-      </div>
-    </div>
-  </div>
-</header>
+<nav class="navbar-container">
+
+  <ul>
+    <li class="navbar-item">
+      <img class="icon" src="../../../assets/home-icon.png">
+    </li>
+    
+    <li class="navbar-item"></li>
+    <li class="navbar-item"></li>
+    <li class="navbar-item"></li>
+  </ul>
+  
+</nav>

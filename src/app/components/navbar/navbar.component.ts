@@ -5,7 +5,7 @@ import { AuthService } from '../../services/auth.service';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.scss']
+  styleUrls: ['./navbar.component.css']
 })
 
 export class NavbarComponent implements OnInit {
@@ -20,6 +20,10 @@ export class NavbarComponent implements OnInit {
     ngOnInit() {
       this.loggedInUser = this.authService.getUser();
       console.log(this.loggedInUser);
+    }
+
+    navigateHome(){
+      this.router.navigate(['home']);
     }
   
     logout() {
