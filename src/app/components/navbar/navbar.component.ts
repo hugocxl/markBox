@@ -41,11 +41,11 @@ export class NavbarComponent implements OnInit {
           this.homePage = true;
           break;
 
-        case 'mdBooks':
+        case '/mdBooks':
           this.mdBooksPage = true;
           break;
 
-        case 'profile':
+        case '/profile':
           this.profilePage = true;
           break;
         
