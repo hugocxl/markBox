@@ -21,7 +21,7 @@ Online notebooks collection based on Markdown.
  - **Create mdBooks**- As a user I can create mdBooks so I can add mdNotes to it. 
  - **Delete mdBooks**- As a user I can delete my mdBooks and all notes in it.
 
- 
+
  ### mdNotes epic
  - **Create mdNotes**- As a user I can create mdNotes in md. format.
  - **Edit mdNotes**- As a user I can edit my mdNotes. 
@@ -141,9 +141,10 @@ MdNotes
 - Profile Service
   - profile.me()
 - mdBooks Service
-  - mdBooks.getAll(userId)
+  - mdBooks.new()
   - mdBooks.edit(id)
   - mdBooks.delete(id)
+  - mdBooks.getAll()
 - mdNotes Service
   - mdNotes.getOne(id)
   - mdNotes.edit(id)
