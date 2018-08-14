@@ -21,7 +21,6 @@ export class LandingPageComponent implements OnInit {
   
     ngOnInit() {
       this.user = this.authService.getUser(); 
-     
     }
 
     toggle(){

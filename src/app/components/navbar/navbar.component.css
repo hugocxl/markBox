@@ -12,8 +12,9 @@
   padding: 0;
   justify-content: space-between;
 }
-.navbar li{
+.navbar li a{
   padding: 15px 0;
+  display: inline-block;
 }
 .icon{
   width: 25px;
@@ -21,7 +22,7 @@
   padding: 0;
 }
 
-div>li:hover{
+.navbar li a:hover{
   transition: background-color 0.3s;
   background: #a9a9a9;
   width: 65px; 
@@ -30,7 +31,7 @@ div>li:hover{
   cursor: pointer;
 }
 
-.navbar-item.active{
+.navbar-item a.active{
   width: 65px;  
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;

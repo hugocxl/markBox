@@ -27,7 +27,6 @@ export class AppComponent implements OnInit {
       this.loading = false;
       this.user = user;
       this.anon = !user;
-      console.log('APP.COMPONENT: ', this.user)
     });
   }
 
