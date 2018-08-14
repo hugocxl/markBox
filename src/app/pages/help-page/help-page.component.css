@@ -1,0 +1,17 @@
+.main.info{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.main>.left-side{
+  position: fixed;
+  width: 40%;
+  left: 50px;
+
+}
+
+
+.main>.right-side{
+  align-self: flex-end;
+  width: 60%;
+}
