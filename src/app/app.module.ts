@@ -17,6 +17,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 //Services
 
 import { AuthService } from './services/auth.service';
+import { ProfileService } from './services/profile.service';
+
 
 // Guards
 
@@ -48,7 +50,7 @@ const routes: Routes = [
     NavbarComponent,
     LoginFormComponent,
     SignupFormComponent,
-    MdBooksComponent
+    MdBooksComponent,
   ],
   imports: [
     BrowserModule,
@@ -76,6 +78,7 @@ const routes: Routes = [
     InitAuthGuard,
     RequireAnonGuard,
     RequireUserGuard,
+    ProfileService
   ],
   bootstrap: [AppComponent]
 })

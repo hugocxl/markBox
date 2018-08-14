@@ -7,9 +7,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MdBooksComponent implements OnInit {
 
+  open = false;
+
+  mdBooks:Array<any> = [];
+  newMdBook = {
+    title: ''
+  }
   constructor() { }
 
   ngOnInit() {
+  }
+
+  toggleNotes(){
+    this.open = !this.open;
+  }
+
+  addNew(mdBook){
+    this.mdBooks.push(this.newMdBook);
   }
 
 }

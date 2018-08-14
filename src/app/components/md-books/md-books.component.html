@@ -1,3 +1,31 @@
 <section class="mdBooks">
+  <div class="add-new">
+      <form (ngSubmit)="addNew(form)" #form="ngForm">
+        <input type="text" name="title" [(ngModel)]="newMdBook.title">
+    </form>
+  </div>
+  <ul>
+    <!-- <li *ngFor="let mdBook of mdBooks">
+      {{mdBook.title}}
+    </li> -->
 
+  </ul>
+
+    <ul class="md-books-list">
+      <li>
+        <div class="md-book-title flex-row">
+            <h3 class="mdbook-title">Ironhack</h3>
+            <i class="toggleNotes" (click)="toggleNotes()">+</i>
+        </div>
+        
+        <ul *ngIf="open" class="md-notes-list">
+          <li><a [routerLink]="['/mdNotes', 123]">note1</a>
+            </li>
+          <li>note2</li>
+          <li>note3</li>
+          <li>note4</li>
+        </ul>
+      </li>
+    </ul>
+      
 </section>

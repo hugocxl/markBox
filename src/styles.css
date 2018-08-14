@@ -32,7 +32,26 @@ time, mark, audio, video {
 a{
   color: #3c5877;
 }
-
+.page-wrapper{
+  border-left: 1px solid rgb(220,220,220);
+  border-right: 1px solid rgb(220,220,220);
+  padding: 20px 50px;
+  width: 70%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.full-page-wrapper{
+  height: 100vh;
+  align-items: center;
+}
+.flex-row{
+  display: flex;
+}
+.flex-row.jc-center{
+  justify-content: center;
+}
 /* -- forms -- */
 
 form.is-processing {
@@ -117,12 +136,7 @@ form .field.has-error input {
   border: none;
   margin-top: 15px;
 }
-.flex-row{
-  display: flex;
-}
-.flex-row.jc-center{
-  justify-content: center;
-}
+
 @media (min-width:768px) {
   
 }
