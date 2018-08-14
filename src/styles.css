@@ -41,12 +41,13 @@ form.is-processing {
 
 form input {
   padding: 5px;
-  font-size: 16px;
   width: 100%;
   margin-bottom: 10px;
   background: transparent!important;
   color: #fff;
   border: 1px solid rgb(120,120,120);
+  font-weight: 100;
+  font-size: 12px;
 }
 
 form .submit {
@@ -116,11 +117,12 @@ form .field.has-error input {
   border: none;
   margin-top: 15px;
 }
+.flex-row{
+  display: flex;
+}
+.flex-row.jc-center{
+  justify-content: center;
+}
 @media (min-width:768px) {
-  .flex-row{
-    display: flex;
-  }
-  .flex-row.jc-center{
-    justify-content: center;
-  }
+  
 }

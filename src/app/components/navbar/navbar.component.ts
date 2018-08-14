@@ -16,14 +16,12 @@ export class NavbarComponent implements OnInit {
     ) {}
   
     user: any;
-
-
     currentView: String;
-
     homePage : Boolean;
     mdBooksPage : Boolean;
     profilePage : Boolean;
     helpPage : Boolean;
+    showMdBooks = false;
 
     resetUrl(){
       this.homePage = false;
@@ -39,10 +37,6 @@ export class NavbarComponent implements OnInit {
       switch (this.currentView){
         case '/home':
           this.homePage = true;
-          break;
-
-        case '/mdBooks':
-          this.mdBooksPage = true;
           break;
 
         case '/profile':
@@ -61,17 +55,14 @@ export class NavbarComponent implements OnInit {
       console.log(this.router.url)
     }
 
-
-
     //NAVIGATION FUNCTIONS: 
     navigateHome(){
       this.router.navigate(['/home']);
       this.setCurrentView()
-
     }
 
     navigateMdBooks(){
-      this.router.navigate(['/mdBooks']);
+      this.showMdBooks = !this.showMdBooks;
       this.setCurrentView()
     }
 

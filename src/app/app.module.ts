@@ -25,6 +25,7 @@ import { RequireAnonGuard } from './guards/require-anon.guard';
 import { RequireUserGuard } from './guards/require-user.guard';
 import { LoginFormComponent } from './components/login-form/login-form.component';
 import { SignupFormComponent } from './components/signup-form/signup-form.component';
+import { MdBooksComponent } from './components/md-books/md-books.component';
 
 const routes: Routes = [
   { path: '',  component: LandingPageComponent, canActivate: [ RequireAnonGuard ] },
@@ -45,7 +46,8 @@ const routes: Routes = [
     HelpPageComponent,
     NavbarComponent,
     LoginFormComponent,
-    SignupFormComponent
+    SignupFormComponent,
+    MdBooksComponent
   ],
   imports: [
     BrowserModule,

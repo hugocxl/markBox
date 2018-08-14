@@ -12,16 +12,13 @@
   padding: 0;
   justify-content: space-between;
 }
-
-div>li:first-child{
-  margin-top: 100px;
+.navbar li{
+  padding: 15px 0;
 }
-
 .icon{
   width: 25px;
   height: 25px;
   padding: 0;
-  margin: 30% 0;
 }
 
 div>li:hover{
