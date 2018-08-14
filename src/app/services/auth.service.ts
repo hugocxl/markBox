@@ -52,7 +52,6 @@ export class AuthService {
   }
 
   signup(user: any): Promise<any> {
-    console.log(user);
     const options = {
       withCredentials: true
     };
@@ -71,7 +70,6 @@ export class AuthService {
   }
 
   getUser(): any {
-    console.log(this.user);
     return this.user;
   }
 }

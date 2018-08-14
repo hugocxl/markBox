@@ -29,7 +29,8 @@ import { MdBooksComponent } from './components/md-books/md-books.component';
 
 const routes: Routes = [
   { path: '',  component: LandingPageComponent, canActivate: [ RequireAnonGuard ] },
-  { path: 'home',  component: HomePageComponent, canActivate: [ InitAuthGuard ] },
+  { path: 'home',  component: HomePageComponent, canActivate: [ RequireUserGuard ] },
+  { path: 'mdBooks',  component: MdBooksPageComponent, canActivate: [ RequireUserGuard ] },
   { path: 'profile',  component: ProfilePageComponent , canActivate: [ RequireUserGuard ] },
   { path: 'help',  component: HelpPageComponent , canActivate: [ RequireUserGuard ] },
   { path: '**', redirectTo: '' },

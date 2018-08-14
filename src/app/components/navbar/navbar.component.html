@@ -1,21 +1,29 @@
 <ul class="navbar">
 
   <div>
-    <li [ngClass]="{'active': homePage }" (click)="navigateHome()" class="navbar-item">
+    <li class="navbar-item">
+      <a [routerLink]="['/home']" routerLinkActive="active">
         <img class="icon" src="../../../assets/home-icon.png">
+      </a>
     </li>
   
-    <li class="navbar-item" [ngClass]="{'active': mdBooksPage }" (click)="navigateMdBooks()">
-      <img class="icon" src="../../../assets/notebook-icon.png">
+    <li class="navbar-item">
+        <a [routerLink]="['/mdBooks']" routerLinkActive="active">
+          <img class="icon" src="../../../assets/notebook-icon.png">
+      </a>
     </li>
   
-    <li class="navbar-item" [ngClass]="{'active': profilePage }" (click)="navigateProfile()">
-      <img class="icon" src="../../../assets/user-icon.png">
+    <li class="navbar-item">
+      <a [routerLink]="['/profile']" routerLinkActive="active">
+        <img class="icon" src="../../../assets/user-icon.png">
+      </a> 
     </li>
   </div>
   <div>
-    <li class="navbar-item" [ngClass]="{'active': helpPage }" (click)="navigateHelp()">
-      <img class="icon" src="../../../assets/info-icon.png">
+    <li class="navbar-item">
+      <a [routerLink]="['/help']" routerLinkActive="active">
+        <img class="icon" src="../../../assets/info-icon.png">
+      </a>
     </li>
   
     <li class="navbar-item" (click)="logout()" id="last-nav-item">

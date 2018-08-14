@@ -17,7 +17,6 @@ export class HomePageComponent implements OnInit {
 
   ngOnInit() {
     this.user = this.authService.getUser()
-    console.log('HOME: ', this.user)
   }
 
 }
