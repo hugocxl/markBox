@@ -1,4 +1,5 @@
 <app-navbar></app-navbar>
+<!-- 
 
 <div class="main">
     <h1>Help page</h1>
@@ -6,3 +7,171 @@
 </div>
 
 
+
+<div class="container">
+    <p>This Markdown cheat sheet provides a quick overview of all the Markdown syntax elements. It can't cover every edge case, so if you need more information about any of these elements, refer to our reference guides for <a href="/basic-syntax">basic syntax</a> and <a href="/extended-syntax">extended syntax</a>.</p>
+  
+    <h1></a>Basic Syntax</h1>
+    <p>These are the elements outlined in John Gruber's original design document. All Markdown applications support these elements.</p>
+  
+    <table>
+        <thead>
+            <tr>
+                <th>Element</th>
+                <th>Markdown Syntax</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><a href="/basic-syntax/#headings">Heading</a></td>
+                <td>
+                    <code>
+                        # H1<br>
+                        ## H2<br>
+                        ### H3
+                    </code>
+                </td>
+            </tr>
+
+            <tr>
+                <td><a href="/basic-syntax/#bold">Bold</a></td>
+                <td><code>**bold text**</code></td>
+            </tr>
+
+            <tr>
+                <td><a href="/basic-syntax/#italic">Italic</a></td>
+                <td><code>*italicized text*</code></td>
+            </tr>
+
+            <tr>
+                <td><a href="/basic-syntax/#blockquotes-1">Blockquote</a></td>
+                <td><code>&gt; blockquote</code></td>
+            </tr>
+
+            <tr>
+                <td><a href="/basic-syntax/#ordered-lists">Ordered List</a></td>
+                <td><code>
+                1. First item<br>
+                2. Second item<br>
+                3. Third item<br>
+                </code></td>
+            </tr>
+
+            <tr>
+                <td><a href="/basic-syntax/#unordered-lists">Unordered List</a></td>
+                <td>
+                <code>
+                    - First item<br>
+                    - Second item<br>
+                    - Third item<br>
+                </code>
+                </td>
+            </tr>
+
+            <tr>
+                <td><a href="/basic-syntax/#code-1">Code</a></td>
+                <td><code>`code`</code></td>
+            </tr>
+
+            <tr>
+                <td><a href="/basic-syntax/#horizontal-rules">Horizontal Rule</a></td>
+                <td><code>---</code></td>
+            </tr>
+
+            <tr>
+                <td><a href="/basic-syntax/#links">Link</a></td>
+                <td><code>[title](https://www.example.com)</code></td>
+            </tr>
+
+            <tr>
+                <td><a href="/basic-syntax/#images-1">Image</a></td>
+                <td><code>![alt text](image.jpg)</code></td>
+            </tr>
+
+    </tbody>
+  </table>
+  
+  <h1 class="page-header" id="extended-syntax"><a class="anchorjs-link " href="#extended-syntax" aria-label="Anchor link for: extended syntax" data-anchorjs-icon="" style="font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 1em; line-height: inherit; font-family: anchorjs-icons; position: absolute; margin-left: -1em; padding-right: 0.5em;"></a>Extended Syntax</h1>
+  
+  <p class="lead">These elements extend the basic syntax by adding additional features. Not all Markdown applications support these elements.</p>
+  
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>Element</th>
+        <th>Markdown Syntax</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a href="/extended-syntax/#tables">Table</a></td>
+        <td><code>
+            | Syntax      | Description |<br>
+            | ----------- | ----------- |<br>
+            | Header      | Title       |<br>
+            | Paragraph   | Text        |
+        </code></td>
+      </tr>
+      <tr>
+        <td><a href="/extended-syntax/#fenced-code-blocks">Fenced Code Block</a></td>
+        <td><code>```<br>
+        {<br>
+        &nbsp;&nbsp;"firstName": "John",<br>
+        &nbsp;&nbsp;"lastName": "Smith",<br>
+        &nbsp;&nbsp;"age": 25<br>
+        }<br>
+        ```
+        </code></td>
+      </tr>
+      <tr>
+        <td><a href="/extended-syntax/#footnotes">Footnote</a></td>
+        <td><code>
+          Here's a sentence with a footnote. [^1]<br><br>
+  
+          [^1]: This is the footnote.
+        </code></td>
+      </tr>
+      <tr>
+        <td><a href="/extended-syntax/#heading-ids">Heading ID</a></td>
+        <td><code>### My Great Heading {#custom-id}</code></td>
+      </tr>
+      <tr>
+        <td><a href="/extended-syntax/#strikethrough">Strikethrough</a></td>
+        <td><code>~~The world is flat.~~</code></td>
+      </tr>
+      <tr>
+        <td><a href="/extended-syntax/#task-lists">Task List</a></td>
+        <td><code>
+          - [x] Write the press release<br>
+          - [ ] Update the website<br>
+          - [ ] Contact the media
+        </code></td>
+      </tr>
+    </tbody>
+  </table>
+  
+            <div class="panel panel-primary" style="margin-top: 50px">
+    <div class="panel-heading">
+      <h4 class="no-anchor" data-toc-skip="" id="want-to-learn-more-markdown">Want to learn more Markdown?
+    </h4>
+  </div>
+    <div class="panel-body" style="font-size: 16px">
+      Hey there! <img class="emoji" title=":wave:" alt=":wave:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f44b.png" height="20" width="20"> I'm Matt Cone. I'm a technical writer who's been using Markdown for years. If you liked this and want to hear about my new Markdown tutorials, enter your email address below. I don't send spam.
+      <br>
+  
+      <form action="https://tinyletter.com/markdownguide" method="post" target="popupwindow" onsubmit="window.open('https://tinyletter.com/markdownguide', 'popupwindow', 'scrollbars=yes,width=800,height=600');return true">
+        <div class="form-group" style="margin-top: 20px">
+          <input type="email" class="form-control" name="email" id="tlemail" placeholder="Your email address"><input type="hidden" value="1" name="embed">
+        </div>
+        <button type="submit" class="btn btn-success">Subscribe</button>
+      </form>
+  
+    </div>
+  </div>
+  
+          </div>
+          <div class="col-xs-6 col-sm-3 hidden-xs" id="sidebar">
+            <nav id="toc" data-spy="affix" data-toggle="toc" class="affix"><ul class="nav"><li class=""><a href="#basic-syntax">Basic Syntax</a></li><li><a href="#extended-syntax">Extended Syntax</a></li></ul></nav>
+          </div>
+        </div>
+      </div> -->

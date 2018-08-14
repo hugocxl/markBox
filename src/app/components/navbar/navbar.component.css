@@ -30,6 +30,7 @@ div>li:hover{
   width: 65px; 
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
+  cursor: pointer;
 }
 
 .navbar-item.active{
