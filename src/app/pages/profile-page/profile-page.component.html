@@ -1,36 +1,37 @@
 
+<app-navbar></app-navbar>
+<div class="main">
+  <form method="post" action="/profile/edit" role="register">
 
+  <div class="form-group">
+    <h2>Basic information</h2>
 
-<form method="post" action="/profile/edit" role="register">
+    <div class="username-edit">
+      <h3>Username</h3>
+      <p>Update your username:</p>
+      <input type="text" name="username1" placeholder="New username">
+      <input type="text" name="username2" placeholder="Repeat new username.">
+    </div>
 
-<div class="form-group">
-  <h2>Basic information</h2>
+    <div class="password-edit">
+        <h3>Password</h3>
+        <p>Update your password:</p>
+        <input type="password" name="password1" placeholder="New password">
+        <input type="password" name="password2" placeholder="Repeat new password">
+    </div>
 
-  <div class="username-edit">
-    <h3>Username</h3>
-    <p>Update your username:</p>
-    <input type="text" name="username1" placeholder="New username">
-    <input type="text" name="username2" placeholder="Repeat new username.">
+    <div class="email-edit">
+        <h3>Email</h3>
+        <p>Update your email:</p>
+        <input type="text" name="email1" placeholder="New email">
+        <input type="text" name="email2" placeholder="Repeat new email">
+      </div>         
   </div>
 
-  <div class="password-edit">
-      <h3>Password</h3>
-      <p>Update your password:</p>
-      <input type="password" name="password1" placeholder="New password">
-      <input type="password" name="password2" placeholder="Repeat new password">
+  <div class="form-group">
+    <h2>Everything ready?</h2>
+    <button type="submit" name="go">Update info</button>
   </div>
 
-  <div class="email-edit">
-      <h3>Email</h3>
-      <p>Update your email:</p>
-      <input type="text" name="email1" placeholder="New email">
-      <input type="text" name="email2" placeholder="Repeat new email">
-    </div>         
+  </form>
 </div>
-
-<div class="form-group">
-  <h2>Everything ready?</h2>
-  <button type="submit" name="go">Update info</button>
-</div>
-
-</form>

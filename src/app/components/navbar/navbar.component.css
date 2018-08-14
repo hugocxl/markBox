@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   background-color: #3c5877;
-  width: 65px;
+  width: 50px;
   position: fixed;
   height: 100%;
   top: 0;
@@ -10,40 +10,32 @@
   list-style: none;
   text-align: center;
   padding: 0;
-  justify-content: center;
-  
+  justify-content: space-between;
 }
 
+div>li:first-child{
+  margin-top: 100px;
+}
 
 .icon{
-  width: 35px;
-  height: 35px;
+  width: 25px;
+  height: 25px;
   padding: 0;
   margin: 30% 0;
 }
 
-ul>li{
+div>li:hover{
   transition: background-color ease 0.5s;
-}
-
-
-ul>li:hover{
   background: #a9a9a9;
-  width: 80px; 
+  width: 65px; 
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
 }
 
-
 .navbar-item.active{
-  width: 80px;  
+  width: 65px;  
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
   background:rgba(40, 40, 40); 
 }
 
-/* 
-
-.hugo{
-  height: 50%;
-} */
