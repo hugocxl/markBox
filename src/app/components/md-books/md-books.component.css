@@ -2,4 +2,41 @@
   background:rgb(74, 82,88);
   width: 200px;
   height: 100vh;
+  color: #fff;
+  padding: 15px;
+}
+.md-book-title{
+  justify-content: space-between;
+  border-bottom: 1px solid #fff;
+  margin-bottom: 10px;
+}
+.md-books-list, .md-notes-list{
+  list-style:none;
+  padding-left: 0;
+}
+.mdNote{
+  width: 100%;
+}
+.md-notes-list{
+  padding-left: 10px;
+}
+.toggleNotes:hover,.md-notes-list h4:hover{
+  cursor: pointer;
+}
+.edit-note, .rendered-note{
+  width: 50%;
+  height: 80%;
+}
+.edit-note{
+  border-right: 1px solid rgb(220,220,220);
+}
+.edit-note textarea{
+  width: 100%;
+  background: transparent!important;
+  border: none!important;
+  height: 100vh;
+  padding: 40px;
+}
+.edit-note textarea:focus{
+  outline: none!important;
 }
