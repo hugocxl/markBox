@@ -18,7 +18,15 @@
   width: 100%;
 }
 .md-notes-list{
-  padding-left: 10px;
+  padding-left: 10px;  
+  height: 0;
+  visibility: hidden;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+.md-notes-list.open{
+  height: auto;
+  visibility: visible;
 }
 .toggleNotes:hover,.md-notes-list h4:hover{
   cursor: pointer;

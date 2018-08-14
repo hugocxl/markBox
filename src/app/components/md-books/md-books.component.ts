@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MdBooksService } from '../../services/md-books.service';
+import { MdNotesService } from '../../services/md-notes.service';
 
 @Component({
   selector: 'app-md-books',
@@ -12,10 +13,13 @@ export class MdBooksComponent implements OnInit {
   isEditing = false;
   mdBooks: Object;
 
-  note = "hola bla bla bla";
-  markdown = this.note;
+  content: Object;
+  markdown:string;
 
-  constructor( private mdBooksService: MdBooksService) { }
+  constructor( 
+    private mdBooksService: MdBooksService,
+    private mdNotesService: MdNotesService
+  ) { }
 
   public pipeMarkDown = '# Markdown';
 
@@ -30,12 +34,18 @@ export class MdBooksComponent implements OnInit {
       })
   }
 
-  toggleNotes(){
-    this.open = !this.open;
+  toggleNotes(id){
+    document.getElementById(id).classList.toggle('open');
   }
 
-  handleClickNote(){
-    this.markdown = "# h1 ahora es otra nota";
+  handleClickNote(id){
+    this.mdNotesService.getOne(id)
+    .then(mdNote => {
+      this.markdown = mdNote.content;
+    })
+    .catch(err => {
+      console.log(err);
+    })
   }
 
   handleEdit(){

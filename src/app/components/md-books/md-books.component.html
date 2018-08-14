@@ -1,31 +1,24 @@
-{{mdBooks|json}}
+<!-- {{mdBooks|json}} -->
 <div class="flex-row">
     <section class="mdBooks">
-        <!-- <div class="add-new">
-            <form (ngSubmit)="addNew(form)" #form="ngForm">
+        <div class="add-new">
+            <!-- <form (ngSubmit)="addNew(form)" #form="ngForm">
               <input type="text" name="title" [(ngModel)]="newMdBook.title">
-          </form>
-        </div> -->
-        <ul>
-          <!-- <li *ngFor="let mdBook of mdBooks">
-            {{mdBook.title}}
-          </li> -->
-      
+          </form> -->
+        </div>
+        <ul>   
         </ul>
           <ul class="md-books-list">
-            <li>
+            <li *ngFor="let mdBook of mdBooks">
               <div class="md-book-title flex-row">
-                  <h3 class="mdbook-title">Ironhack</h3>
-                  <i class="toggleNotes" (click)="toggleNotes()">+</i>
+                  <h3 class="mdbook-title">{{mdBook.title}}</h3>
+                  <i class="toggleNotes" (click)="toggleNotes(mdBook._id)">+</i>
               </div>
               
-              <ul *ngIf="open" class="md-notes-list">
-                <li>
-                  <h4 (click)="handleClickNote()">note1</h4>
+              <ul class="md-notes-list" [id]="mdBook._id">
+                <li *ngFor="let mdNote of mdBook.mdNotes">
+                  <h4 (click)="handleClickNote(mdNote._id)">{{mdNote.title}}</h4>
                 </li>
-                <li>note2</li>
-                <li>note3</li>
-                <li>note4</li>
               </ul>
             </li>
           </ul>
