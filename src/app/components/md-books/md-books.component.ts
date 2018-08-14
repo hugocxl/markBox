@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MdBooksService } from '../../services/md-books.service';
 
 @Component({
   selector: 'app-md-books',
@@ -8,22 +9,37 @@ import { Component, OnInit } from '@angular/core';
 export class MdBooksComponent implements OnInit {
 
   open = false;
+  isEditing = false;
+  mdBooks: Object;
 
-  mdBooks:Array<any> = [];
-  newMdBook = {
-    title: ''
-  }
-  constructor() { }
+  note = "hola bla bla bla";
+  markdown = this.note;
+
+  constructor( private mdBooksService: MdBooksService) { }
+
+  public pipeMarkDown = '# Markdown';
 
   ngOnInit() {
+    this.mdBooksService.getAll()
+      .then(mdBooks => {
+        console.log(mdBooks);
+        this.mdBooks = mdBooks;
+      })
+      .catch(err => {
+        console.error(err);
+      })
   }
 
   toggleNotes(){
     this.open = !this.open;
   }
 
-  addNew(mdBook){
-    this.mdBooks.push(this.newMdBook);
+  handleClickNote(){
+    this.markdown = "# h1 ahora es otra nota";
+  }
+
+  handleEdit(){
+    this.isEditing = !this.isEditing;
   }
 
 }

@@ -1,31 +1,46 @@
-<section class="mdBooks">
-  <div class="add-new">
-      <form (ngSubmit)="addNew(form)" #form="ngForm">
-        <input type="text" name="title" [(ngModel)]="newMdBook.title">
-    </form>
-  </div>
-  <ul>
-    <!-- <li *ngFor="let mdBook of mdBooks">
-      {{mdBook.title}}
-    </li> -->
-
-  </ul>
-
-    <ul class="md-books-list">
-      <li>
-        <div class="md-book-title flex-row">
-            <h3 class="mdbook-title">Ironhack</h3>
-            <i class="toggleNotes" (click)="toggleNotes()">+</i>
-        </div>
-        
-        <ul *ngIf="open" class="md-notes-list">
-          <li><a [routerLink]="['/mdNotes', 123]">note1</a>
-            </li>
-          <li>note2</li>
-          <li>note3</li>
-          <li>note4</li>
-        </ul>
-      </li>
-    </ul>
+{{mdBooks|json}}
+<div class="flex-row">
+    <section class="mdBooks">
+        <!-- <div class="add-new">
+            <form (ngSubmit)="addNew(form)" #form="ngForm">
+              <input type="text" name="title" [(ngModel)]="newMdBook.title">
+          </form>
+        </div> -->
+        <ul>
+          <!-- <li *ngFor="let mdBook of mdBooks">
+            {{mdBook.title}}
+          </li> -->
       
-</section>
+        </ul>
+          <ul class="md-books-list">
+            <li>
+              <div class="md-book-title flex-row">
+                  <h3 class="mdbook-title">Ironhack</h3>
+                  <i class="toggleNotes" (click)="toggleNotes()">+</i>
+              </div>
+              
+              <ul *ngIf="open" class="md-notes-list">
+                <li>
+                  <h4 (click)="handleClickNote()">note1</h4>
+                </li>
+                <li>note2</li>
+                <li>note3</li>
+                <li>note4</li>
+              </ul>
+            </li>
+          </ul>
+            
+      </section>
+      
+      <section class="mdNote">
+        <button (click)="handleEdit()">Edit</button>
+        <div class="md-note-content-wrapper flex-row">
+          <div class="edit-note" *ngIf="isEditing">
+              <textarea  [(ngModel)]="markdown"></textarea>
+          </div>
+          <div class="rendered-note">
+            <markdown [data]="markdown"></markdown>
+          </div>
+        </div>
+      </section>
+</div>
