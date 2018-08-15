@@ -1,4 +1,4 @@
-.mdBooks{
+.md-books-nav{
   background:rgb(74, 82,88);
   width: 200px;
   height: 100vh;
@@ -14,4 +14,3 @@
   list-style:none;
   padding-left: 0;
 }
-

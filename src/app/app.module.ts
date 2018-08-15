@@ -29,9 +29,8 @@ import { RequireAnonGuard } from './guards/require-anon.guard';
 import { RequireUserGuard } from './guards/require-user.guard';
 import { LoginFormComponent } from './components/login-form/login-form.component';
 import { SignupFormComponent } from './components/signup-form/signup-form.component';
-import { MdBooksComponent } from './components/md-books/md-books.component';
 import { MdNoteComponent } from './components/md-note/md-note.component';
-import { MdNoteCardComponent } from './component/md-note-card/md-note-card.component';
+import { MdBookNavComponent } from './components/md-book-nav/md-book-nav.component';
 
 const routes: Routes = [
   { path: '',  component: LandingPageComponent, canActivate: [ RequireAnonGuard ] },
@@ -55,9 +54,8 @@ const routes: Routes = [
     NavbarComponent,
     LoginFormComponent,
     SignupFormComponent,
-    MdBooksComponent,
     MdNoteComponent,
-    MdNoteCardComponent,
+    MdBookNavComponent,
   ],
   imports: [
     BrowserModule,
@@ -85,8 +83,8 @@ const routes: Routes = [
     InitAuthGuard,
     RequireAnonGuard,
     RequireUserGuard,
-    ProfileService,
-    MdBooksService
+    MdBooksService,
+    ProfileService
   ],
   bootstrap: [AppComponent]
 })
