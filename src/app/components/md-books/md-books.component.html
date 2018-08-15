@@ -1,5 +1,4 @@
 <!-- {{mdBooks|json}} -->
-<div class="flex-row">
     <section class="mdBooks">
         <div class="add-new">
             <!-- <form (ngSubmit)="addNew(form)" #form="ngForm">
@@ -17,23 +16,13 @@
               
               <ul class="md-notes-list" [id]="mdBook._id">
                 <li *ngFor="let mdNote of mdBook.mdNotes">
-                  <h4 (click)="handleClickNote(mdNote._id)">{{mdNote.title}}</h4>
+                  <a [routerLink]="['/mdBooks', mdBook._id, 'mdNotes', mdNote._id]" routerLinkActive="active">{{mdNote.title}}</a>
                 </li>
               </ul>
             </li>
           </ul>
             
       </section>
-      
-      <section class="mdNote">
-        <button (click)="handleEdit()">Edit</button>
-        <div class="md-note-content-wrapper flex-row">
-          <div class="edit-note" *ngIf="isEditing">
-              <textarea  [(ngModel)]="markdown"></textarea>
-          </div>
-          <div class="rendered-note">
-            <markdown [data]="markdown"></markdown>
-          </div>
-        </div>
-      </section>
-</div>
+            
+
+

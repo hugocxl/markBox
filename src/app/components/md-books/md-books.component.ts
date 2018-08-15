@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MdBooksService } from '../../services/md-books.service';
 import { MdNotesService } from '../../services/md-notes.service';
+import { ActivatedRoute } from '@angular/router';
+
 
 @Component({
   selector: 'app-md-books',
@@ -10,17 +12,21 @@ import { MdNotesService } from '../../services/md-notes.service';
 export class MdBooksComponent implements OnInit {
 
   open = false;
-  isEditing = false;
+  
+
   mdBooks: Object;
-
   mdNote : any;
-
-  content: String;
   markdown: any;
+  
+  id: number;
+  private sub: any;
+
 
   constructor( 
     private mdBooksService: MdBooksService,
-    private mdNotesService: MdNotesService
+    private mdNotesService: MdNotesService,
+    private route: ActivatedRoute,
+    
   ) { }
 
   public pipeMarkDown = '# Markdown';
@@ -28,7 +34,6 @@ export class MdBooksComponent implements OnInit {
   ngOnInit() {
     this.mdBooksService.getAll()
       .then(mdBooks => {
-        console.log(mdBooks);
         this.mdBooks = mdBooks;
       })
       .catch(err => {
@@ -40,19 +45,5 @@ export class MdBooksComponent implements OnInit {
     document.getElementById(id).classList.toggle('open');
   }
 
-  handleClickNote(id){
-    this.mdNotesService.getOne(id)
-    .then(mdNote => {
-      this.mdNote = mdNote;
-      this.markdown = this.mdNote.content;
-    })
-    .catch(err => {
-      console.log(err);
-    })
-  }
-
-  handleEdit(){
-    this.isEditing = !this.isEditing;
-  }
 
 }

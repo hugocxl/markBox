@@ -1,0 +1,14 @@
+<section class="mdNote">
+  <button (click)="handleEdit()">Edit</button>
+  <div class="md-note-content-wrapper flex-row">
+    <div class="edit-note" *ngIf="isEditing">
+        <textarea  [(ngModel)]="markdown"></textarea>
+    </div>
+    <div class="rendered-note">
+      <markdown [data]="markdown"></markdown>
+    </div>
+  </div>
+</section>
+
+
+{{mdNote |json}}

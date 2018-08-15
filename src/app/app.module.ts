@@ -30,11 +30,13 @@ import { RequireUserGuard } from './guards/require-user.guard';
 import { LoginFormComponent } from './components/login-form/login-form.component';
 import { SignupFormComponent } from './components/signup-form/signup-form.component';
 import { MdBooksComponent } from './components/md-books/md-books.component';
+import { MdNoteComponent } from './components/md-note/md-note.component';
 
 const routes: Routes = [
   { path: '',  component: LandingPageComponent, canActivate: [ RequireAnonGuard ] },
   { path: 'home',  component: HomePageComponent, canActivate: [ RequireUserGuard ] },
   { path: 'mdBooks',  component: MdBooksPageComponent, canActivate: [ RequireUserGuard ] },
+  { path: 'mdBooks/:idBook/mdNotes/:idNote',  component: MdBooksPageComponent, canActivate: [ RequireUserGuard ] },
   { path: 'profile',  component: ProfilePageComponent , canActivate: [ RequireUserGuard ] },
   { path: 'help',  component: HelpPageComponent , canActivate: [ RequireUserGuard ] },
   { path: '**', redirectTo: '' },
@@ -53,6 +55,7 @@ const routes: Routes = [
     LoginFormComponent,
     SignupFormComponent,
     MdBooksComponent,
+    MdNoteComponent,
   ],
   imports: [
     BrowserModule,
