@@ -2,7 +2,8 @@
   <ul class="md-books-list">
     <li *ngFor="let mdBook of mdBooks">
       <div class="md-book-title flex-row">
-        <h3 class="mdbook-title">{{mdBook.title}}</h3>
+        <a [routerLink]="['/mdBooks', mdBook._id]" routerLinkActive="active">{{mdBook.title}}</a>
+
         <i class="toggleNotes" (click)="toggleNotes(mdBook._id)">+</i>
       </div>
       
