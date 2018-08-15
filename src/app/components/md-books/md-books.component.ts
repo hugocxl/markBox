@@ -13,8 +13,10 @@ export class MdBooksComponent implements OnInit {
   isEditing = false;
   mdBooks: Object;
 
-  content: Object;
-  markdown:string;
+  mdNote : any;
+
+  content: String;
+  markdown: any;
 
   constructor( 
     private mdBooksService: MdBooksService,
@@ -41,7 +43,8 @@ export class MdBooksComponent implements OnInit {
   handleClickNote(id){
     this.mdNotesService.getOne(id)
     .then(mdNote => {
-      this.markdown = mdNote.content;
+      this.mdNote = mdNote;
+      this.markdown = this.mdNote.content;
     })
     .catch(err => {
       console.log(err);
