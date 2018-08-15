@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MdBooksComponent } from './md-books.component';
+import { MdBookNavComponent } from './md-book-nav.component';
 
-describe('MdBooksComponent', () => {
-  let component: MdBooksComponent;
-  let fixture: ComponentFixture<MdBooksComponent>;
+describe('MdBookNavComponent', () => {
+  let component: MdBookNavComponent;
+  let fixture: ComponentFixture<MdBookNavComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MdBooksComponent ]
+      declarations: [ MdBookNavComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MdBooksComponent);
+    fixture = TestBed.createComponent(MdBookNavComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
