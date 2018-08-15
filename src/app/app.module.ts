@@ -31,6 +31,7 @@ import { LoginFormComponent } from './components/login-form/login-form.component
 import { SignupFormComponent } from './components/signup-form/signup-form.component';
 import { MdBooksComponent } from './components/md-books/md-books.component';
 import { MdNoteComponent } from './components/md-note/md-note.component';
+import { MdNoteCardComponent } from './component/md-note-card/md-note-card.component';
 
 const routes: Routes = [
   { path: '',  component: LandingPageComponent, canActivate: [ RequireAnonGuard ] },
@@ -56,6 +57,7 @@ const routes: Routes = [
     SignupFormComponent,
     MdBooksComponent,
     MdNoteComponent,
+    MdNoteCardComponent,
   ],
   imports: [
     BrowserModule,
