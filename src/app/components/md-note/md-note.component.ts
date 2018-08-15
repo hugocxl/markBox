@@ -33,10 +33,8 @@ export class MdNoteComponent implements OnInit {
     public pipeMarkDown = '# Markdown';
   
     ngOnInit(){
-      this.router.events.subscribe((val) => {
-        if(this.location.path() != ''){
-          this.id = this.route.snapshot.params.idNote;
-          this.mdNotesService.getOne(this.id)
+      this.route.params.subscribe((val) => {
+        this.mdNotesService.getOne(val.idNote)
         .then(mdNote => {
           this.mdNote = mdNote;
           this.markdown = this.mdNote.content;
@@ -44,7 +42,7 @@ export class MdNoteComponent implements OnInit {
         .catch(err => {
           console.error(err);
         });
-      }
+      
       });
   }
   
