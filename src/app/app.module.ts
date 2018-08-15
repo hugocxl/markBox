@@ -31,16 +31,29 @@ import { LoginFormComponent } from './components/login-form/login-form.component
 import { SignupFormComponent } from './components/signup-form/signup-form.component';
 import { MdNoteComponent } from './components/md-note/md-note.component';
 import { MdBookNavComponent } from './components/md-book-nav/md-book-nav.component';
+import { CardListComponent } from './components/card-list/card-list.component';
+import { CardComponent } from './components/card/card.component';
 
 const routes: Routes = [
   { path: '',  component: LandingPageComponent, canActivate: [ RequireAnonGuard ] },
   { path: 'home',  component: HomePageComponent, canActivate: [ RequireUserGuard ] },
-  { path: 'mdBooks',  component: MdBooksPageComponent, canActivate: [ RequireUserGuard ] },
-  { path: 'mdBooks/:idBook/mdNotes/:idNote',  component: MdBooksPageComponent, canActivate: [ RequireUserGuard ] },
+  { path: 'mdBooks',  
+    component: MdBooksPageComponent, 
+    canActivate: [ RequireUserGuard ],
+    children: [
+      { 
+        path: ':id', 
+        component: CardListComponent,
+      }, 
+      {
+        path: ':id/mdNotes/:id', 
+        component: MdNoteComponent 
+      }
+    ]
+  },
   { path: 'profile',  component: ProfilePageComponent , canActivate: [ RequireUserGuard ] },
   { path: 'help',  component: HelpPageComponent , canActivate: [ RequireUserGuard ] },
   { path: '**', redirectTo: '' },
-  // { path: '**', component: PageNotFoundComponent }
   ];
 
 @NgModule({
@@ -56,6 +69,8 @@ const routes: Routes = [
     SignupFormComponent,
     MdNoteComponent,
     MdBookNavComponent,
+    CardListComponent,
+    CardComponent,
   ],
   imports: [
     BrowserModule,

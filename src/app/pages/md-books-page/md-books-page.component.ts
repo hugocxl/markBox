@@ -23,6 +23,7 @@ export class MdBooksPageComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log('PAGE COMPONENT')
     this.checkNoteSelection();
   }
 
