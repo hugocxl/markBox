@@ -20,6 +20,14 @@ export class MdBooksService {
     return this.httpClient.get(`${this.mdBooksURL}`, options).toPromise()
   };
 
+  //GET ONE BOOK - ID: Note - REQ.PARAMS;
+  getOne(id){
+    const options = {
+      withCredentials: true
+    };
+    return this.httpClient.get(`${this.mdBooksURL}/${id}`, options).toPromise()
+  }
+
   //CREATE NEW BOOK - DATA: Title - REQ.BODY;
   new(data){
     const options = {

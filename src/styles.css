@@ -61,6 +61,13 @@ a{
 .flex-row.jc-center{
   justify-content: center;
 }
+.grid-row{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: 100%;
+  grid-gap: 1em;
+  padding: 1em;
+}
 /* -- forms -- */
 
 form.is-processing {

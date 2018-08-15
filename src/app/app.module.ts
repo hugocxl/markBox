@@ -20,8 +20,6 @@ import { AuthService } from './services/auth.service';
 import { ProfileService } from './services/profile.service';
 import { MdBooksService } from './services/md-books.service';
 
-
-
 // Guards
 
 import { InitAuthGuard } from './guards/init-auth.guard';
