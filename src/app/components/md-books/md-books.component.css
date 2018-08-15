@@ -14,37 +14,4 @@
   list-style:none;
   padding-left: 0;
 }
-.mdNote{
-  width: 100%;
-}
-.md-notes-list{
-  padding-left: 10px;  
-  height: 0;
-  visibility: hidden;
-  overflow: hidden;
-  margin-bottom: 15px;
-}
-.md-notes-list.open{
-  height: auto;
-  visibility: visible;
-}
-.toggleNotes:hover,.md-notes-list h4:hover{
-  cursor: pointer;
-}
-.edit-note, .rendered-note{
-  width: 50%;
-  height: 80%;
-}
-.edit-note{
-  border-right: 1px solid rgb(220,220,220);
-}
-.edit-note textarea{
-  width: 100%;
-  background: transparent!important;
-  border: none!important;
-  height: 100vh;
-  padding: 40px;
-}
-.edit-note textarea:focus{
-  outline: none!important;
-}
+
