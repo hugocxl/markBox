@@ -56,7 +56,6 @@ export class MdNoteComponent implements OnInit {
       title: this.mdNote.title,
       content: this.markdown;
     }
-    console.log(data)
     this.mdNotesService.edit(this.id, data)
     .then(data => {
       console.log(data)
