@@ -33,10 +33,10 @@ export class MdNoteComponent implements OnInit {
     public pipeMarkDown = '# Markdown';
   
     ngOnInit(){
-      console.log('MDNOTE COMPONENT');
       this.route.params.subscribe((val) => {
         this.mdNotesService.getOne(val.id)
         .then(mdNote => {
+          this.id = val.id;
           this.mdNote = mdNote;
           this.markdown = this.mdNote.content;
         })
@@ -48,6 +48,22 @@ export class MdNoteComponent implements OnInit {
   
   handleEdit(){
     this.isEditing = !this.isEditing;
+  }
+
+  saveChanges(){
+    this.handleEdit();
+    const data = {
+      title: this.mdNote.title,
+      content: this.markdown;
+    }
+    console.log(data)
+    this.mdNotesService.edit(this.id, data)
+    .then(data => {
+      console.log(data)
+    })
+    .catch(error => {
+      console.log('FAIL')
+    })
   }
 
 
