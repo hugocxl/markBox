@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MdNotesService } from '../../services/md-notes.service';
+
 import { ActivatedRoute } from '@angular/router';
 import { Renderer2 } from '@angular/core';
 
@@ -30,7 +31,7 @@ export class MdNoteComponent implements OnInit {
   ) { }
 
     public pipeMarkDown = '# Markdown';
-  
+    newTitle:any;
 
     // @HostListener('mouseover') onHover() {
     //   let part = this.el.nativeElement.querySelector('#noteTitle').style= 'color:red';
@@ -58,7 +59,7 @@ export class MdNoteComponent implements OnInit {
     };
     this.mdNotesService.edit(this.mdNote._id, data)
     .then(data => {
-      console.log('Succesfully saved')
+      console.log('Succesfully saved');
     })
     .catch(error => {
       console.log('Fail Saving')

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges } from '@angular/core';
 import { MdBooksService } from '../../services/md-books.service';
 import { MdNotesService } from '../../services/md-notes.service';
 
@@ -14,7 +14,7 @@ export class MdBookNavComponent implements OnInit {
   mdNote : any;
   newMdBook:any;
   id: number;
-
+  title:any;
   newBook = {
     title : ''
   }
@@ -30,21 +30,31 @@ export class MdBookNavComponent implements OnInit {
 
   ngOnInit() {
     this.mdBooksService.getAll()
-      .then(mdBooksDB => {
-        this.mdBooks = mdBooksDB;
+    .then(() =>{
+      this.mdBooks = this.mdBooksService.mdBooks;
+    })
+    .catch(err => {
+      console.error(err);
+    })
+
+    this.mdNotesService.titleChange$.subscribe((title) =>{
+      this.mdBooksService.getAll()
+      .then(() =>{
+        this.mdBooks = this.mdBooksService.mdBooks;
       })
       .catch(err => {
         console.error(err);
       })
+    })
   }
 
   toggleNotes(id){
     document.getElementById(id).classList.toggle('open');
   }
   addMdNote(form, bookId){
-    console.log(this.newNote);
     this.mdNotesService.new(this.newNote,bookId)
     .then(newNote => {
+      console.log(newNote);
       let index = this.mdBooks.findIndex(x => x._id === bookId);
       this.mdBooks[index].mdNotes.push(newNote);
       this.newNote.title = "";
@@ -57,7 +67,7 @@ export class MdBookNavComponent implements OnInit {
     this.mdBooksService.new(this.newBook)
     .then(book => {
       this.newMdBook = book;
-      return this.mdNotesService.getOne(this.newMdBook.mdNotes[0])
+      return this.mdNotesService.getOne(this.newMdBook.mdNotes[0])  
     })
     .then(newNote =>{
       this.newMdBook.mdNotes.push(newNote);

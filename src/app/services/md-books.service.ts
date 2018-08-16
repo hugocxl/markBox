@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -11,6 +12,7 @@ export class MdBooksService {
   ) { }
 
   mdBooksURL = 'http://localhost:3000/api/mdbooks';
+  mdBooks:any;
 
   //GET ALL BOOKS - no data needed;
   getAll(){
@@ -18,6 +20,12 @@ export class MdBooksService {
       withCredentials: true,
     }
     return this.httpClient.get(`${this.mdBooksURL}`, options).toPromise()
+    .then(mdBooksDB => {
+      this.mdBooks = mdBooksDB;
+    })
+    .catch(err => {
+      console.error(err);
+    })
   };
 
   //GET ONE BOOK - ID: Note - REQ.PARAMS;
@@ -53,4 +61,3 @@ export class MdBooksService {
   }
   
 }
-  
