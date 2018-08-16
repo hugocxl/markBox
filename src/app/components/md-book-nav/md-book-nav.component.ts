@@ -20,7 +20,9 @@ export class MdBookNavComponent implements OnInit {
   newBook = {
     title : ''
   }
-
+  newNote = {
+    title: ''
+  }
   constructor( 
     private mdBooksService: MdBooksService,
     private mdNotesService: MdNotesService  
@@ -39,7 +41,18 @@ export class MdBookNavComponent implements OnInit {
   toggleNotes(id){
     document.getElementById(id).classList.toggle('open');
   }
-
+  addMdNote(form, bookId){
+    console.log(this.newNote);
+    this.mdNotesService.new(this.newNote,bookId)
+    .then(newNote => {
+      let index = this.mdBooks.findIndex(x => x._id === bookId);
+      this.mdBooks[index].mdNotes.push(newNote);
+      this.newNote.title = "";
+    })
+    .catch(err => {
+      console.error(err);
+    })
+  }
   addMdBook(form){
     this.mdBooksService.new(this.newBook)
     .then(book => {

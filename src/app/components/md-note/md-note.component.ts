@@ -90,7 +90,7 @@ export class MdNoteComponent implements OnInit {
     
     const data = {
       title: this.mdNote.title,
-      content: this.markdown;
+      content: this.markdown
     };
 
     this.mdNotesService.edit(this.mdNote._id, data)
