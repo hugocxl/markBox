@@ -42,6 +42,7 @@ export class MdBookNavComponent implements OnInit {
     document.getElementById(id).classList.toggle('open');
   }
   addMdNote(form, bookId){
+    console.log(this.newNote);
     this.mdNotesService.new(this.newNote,bookId)
     .then(newNote => {
       let index = this.mdBooks.findIndex(x => x._id === bookId);

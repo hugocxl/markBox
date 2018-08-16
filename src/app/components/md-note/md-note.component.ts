@@ -1,11 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { MdBooksService } from '../../services/md-books.service';
 import { MdNotesService } from '../../services/md-notes.service';
 import { ActivatedRoute } from '@angular/router';
-
-import { Location } from '@angular/common';
-import { Router } from '@angular/router';
-
+import { HostListener, ElementRef } from '@angular/core';
+import { Renderer2 } from '@angular/core';
 
 
 @Component({
@@ -15,55 +12,97 @@ import { Router } from '@angular/router';
 })
 export class MdNoteComponent implements OnInit {
 
-  actualRoute: string;
-
-  id: number;
-  isEditing = false;
-  mdBooks: Object;
-  mdNote : any;
+  mdNote = {
+    _id: "",
+    title: "",
+    content: "",
+  };
   markdown: any;
 
+  isTitleEdited = false;
+  isEditing = false;
+  // id: number;
+
   constructor(  
-    private location: Location, 
-    private router: Router,
     private mdNotesService: MdNotesService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private el: ElementRef,
+    private renderer: Renderer2
   ) { }
 
     public pipeMarkDown = '# Markdown';
   
-    ngOnInit(){
-      this.route.params.subscribe((val) => {
-        this.mdNotesService.getOne(val.id)
-        .then(mdNote => {
-          this.id = val.id;
-          this.mdNote = mdNote;
-          this.markdown = this.mdNote.content;
-        })
-        .catch(err => {
-          console.error(err);
-        });
-      });
-  }
-  
-  handleEdit(){
-    this.isEditing = !this.isEditing;
+
+    // @HostListener('mouseover') onHover() {
+    //   let part = this.el.nativeElement.querySelector('#noteTitle').style= 'color:red';
+    //   window.alert("hover");
+    // }
+  //INIT: BIND SELECTED NOTE TO COMPONENT PROPERTIES THROUGH PARAMS SUB.
+  ngOnInit(){
+    this.route.params.subscribe((val) => {
+      this.getNote(val);
+      this.editTitle();
+    });
+  };
+
+  //EDIT NOTE TITLE - Activated onInit
+  editTitle(){
+    this.renderer.listen(document.getElementById('noteTitle'), 'click', (event) => {
+      this.isTitleEdited = true;
+    });
   }
 
+  saveTitleChanges(){
+    const data = {
+      title: document.getElementById('noteTitle').innerHTML,
+      content: this.markdown;
+    };
+    this.mdNotesService.edit(this.mdNote._id, data)
+    .then(data => {
+      console.log('Succesfully saved')
+    })
+    .catch(error => {
+      console.log('Fail Saving')
+    });
+    this.isTitleEdited = false;
+  }
+
+
+  //GET NOTE FUNCTION:
+  getNote(val) {
+    this.mdNotesService.getOne(val.id)
+      .then(note => {
+        this.mdNote = note;
+        this.markdown = this.mdNote.content;
+        //If note.content -> ERROR (though it works)
+      })
+      .catch(err => {
+        console.error(err);
+      });
+  }
+
+  //EDIT MODE CONTROL:
+  handleEdit(){
+    this.isEditing = !this.isEditing;
+  };
+
+  //SAVE EDITED NOTE: 
   saveChanges(){
     this.handleEdit();
+    
     const data = {
       title: this.mdNote.title,
       content: this.markdown
-    }
-    this.mdNotesService.edit(this.id, data)
+    };
+
+    this.mdNotesService.edit(this.mdNote._id, data)
     .then(data => {
-      console.log(data);
+      console.log('Succesfully saved')
     })
     .catch(error => {
-      console.log('FAIL')
-    })
-  }
+      console.log('Fail Saving')
+    });
+  };
 
 
 }

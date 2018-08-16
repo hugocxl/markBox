@@ -1,20 +1,23 @@
-<section class="mdNote">
+<button *ngIf="!isEditing" (click)="handleEdit()">Edit Mode</button>
+<button *ngIf="isEditing" (click)="saveChanges()">Save</button>
 
-  <button *ngIf="!isEditing" (click)="handleEdit()">Edit Mode</button>
-  <button *ngIf="isEditing" (click)="saveChanges()">Save</button>
+
+<section class="mdNote">
+  <h1 id="noteTitle" contenteditable="true">{{mdNote.title}}</h1>
+  <button *ngIf="isTitleEdited" (click)="saveTitleChanges()">Save title</button>
+
+
   <div class="md-note-content-wrapper flex-row">
 
     <div class="edit-note" *ngIf="isEditing">
-      <h3>Markdown</h3>
-        <textarea  [(ngModel)]="markdown"></textarea>
+      <textarea [(ngModel)]="markdown"></textarea>
     </div>
 
     <div class="rendered-note">
-        <h3>Preview</h3>
       <markdown [data]="markdown"></markdown>
     </div>
 
-
   </div>
-</section>
 
+
+</section>
