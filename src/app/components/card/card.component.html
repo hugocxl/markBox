@@ -1,7 +1,5 @@
 <div class="md-note-card" [routerLink]="['mdNotes', mdNote._id]">
-  <div class="flex-row">
-      <span class="edit-date">{{mdNote.updatedAt|date : 'MM-dd-yy'}}</span>
-      <h2>{{mdNote.title}}</h2>
-  </div> 
+  <h2>{{mdNote.title}}</h2>
+  <p class="edit-date">{{mdNote.updatedAt|date : 'MM-dd-yy'}}</p>
   {{mdNote.content}}
 </div>
