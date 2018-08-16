@@ -1,14 +1,13 @@
 
-
 <section class="mdNote">
+  <button *ngIf="!isEditing" (click)="handleEdit()">Edit Mode</button>
   
   <div class="edit-mdnote" *ngIf="isEditing">
-      <button *ngIf="!isEditing" (click)="handleEdit()">Edit Mode</button>
-      <textarea [(ngModel)]="markdown"></textarea>
-    </div>
-
-    <div class="render-mdnote">
-      <markdown [data]="markdown"></markdown>
-    </div>
-
+    <textarea [(ngModel)]="markdown"></textarea>
+  </div>
+  
+  <div class="render-mdnote">
+    <markdown [data]="markdown"></markdown>
+  </div>
+  
 </section>

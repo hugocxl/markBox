@@ -35,10 +35,21 @@ import { CardComponent } from './components/card/card.component';
 const routes: Routes = [
   { path: '',  component: LandingPageComponent, canActivate: [ RequireAnonGuard ] },
   { path: 'home',  component: HomePageComponent, canActivate: [ RequireUserGuard ] },
-  { path: 'mdBooks/:id', component: CardListComponent, canActivate: [ RequireUserGuard ],
-    children: [
+  // { path: 'mdBooks/:id', component: CardListComponent, canActivate: [ RequireUserGuard ],
+  //   children: [
+  //     { path: 'mdNotes/:id', component: MdNoteComponent }
+  //   ]
+  // },
+  { path: 'mdBooks',  
+  component: MdBooksPageComponent, 
+  canActivate: [ RequireUserGuard ],
+  children: [
+      { 
+        path: ':id', 
+        component: CardListComponent,
+      }, 
       {
-        path: 'mdNotes/:id', 
+        path: ':id/mdNotes/:id', 
         component: MdNoteComponent 
       }
     ]

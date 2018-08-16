@@ -5,6 +5,7 @@
 .mdNote{
   width: 100%;
   display: flex;
+  padding-left: 50px;
 }
 
 
@@ -28,4 +29,10 @@
 }
 .edit-mdnote textarea:focus{
   outline: none!important;
+}
+
+button{
+  position: fixed;
+  top: 1em;
+  right:1em;
 }
