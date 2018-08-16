@@ -54,11 +54,11 @@ export class MdNoteComponent implements OnInit {
     this.handleEdit();
     const data = {
       title: this.mdNote.title,
-      content: this.markdown;
+      content: this.markdown
     }
     this.mdNotesService.edit(this.id, data)
     .then(data => {
-      console.log(data)
+      console.log(data);
     })
     .catch(error => {
       console.log('FAIL')
