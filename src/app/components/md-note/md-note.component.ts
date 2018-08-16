@@ -16,6 +16,7 @@ export class MdNoteComponent implements OnInit {
     title: "",
     content: "",
   };
+  mdNewnote:any;
   markdown: any;
 
   isTitleEdited = false;
@@ -70,7 +71,8 @@ export class MdNoteComponent implements OnInit {
   getNote(val) {
     this.mdNotesService.getOne(val.id)
       .then(note => {
-        this.mdNote = note;
+        this.mdNewnote = note
+        this.mdNote = this.mdNewnote;
         this.markdown = this.mdNote.content;
         //If note.content -> ERROR (though it works)
       })

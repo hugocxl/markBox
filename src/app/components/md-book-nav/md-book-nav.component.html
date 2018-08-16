@@ -11,7 +11,7 @@
         <li *ngFor="let mdNote of mdBook.mdNotes">
           <a [routerLink]="['/mdBooks', mdBook._id, 'mdNotes', mdNote._id]" routerLinkActive="active">{{mdNote.title}}</a>
         </li>
-        <form (ngSubmit)="addMdNote(form,mdBook._id)" #form="ngForm">
+        <form (ngSubmit)="addMdNote(form ,mdBook._id)" #form="ngForm">
             <input type="text" name="title" [(ngModel)]="newNote.title" #titleField="ngModel"/>
             <button type="submit">Add</button>
           </form>

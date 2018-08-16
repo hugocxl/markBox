@@ -11,7 +11,7 @@ import { MdNotesService } from '../../services/md-notes.service';
 export class MdBookNavComponent implements OnInit {
 
   open = false;
-  mdBooks;
+  mdBooks:any;
   mdNote : any;
   markdown: any;
   newMdBook:any;
