@@ -36,16 +36,6 @@ export class MdBookNavComponent implements OnInit {
     .catch(err => {
       console.error(err);
     })
-
-    this.mdNotesService.titleChange$.subscribe((title) =>{
-      this.mdBooksService.getAll()
-      .then(() =>{
-        this.mdBooks = this.mdBooksService.mdBooks;
-      })
-      .catch(err => {
-        console.error(err);
-      })
-    })
   }
 
   toggleNotes(id){
