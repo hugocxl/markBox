@@ -17,6 +17,7 @@ export class MdNoteComponent implements OnInit {
     title: "",
     content: "",
   };
+  mdNewnote:any;
   markdown: any;
 
   isTitleEdited = false;
@@ -55,7 +56,7 @@ export class MdNoteComponent implements OnInit {
   saveTitleChanges(){
     const data = {
       title: document.getElementById('noteTitle').innerHTML,
-      content: this.markdown;
+      content: this.markdown
     };
     this.mdNotesService.edit(this.mdNote._id, data)
     .then(data => {
@@ -72,7 +73,8 @@ export class MdNoteComponent implements OnInit {
   getNote(val) {
     this.mdNotesService.getOne(val.id)
       .then(note => {
-        this.mdNote = note;
+        this.mdNewnote = note
+        this.mdNote = this.mdNewnote;
         this.markdown = this.mdNote.content;
         //If note.content -> ERROR (though it works)
       })

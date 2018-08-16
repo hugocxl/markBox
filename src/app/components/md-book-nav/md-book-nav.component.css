@@ -2,8 +2,10 @@
   background:rgb(74, 82,88);
   width: 200px;
   height: 100vh;
+  overflow: scroll;
   color: #fff;
   padding: 15px;
+  border-bottom: 1em solid rgb(74, 82,88);
 }
 .md-book-title{
   justify-content: space-between;
