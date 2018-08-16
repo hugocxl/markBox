@@ -10,10 +10,8 @@ import { MdNotesService } from '../../services/md-notes.service';
 })
 export class MdBookNavComponent implements OnInit {
 
-  open = false;
   mdBooks:any;
   mdNote : any;
-  markdown: any;
   newMdBook:any;
   id: number;
 
@@ -23,10 +21,12 @@ export class MdBookNavComponent implements OnInit {
   newNote = {
     title: ''
   }
+
   constructor( 
     private mdBooksService: MdBooksService,
-    private mdNotesService: MdNotesService  
+    private mdNotesService: MdNotesService,
   ) { }
+
 
   ngOnInit() {
     this.mdBooksService.getAll()

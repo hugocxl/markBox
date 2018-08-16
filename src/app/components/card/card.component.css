@@ -1,4 +1,8 @@
 .md-note-card{
   box-shadow: 4px 3px 12px rgba(0, 0, 0, 0.2);
   padding:1em;
+  height: 200px;
+  overflow: hidden;
+  border-bottom: 20px solid white;
+  width:200px;
 }

@@ -1,34 +1,31 @@
+*{
+  margin: 0;
+}
+
 .mdNote{
   width: 100%;
+  display: flex;
 }
-.md-notes-list{
-  padding-left: 10px;  
-  height: 0;
-  visibility: hidden;
-  overflow: hidden;
-  margin-bottom: 15px;
+
+
+.render-mdnote{
+  padding: 10% 10%;
+  margin: 0 15%;
+  background: #F1F1F1;
 }
-.md-notes-list.open{
-  height: auto;
-  visibility: visible;
-}
-.toggleNotes:hover,.md-notes-list h4:hover{
-  cursor: pointer;
-}
-.edit-note, .rendered-note{
-  width: 50%;
-  height: 80%;
-}
-.edit-note{
-  border-right: 1px solid rgb(220,220,220);
-}
-.edit-note textarea{
+
+
+
+
+
+
+.edit-mdnote textarea{
   width: 100%;
   background: transparent!important;
   border: none!important;
   height: 100vh;
   padding: 40px;
 }
-.edit-note textarea:focus{
+.edit-mdnote textarea:focus{
   outline: none!important;
 }
