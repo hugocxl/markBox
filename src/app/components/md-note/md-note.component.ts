@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MdNotesService } from '../../services/md-notes.service';
 import { ActivatedRoute } from '@angular/router';
-import { HostListener, ElementRef } from '@angular/core';
 import { Renderer2 } from '@angular/core';
 
 
@@ -27,7 +26,6 @@ export class MdNoteComponent implements OnInit {
   constructor(  
     private mdNotesService: MdNotesService,
     private route: ActivatedRoute,
-    private el: ElementRef,
     private renderer: Renderer2
   ) { }
 
