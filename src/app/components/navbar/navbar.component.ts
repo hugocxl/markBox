@@ -23,6 +23,11 @@ export class NavbarComponent implements OnInit {
     }
 
     logout() {
+      //DELETE FROM VIEW NAVBARS:
+      document.getElementById('md-books-nav').classList.remove('active');
+      document.getElementById('app-document').classList.remove('active');
+
+      //LOGOUT:
       this.authService.logout()
         .then(() => this.router.navigate(['/login']));
     }

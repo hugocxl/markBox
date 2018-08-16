@@ -28,7 +28,7 @@ time, mark, audio, video {
 #app-document{
   transform: translateX(0%);
   transition: all 0.5s linear; 
-  padding-left: 50px;
+  
 }
 #app-document.active{
   transform: translateX(180px);
