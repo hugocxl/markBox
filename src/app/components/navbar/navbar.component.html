@@ -1,4 +1,4 @@
-<ul class="navbar">
+ <ul class="navbar">
 
   <div>
     <li class="navbar-item">
@@ -8,7 +8,7 @@
     </li>
   
     <li class="navbar-item">
-        <a [routerLink]="['/mdBooks']" routerLinkActive="active">
+        <a routerLinkActive="active" (click)="toggleBooksNav()">
           <img class="icon" src="../../../assets/notebook-icon.png">
       </a>
     </li>
@@ -18,16 +18,27 @@
         <img class="icon" src="../../../assets/user-icon.png">
       </a> 
     </li>
-  </div>
-  <div>
+    
+    <li class="navbar-item">
+        <a [routerLink]="['/settings']" routerLinkActive="active">
+          <img class="icon" src="../../../assets/settings-icon.png">
+        </a>
+      </li>
+
     <li class="navbar-item">
       <a [routerLink]="['/help']" routerLinkActive="active">
         <img class="icon" src="../../../assets/info-icon.png">
       </a>
     </li>
-  
+
+
+  </div>
+
+  <div>
     <li class="navbar-item" (click)="logout()" id="last-nav-item">
-      <img class="icon" src="../../../assets/logout-icon.png">
+      <a>
+        <img class="icon" src="../../../assets/logout-icon.png">
+      </a>
     </li>
   </div>
 
