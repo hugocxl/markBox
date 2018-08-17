@@ -5,20 +5,21 @@
   </form>
 
   <p id="list-title">Your mdBooks:</p>
-  <ul class="md-books-list">
 
+
+  <ul class="md-books-list">
     <li *ngFor="let mdBook of mdBooks">
 
       <div class="md-book-title flex-row">
-        <i class="toggleNotes" (click)="toggleNotes(mdBook._id)">   > </i>
-        <a [routerLink]="['/mdBooks', mdBook._id]" routerLinkActive="active">{{mdBook.title}}</a>
+        <img src="../../../assets/open-list-icon.png" class="toggleNotes" (click)="toggleNotes(mdBook._id)" routerLinkActive="active">
+        <a [routerLink]="['/mdBooks', mdBook._id]" routerLinkActive="active">  {{mdBook.title}}</a>
       </div>
       
 
       <ul class="md-notes-list" [id]="mdBook._id">
 
         <li *ngFor="let mdNote of mdBook.mdNotes" class="list-item">
-          <a [routerLink]="['/mdBooks', mdBook._id, 'mdNotes', mdNote._id]" routerLinkActive="active"># {{mdNote.title}}</a>
+          <a id="note-selected" [routerLink]="['/mdBooks', mdBook._id, 'mdNotes', mdNote._id]" routerLinkActive="active">{{mdNote.title}}</a>
         </li>
 
         <form (ngSubmit)="addMdNote(form ,mdBook._id)" #form="ngForm">
