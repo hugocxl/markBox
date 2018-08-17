@@ -1,12 +1,18 @@
-
 <section class="mdNote">
-  <button *ngIf="!isEditing" (click)="handleEdit()">Edit Mode</button>
+  <button *ngIf="!isEditing" (click)="handleEdit()">
+      <img class="icon" src="../../../assets/edit-icon.png">
+  </button>
+
+  <button *ngIf="isEditing" (click)="activatePreview()">
+      <img class="icon" src="../../../assets/preview-icon.png">
+  </button>
+  
   
   <div class="edit-mdnote" *ngIf="isEditing">
-    <textarea [(ngModel)]="markdown"></textarea>
+    <textarea rows="1" cols="50" wrap="physical" [(ngModel)]="markdown"></textarea>
   </div>
   
-  <div class="render-mdnote">
+  <div *ngIf="previewActive" class="render-mdnote">
     <markdown [data]="markdown"></markdown>
   </div>
   

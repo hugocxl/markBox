@@ -1,9 +1,6 @@
-*{
-  margin: 0;
-}
+
 
 .mdNote{
-  width: 100%;
   display: flex;
   padding-left: 50px;
 }
@@ -13,11 +10,14 @@
   padding: 10% 10%;
   margin: 0 15%;
   background: #F1F1F1;
+  width: auto;
 }
 
 
 
-
+.edit-mdnote{
+  width: auto;
+}
 
 
 .edit-mdnote textarea{
@@ -26,6 +26,9 @@
   border: none!important;
   height: 100vh;
   padding: 40px;
+  resize: none;
+  overflow: auto;
+
 }
 .edit-mdnote textarea:focus{
   outline: none!important;
@@ -35,4 +38,17 @@ button{
   position: fixed;
   top: 1em;
   right:1em;
+  height: 40px;
+  width: 40px;
+  background: black;
+  border-radius: 10px;
+  border: none;
+}
+
+
+.icon{
+  width: 25px;
+  height: 25px;
+  padding: 0;
+  margin: 0;
 }

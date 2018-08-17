@@ -20,8 +20,9 @@ export class MdNoteComponent implements OnInit {
   mdNewnote:any;
   markdown: any;
 
-  isTitleEdited = false;
+  
   isEditing = false;
+  previewActive = true;
   // id: number;
 
   constructor(  
@@ -39,33 +40,18 @@ export class MdNoteComponent implements OnInit {
     // }
   //INIT: BIND SELECTED NOTE TO COMPONENT PROPERTIES THROUGH PARAMS SUB.
   ngOnInit(){
+    console.log('LOADED')
     this.route.params.subscribe((val) => {
       this.getNote(val);
-      this.editTitle();
     });
   };
 
   //EDIT NOTE TITLE - Activated onInit
-  editTitle(){
-    this.renderer.listen(document.getElementById('noteTitle'), 'click', (event) => {
-      this.isTitleEdited = true;
-    });
-  }
-
-  saveTitleChanges(){
-    const data = {
-      title: document.getElementById('noteTitle').innerHTML,
-      content: this.markdown
-    };
-    this.mdNotesService.edit(this.mdNote._id, data)
-    .then(data => {
-      console.log('Succesfully saved');
-    })
-    .catch(error => {
-      console.log('Fail Saving')
-    });
-    this.isTitleEdited = false;
-  }
+  // editTitle(){
+  //   this.renderer.listen(document.getElementById('noteTitle'), 'click', (event) => {
+  //     this.isTitleEdited = true;
+  //   });
+  // }
 
 
   //GET NOTE FUNCTION:
@@ -85,6 +71,11 @@ export class MdNoteComponent implements OnInit {
   //EDIT MODE CONTROL:
   handleEdit(){
     this.isEditing = !this.isEditing;
+    this.previewActive = false;
+  };
+
+  activatePreview(){
+    this.previewActive = !this.previewActive;
   };
 
   //SAVE EDITED NOTE: 
