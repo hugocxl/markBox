@@ -2,7 +2,7 @@
     
     <div class="edit-mdnote" *ngIf="editMode">
         <header>
-            <p>{{mdNote.createdAt | date: M/d/yy }}</p>
+            <p>{{mdNote.createdAt }}</p>
             <p>{{mdNote.updatedAt }}</p>
         </header>
         <textarea (keypress)="autoSave()" [(ngModel)]="markdown"></textarea>

@@ -1,27 +1,34 @@
 <section id="md-books-nav">
-  <ul class="md-books-list">
-    <li *ngFor="let mdBook of mdBooks">
-      <div class="md-book-title flex-row">
-        <a [routerLink]="['/mdBooks', mdBook._id]" routerLinkActive="active">{{mdBook.title}}</a>
 
-        <i class="toggleNotes" (click)="toggleNotes(mdBook._id)">+</i>
+  <form (ngSubmit)="addMdBook(form)" #form="ngForm">
+    <input id="add-book-input" type="text" placeholder="New mdBook..." name="title" [(ngModel)]="newBook.title" #titleField="ngModel"/>
+  </form>
+
+  <p id="list-title">Your mdBooks:</p>
+  <ul class="md-books-list">
+
+    <li *ngFor="let mdBook of mdBooks">
+
+      <div class="md-book-title flex-row">
+        <i class="toggleNotes" (click)="toggleNotes(mdBook._id)">   > </i>
+        <a [routerLink]="['/mdBooks', mdBook._id]" routerLinkActive="active">{{mdBook.title}}</a>
       </div>
       
+
       <ul class="md-notes-list" [id]="mdBook._id">
-        <li *ngFor="let mdNote of mdBook.mdNotes">
-          <a [routerLink]="['/mdBooks', mdBook._id, 'mdNotes', mdNote._id]" routerLinkActive="active">{{mdNote.title}}</a>
+
+        <li *ngFor="let mdNote of mdBook.mdNotes" class="list-item">
+          <a [routerLink]="['/mdBooks', mdBook._id, 'mdNotes', mdNote._id]" routerLinkActive="active"># {{mdNote.title}}</a>
         </li>
+
         <form (ngSubmit)="addMdNote(form ,mdBook._id)" #form="ngForm">
-            <input type="text" name="title" [(ngModel)]="newNote.title" #titleField="ngModel"/>
-            <button type="submit">Add</button>
-          </form>
+            <input placeholder="New mdNote..." id="add-note-input" type="text" name="title" [(ngModel)]="newNote.title" #titleField="ngModel"/>
+        </form>
+
       </ul>
+
     </li>
   </ul>
   
-  <form (ngSubmit)="addMdBook(form)" #form="ngForm">
-    <input type="text" name="title" [(ngModel)]="newBook.title" #titleField="ngModel"/>
-    <button type="submit">Add</button>
-  </form>
 
 </section>
