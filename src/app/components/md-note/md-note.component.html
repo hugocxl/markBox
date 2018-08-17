@@ -1,13 +1,36 @@
-
 <section class="mdNote">
-  <button *ngIf="!isEditing" (click)="handleEdit()">Edit Mode</button>
   
-  <div class="edit-mdnote" *ngIf="isEditing">
-    <textarea [(ngModel)]="markdown"></textarea>
+  <div class="edit-mdnote" *ngIf="editMode">
+    <textarea (keypress)="autoSave()" [(ngModel)]="markdown"></textarea>
   </div>
   
-  <div class="render-mdnote">
+  <div *ngIf="previewActive" class="render-mdnote">
     <markdown [data]="markdown"></markdown>
+  </div>
+  
+
+  <div id="box-buttons">
+
+    <button *ngIf="!editMode" (click)="editModeIO()">
+        <img class="icon" src="../../../assets/edit-icon.png">
+    </button>
+  
+    <button title="Active preview" *ngIf="editMode" (click)="activatePreview()">
+        <img class="icon" src="../../../assets/preview-icon.png">
+    </button>
+  
+    <button *ngIf="editMode" (click)="saveAndClose()">
+        <img class="icon" src="../../../assets/save-icon.png">
+    </button>
+  
+    <button *ngIf="editMode" (click)="activateAutoSave()">
+        <img class="icon" src="../../../assets/auto-save-icon.png">
+    </button>
+
+    <button *ngIf="editMode" (click)="closeEdit()">
+        <img class="icon" src="../../../assets/close-icon.png">
+    </button>
+
   </div>
   
 </section>

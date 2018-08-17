@@ -19,7 +19,11 @@
 }
 
 .navbar li:last-child{
-  margin-bottom: 15px;
+  margin-bottom: 20%;
+}
+
+.navbar li:first-child{
+  margin-top: 20%;
 }
 .icon{
   width: 25px;
