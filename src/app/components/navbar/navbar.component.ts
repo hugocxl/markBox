@@ -1,7 +1,7 @@
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
-0
+import { Renderer2 } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
@@ -14,6 +14,7 @@ export class NavbarComponent implements OnInit {
     constructor(
       private authService: AuthService,
       private router: Router,
+      private renderer: Renderer2
     ) {}
     
     user: any;
@@ -26,6 +27,7 @@ export class NavbarComponent implements OnInit {
       //DELETE FROM VIEW NAVBARS:
       document.getElementById('md-books-nav').classList.remove('active');
       document.getElementById('app-document').classList.remove('active');
+      this.renderer.removeClass(document.body, 'logged-in');
 
       //LOGOUT:
       this.authService.logout()
@@ -35,6 +37,11 @@ export class NavbarComponent implements OnInit {
     toggleBooksNav(){
       document.getElementById('md-books-nav').classList.toggle('active');
       document.getElementById('app-document').classList.toggle('active');
+      if(document.getElementsByTagName('body')[0].classList.contains('active')){
+        this.renderer.removeClass(document.body, 'active');
+      } else {
+        this.renderer.addClass(document.body, 'active');
+      }
     }
 
   }

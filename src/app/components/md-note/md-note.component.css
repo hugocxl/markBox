@@ -1,34 +1,40 @@
-
-
 .mdNote{
   display: flex;
-  padding-left: 50px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
-
 
 .render-mdnote{
-  padding: 10% 10%;
-  margin: 0 15%;
+  padding: 3em;
+  width: 80%;
+  min-height: 100vh;
   background: #F1F1F1;
-  width: auto;
 }
-
-
 
 .edit-mdnote{
-  width: auto;
+  padding: 3em;
+  width: 80%;
+  min-height: 100vh;
+  height: auto;
+  background: #F1F1F1;
 }
-
-
+#md-note-view.active-preview .render-mdnote, #md-note-view.active-preview .edit-mdnote{
+  width: 50%;
+}
+#md-note-view.active-preview .edit-mdnote{
+  background: #fff;
+}
+#md-note-view.active-preview{
+  width: calc(100%);
+}
 .edit-mdnote textarea{
   width: 100%;
   background: transparent!important;
   border: none!important;
   height: 100vh;
-  padding: 40px;
+  padding: 7em;
   resize: none;
   overflow: auto;
-
 }
 .edit-mdnote textarea:focus{
   outline: none!important;
@@ -42,6 +48,13 @@ button{
   border: none;
   margin-bottom: 5px;
   cursor: pointer;
+  transition: all .3s;
+}
+button:hover,button.saving{
+  opacity: .7;
+}
+button:active, button:focus{
+  outline: none;
 }
 
 .icon{
@@ -57,7 +70,6 @@ button{
 }
 
 #box-buttons{
-  
   position: fixed;
   top: 1em;
   right:1em;

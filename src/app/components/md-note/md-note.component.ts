@@ -64,6 +64,7 @@ export class MdNoteComponent implements OnInit {
   };
   activatePreview(){
     this.previewActive = !this.previewActive;
+    this.toggleEditClass();
   };
   // AUTOSAVE MODE MANAGEMENT:
   activateAutoSave(){
@@ -78,7 +79,6 @@ export class MdNoteComponent implements OnInit {
       title: this.mdNote.title,
       content: this.markdown
     };
-
     this.mdNotesService.edit(this.mdNote._id, data)
     .then(data => {
       console.log('Succesfully saved')
@@ -88,16 +88,18 @@ export class MdNoteComponent implements OnInit {
     });
   };
   saveAndClose(){
-    this.editMode = false;
-    this.previewActive = true;
     this.saveFunction();
   }
   //CLOSE NOTE WITHOUT SAVING:
   closeEdit(){
     this.editMode = false;
     this.previewActive = true;
+    document.getElementById('md-note-view').classList.remove('active-preview');
   }
 
+  toggleEditClass(){
+    document.getElementById('md-note-view').classList.toggle('active-preview')
+  }
 
 }
 
