@@ -20,9 +20,14 @@ export class MdNoteComponent implements OnInit {
   mdNewnote:any;
   markdown: any;
 
+  public pipeMarkDown = '# Markdown';
   
-  isEditing = false;
+  newTitle:any;
+  
+  editMode = false;
+  autoSaveMode = false;
   previewActive = true;
+  
   // id: number;
 
   constructor(  
@@ -31,29 +36,14 @@ export class MdNoteComponent implements OnInit {
     private renderer: Renderer2
   ) { }
 
-    public pipeMarkDown = '# Markdown';
-    newTitle:any;
 
-    // @HostListener('mouseover') onHover() {
-    //   let part = this.el.nativeElement.querySelector('#noteTitle').style= 'color:red';
-    //   window.alert("hover");
-    // }
+
   //INIT: BIND SELECTED NOTE TO COMPONENT PROPERTIES THROUGH PARAMS SUB.
   ngOnInit(){
-    console.log('LOADED')
     this.route.params.subscribe((val) => {
       this.getNote(val);
     });
   };
-
-  //EDIT NOTE TITLE - Activated onInit
-  // editTitle(){
-  //   this.renderer.listen(document.getElementById('noteTitle'), 'click', (event) => {
-  //     this.isTitleEdited = true;
-  //   });
-  // }
-
-
   //GET NOTE FUNCTION:
   getNote(val) {
     this.mdNotesService.getOne(val.id)
@@ -67,21 +57,23 @@ export class MdNoteComponent implements OnInit {
         console.error(err);
       });
   }
-
   //EDIT MODE CONTROL:
-  handleEdit(){
-    this.isEditing = !this.isEditing;
+  editModeIO(){
     this.previewActive = false;
+    this.editMode = !this.editMode;
   };
-
   activatePreview(){
     this.previewActive = !this.previewActive;
   };
-
+  // AUTOSAVE MODE MANAGEMENT:
+  activateAutoSave(){
+    this.autoSaveMode = !this.autoSaveMode;
+  }
+  autoSave(){
+    if(this.autoSaveMode) { this.saveFunction() }
+  }
   //SAVE EDITED NOTE: 
-  saveChanges(){
-    this.handleEdit();
-    
+  saveFunction(){    
     const data = {
       title: this.mdNote.title,
       content: this.markdown
@@ -95,6 +87,16 @@ export class MdNoteComponent implements OnInit {
       console.log('Fail Saving')
     });
   };
+  saveAndClose(){
+    this.editMode = false;
+    this.previewActive = true;
+    this.saveFunction();
+  }
+  //CLOSE NOTE WITHOUT SAVING:
+  closeEdit(){
+    this.editMode = false;
+    this.previewActive = true;
+  }
 
 
 }
