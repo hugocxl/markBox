@@ -1,5 +1,5 @@
 <div class="md-note-card" [routerLink]="['mdNotes', mdNote._id]">
   <h2 class="h5">{{mdNote.title}}</h2>
   <p class="edit-date">{{mdNote.updatedAt|date : 'MM-dd-yy'}}</p>
-  {{mdNote.content}}
+  <p>{{mdNote.content}}</p>
 </div>
