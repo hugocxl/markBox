@@ -1,12 +1,15 @@
 .md-note-card{
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
   padding: 1em;
-  overflow: hidden;
-  background: #fff;
-  height: 280px;
   border: 1px solid #cecece;
+  background: #fff;
 }
 .md-note-card:hover{
   opacity: .7;
   cursor: pointer;
+}
+.md-note-card p:last-child{
+  border-bottom: 15px solid white;
+  overflow: hidden;
+  height: 200px;
 }
