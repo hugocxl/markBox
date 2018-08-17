@@ -15,3 +15,18 @@
   overflow: scroll;
   padding: 1em;
 }
+
+.main>.right-side table{
+  width: 100%;
+  margin: 1em 0;
+}
+th{
+  text-align: left;
+}
+td{
+  vertical-align: top;
+}
+tr{
+  margin-bottom: 10px;
+overflow: hidden;
+}
