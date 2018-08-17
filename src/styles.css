@@ -25,6 +25,13 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
+
+router-outlet ~ * {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
 #app-document{
   transform: translateX(0%);
   transition: all 0.5s linear; 
