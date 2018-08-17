@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Barlow:200, 400,700');
+
 #md-books-nav{
   background:#383838;
   position: fixed;
   height: 100%;
-  width: 185px;
+  width: 190px;
   color: white;
   padding: 20px;
   border-bottom: 1em solid #383838;
@@ -10,36 +12,84 @@
   transform: translateX(-100%);
   transition: all 0.5s linear; 
   left: 50px;
+  overflow: auto;
 }
 
 #md-books-nav.active{
-  transform: translateX(0%);
+  transform: translateX(0%);  
 }
 
-.md-book-title{
-  justify-content: space-between;
+#add-book-input{
+  background: url('../../../assets/plus-icon.png') no-repeat, rgba(0, 0, 0, 0.5);
+  background-size: 17px 17px;
+  border: none;
+  color: white;
+  border-radius: 7px;
+  height: 30px;
+  background-position: 5% 50%;
+  padding-left: 30px;
 }
+
+#list-title{
+  color: #d4d4d4;
+  text-decoration: none;
+  font-family: 'Barlow', sans-serif;
+  font-weight: medium;
+  font-size: 18px;
+  border-bottom: 1px solid grey;
+  padding-top: 10px;
+  margin-bottom: 10px;
+}
+
 .md-books-list, .md-notes-list{
   list-style:none;
   padding-left: 0;
 }
 
+.md-book-title{
+  padding: 0;
+  margin: 0;
+}
+
 a{
-  color: #fff;
-  font-size: 12px;
+  color: #c6c6c6;
   text-decoration: none;
+  font-family: 'Barlow', sans-serif;
+  font-weight: 200;
+  font-size: 14px;
 }
 
 .md-notes-list{
+  padding-left: 15px;
   height: 0;
   visibility: hidden;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
+  list-style-type: none;
 }
 
 .md-notes-list.open{
   height: auto;
   visibility: visible;
+  margin-bottom: 10px;
 }
+
+.list-item{
+  margin-bottom: 5%;
+}
+
+
 .toggleNotes:hover{
   cursor: pointer;
+}
+
+
+#add-note-input{
+  background: url('../../../assets/plus-icon.png') no-repeat, rgba(0, 0, 0, 0.5);
+  background-size: 17px 17px;
+  border: none;
+  color: white;
+  border-radius: 7px;
+  height: 27px;
+  background-position: 5% 50%;
+  padding-left:30px;
 }
