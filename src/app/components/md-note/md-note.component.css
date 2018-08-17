@@ -8,9 +8,9 @@
   padding: 3em;
   width: 80%;
   background: #F1F1F1;
-  height: calc(100% - 9em);
-  max-height: calc(100% -9em);
-  overflow: auto;
+  height: 100vh;
+  max-height: 100vh;
+  overflow: scroll;
 }
 
 .edit-mdnote{

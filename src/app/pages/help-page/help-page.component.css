@@ -1,17 +1,17 @@
 .main.info{
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
 }
 
 .main>.left-side{
-  position: fixed;
   width: 40%;
-  left: 50px;
-
+  padding: 1em;
 }
 
 
 .main>.right-side{
-  align-self: flex-end;
   width: 60%;
+  max-height: 100vh;
+  overflow: scroll;
+  padding: 1em;
 }
