@@ -1,6 +1,7 @@
-import { Component, OnInit, OnChanges } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MdBooksService } from '../../services/md-books.service';
 import { MdNotesService } from '../../services/md-notes.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -12,19 +13,23 @@ export class MdBookNavComponent implements OnInit {
 
   mdBooks:any;
   mdNote : any;
+  newMdNote: any;
   newMdBook:any;
+  mdBookId: number;
   id: number;
-  title:any;
+  
   newBook = {
     title : ''
   }
   newNote = {
-    title: ''
+    title: '',
+    content: ''
   }
 
   constructor( 
     private mdBooksService: MdBooksService,
     private mdNotesService: MdNotesService,
+    private router: Router
   ) { }
 
 
@@ -44,7 +49,6 @@ export class MdBookNavComponent implements OnInit {
   addMdNote(form, bookId){
     this.mdNotesService.new(this.newNote,bookId)
     .then(newNote => {
-      console.log(newNote);
       let index = this.mdBooks.findIndex(x => x._id === bookId);
       this.mdBooks[index].mdNotes.push(newNote);
       this.newNote.title = "";
@@ -57,12 +61,15 @@ export class MdBookNavComponent implements OnInit {
     this.mdBooksService.new(this.newBook)
     .then(book => {
       this.newMdBook = book;
+      this.mdBookId = this.newMdBook._id;
       return this.mdNotesService.getOne(this.newMdBook.mdNotes[0])  
     })
     .then(newNote =>{
-      this.newMdBook.mdNotes.push(newNote);
+      this.newMdNote = newNote;
       this.mdBooks.push(this.newMdBook);
-      this.newBook.title = '';
+      this.newMdBook.mdNotes.push(newNote);
+      this.router.navigate(['/mdBooks/', this.newMdBook._id, 'mdNotes', this.newMdNote._id]);
+      this.newBook.title = "";
     })
     .catch(err => {
       console.error(err);

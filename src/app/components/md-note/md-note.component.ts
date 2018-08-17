@@ -36,8 +36,6 @@ export class MdNoteComponent implements OnInit {
     private renderer: Renderer2
   ) { }
 
-
-
   //INIT: BIND SELECTED NOTE TO COMPONENT PROPERTIES THROUGH PARAMS SUB.
   ngOnInit(){
     this.route.params.subscribe((val) => {
