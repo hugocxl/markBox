@@ -37,13 +37,12 @@
 button{
   height: 40px;
   width: 40px;
-  background: #4A5259;
+  background: #383838;
   border-radius: 10px;
   border: none;
   margin-bottom: 5px;
   cursor: pointer;
 }
-
 
 .icon{
   width: 25px;
@@ -52,10 +51,20 @@ button{
   margin: 0;
 }
 
+.active{
+  transition: background-color 0.3s;
+  background: #A9A9A9;
+}
+
 #box-buttons{
+  
   position: fixed;
   top: 1em;
   right:1em;
   display: flex;
   flex-direction: column;
 }
+/* 
+div button:hover{
+  margin-right: 5px; 
+} */

@@ -1,10 +1,14 @@
 <section class="mdNote">
-  
-  <div class="edit-mdnote" *ngIf="editMode">
-    <textarea (keypress)="autoSave()" [(ngModel)]="markdown"></textarea>
-  </div>
-  
-  <div *ngIf="previewActive" class="render-mdnote">
+    
+    <div class="edit-mdnote" *ngIf="editMode">
+        <header>
+            <p>{{mdNote.createdAt | date: M/d/yy }}</p>
+            <p>{{mdNote.updatedAt }}</p>
+        </header>
+        <textarea (keypress)="autoSave()" [(ngModel)]="markdown"></textarea>
+    </div>
+    
+    <div *ngIf="previewActive" class="render-mdnote">
     <markdown [data]="markdown"></markdown>
   </div>
   
@@ -15,7 +19,7 @@
         <img class="icon" src="../../../assets/edit-icon.png">
     </button>
   
-    <button title="Active preview" *ngIf="editMode" (click)="activatePreview()">
+    <button title="Active preview" *ngIf="editMode" (click)="activatePreview()" [ngClass]="{'active': previewActive }">
         <img class="icon" src="../../../assets/preview-icon.png">
     </button>
   
@@ -23,7 +27,7 @@
         <img class="icon" src="../../../assets/save-icon.png">
     </button>
   
-    <button *ngIf="editMode" (click)="activateAutoSave()">
+    <button *ngIf="editMode" [ngClass]="{'active': autoSaveMode }" (click)="activateAutoSave()">
         <img class="icon" src="../../../assets/auto-save-icon.png">
     </button>
 
