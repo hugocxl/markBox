@@ -1,5 +1,6 @@
 <app-navbar *ngIf="user"></app-navbar>
 <app-md-book-nav *ngIf="user"></app-md-book-nav>
-<div id="app-document">
-  <router-outlet></router-outlet>
-</div>
+
+<main [@fadeAnimation]="o.isActivated ? o.activatedRoute : ''" id="app-document">
+  <router-outlet #o="outlet"></router-outlet>
+</main>
