@@ -6,13 +6,18 @@
   height: 100%;
   width: 190px;
   color: white;
-  padding: 20px;
   border-bottom: 1em solid #383838;
   z-index: 1;
   transform: translateX(-100%);
   transition: all 0.5s linear; 
   left: 50px;
-  overflow: auto;
+  overflow-x: hidden;
+  -ms-overflow-style: none;
+  overflow: -moz-scrollbars-none;
+}
+
+#md-books-nav::-webkit-scrollbar{
+  display: none;
 }
 
 #md-books-nav.active{
@@ -24,26 +29,33 @@
   background-size: 17px 17px;
   border: none;
   color: white;
-  border-radius: 7px;
+  border-radius:7px;
   height: 30px;
   background-position: 5% 50%;
   padding-left: 30px;
+  margin-top: 20px;
+  width: 83%;
 }
 
 #list-title{
-  color: #d4d4d4;
+  color: #F5F5F5;
   text-decoration: none;
   font-family: 'Barlow', sans-serif;
   font-weight: medium;
-  font-size: 18px;
+  font-size: 15px;
   border-bottom: 1px solid grey;
   padding-top: 10px;
+  padding-left: 15px;
   margin-bottom: 10px;
+}
+
+#md-books-nav form{
+  text-align: center;
 }
 
 .md-books-list, .md-notes-list{
   list-style:none;
-  padding-left: 0;
+
 }
 
 .md-book-title{
@@ -51,6 +63,7 @@
   margin: 0;
 }
 
+/* ITEM INSIDE THE LIST */
 a{
   color: #c6c6c6;
   text-decoration: none;
@@ -59,30 +72,44 @@ a{
   font-size: 14px;
 }
 
+/* WHOLE NOTES LIST */
 .md-notes-list{
-  padding-left: 15px;
   height: 0;
   visibility: hidden;
   margin-bottom: 10px;
   list-style-type: none;
 }
 
+.md-notes-list a{
+  display: inline-block;
+  padding: 3px 30px;
+}
+
+ul>li.list-item:first-child{
+  padding-top: 3%;
+}
+
+
+
 .md-notes-list.open{
   height: auto;
+  transition: all 1s;
   visibility: visible;
   margin-bottom: 10px;
 }
-
-.list-item{
-  margin-bottom: 5%;
+.md-notes-list form{
+  text-align: center;
+  margin-top: 3px;
 }
 
-
-.toggleNotes:hover{
+.toggleNotes{
+  width: 10px;
+  height: 10px;
   cursor: pointer;
+  margin: 5px 5px 0 15px;
 }
 
-
+/* INPUT NEW NOTE */
 #add-note-input{
   background: url('../../../assets/plus-icon.png') no-repeat, rgba(0, 0, 0, 0.5);
   background-size: 17px 17px;
@@ -91,5 +118,26 @@ a{
   border-radius: 7px;
   height: 27px;
   background-position: 5% 50%;
-  padding-left:30px;
+  margin: 0;
+  width: 70%;
+  margin: 0 auto;
+  display: inline-block;
+  padding-left: 30px;
+}
+
+a.active{
+  font-weight: 600;
+  color: white;
+}
+
+img.active{
+  
+}
+
+#note-selected.active{
+  display: inline-block;
+  font-weight: 200;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  
 }
