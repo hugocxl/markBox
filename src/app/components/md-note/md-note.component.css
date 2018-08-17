@@ -7,8 +7,10 @@
 .render-mdnote{
   padding: 3em;
   width: 80%;
-  min-height: 100vh;
   background: #F1F1F1;
+  height: calc(100% - 9em);
+  max-height: calc(100% -9em);
+  overflow: auto;
 }
 
 .edit-mdnote{
@@ -31,10 +33,17 @@
   width: 100%;
   background: transparent!important;
   border: none!important;
-  height: 100vh;
-  padding: 7em;
+  margin-top: 2em;
+  padding: 0 5em 5em;
+  height: calc(100% - 9em);
+  max-height: calc(100% -9em);
   resize: none;
   overflow: auto;
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 500;
+  font-size: 1em;
+  color: #707070;
+  line-height: 1.5;
 }
 .edit-mdnote textarea:focus{
   outline: none!important;
