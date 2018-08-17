@@ -110,7 +110,7 @@ ul>li.list-item:first-child{
 }
 
 /* INPUT NEW NOTE */
-#add-note-input{
+.md-notes-list input{
   background: url('../../../assets/plus-icon.png') no-repeat, rgba(0, 0, 0, 0.5);
   background-size: 17px 17px;
   border: none;
