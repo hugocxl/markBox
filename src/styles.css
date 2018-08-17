@@ -25,34 +25,57 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
-
+body{
+  font-family: 'PT Sans', sans-serif;
+  font-size: .9em;
+}
 router-outlet ~ * {
   position: absolute;
   height: 100%;
   width: 100%;
 }
-
+body.logged-in #app-document{
+  margin-left: 50px;
+}
+body.active{
+  overflow-x: hidden;
+}
 #app-document{
   transform: translateX(0%);
   transition: all 0.5s linear; 
-  
+  margin:0 auto;
+  width: calc(100% - 50px);
 }
 #app-document.active{
   transform: translateX(180px);
-  width: 80%;
+  width: calc(100% - 235px);
+}
+#app-document.active #md-note-view{
+  margin-left: 6px;
 }
 /* You can add global styles to this file, and also import other style files */
-h1,h2{
-  font-weight: 600;
+h1,h2,h3,h4,h5,h6{
+  font-family: 'Barlow', sans-serif;
+  font-weight: 700;
+  margin-bottom: 1em;
 }
-h1{
-  font-size: 50px;
+h1,.h1{
+  font-size: 3.125em;
 }
-h2{
-  font-size: 25px;
+h2,.h2{
+  font-size: 2.618em
 }
-.main{
-  margin-left: 50px;
+h3,.h3{
+  font-size: 1.931em;
+}
+h4,.h4{
+  font-size: 1.618em;
+}
+h5,.h5{
+  font-size: 1.194em;
+}
+h6,.h6{
+  font-size:1em;
 }
 a{
   color: #3c5877;
@@ -79,10 +102,15 @@ a{
 }
 .grid-row{
   display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 2em;
+  padding: 2em;
+  min-height: 100vh;
+  background: #F1F1F1;
+
+}
+#app-document.active .grid-row{
   grid-template-columns: repeat(4, 1fr);
-  width: 100%;
-  grid-gap: 1em;
-  padding: 1em;
 }
 /* -- forms -- */
 

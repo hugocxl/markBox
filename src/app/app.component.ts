@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { fadeAnimation } from './animations';
 import { AuthService } from './services/auth.service';
+import { Renderer2 } from '@angular/core';
+
 
 @Component({
   selector: 'app-root',
@@ -20,7 +22,8 @@ export class AppComponent implements OnInit {
 
   constructor(
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private renderer: Renderer2
   ) {}
 
   ngOnInit() {
@@ -28,11 +31,11 @@ export class AppComponent implements OnInit {
       this.loading = false;
       this.user = user;
       this.anon = !user;
+      if(this.user){
+        this.renderer.addClass(document.body, 'logged-in');
+      }
     });
+
   }
 
-  logout() {
-    this.authService.logout()
-      .then(() => this.router.navigate(['']));
-  }
 }
