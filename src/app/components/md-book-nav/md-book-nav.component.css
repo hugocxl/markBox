@@ -130,10 +130,6 @@ a.active{
   color: white;
 }
 
-img.active{
-  
-}
-
 #note-selected.active{
   display: inline-block;
   font-weight: 200;
