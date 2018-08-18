@@ -1,18 +1,79 @@
+.card-container{
+  display: flex;
+  flex-direction: column;
+}
 .md-note-card{
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-  padding: 1em;
+  padding: 1.5em;
   border: 1px solid #cecece;
   background: #fff;
 }
 .md-note-card:hover{
-  opacity: .7;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
   cursor: pointer;
 }
 .md-note-card p:last-child{
-  border-bottom: 15px solid white;
+  border-bottom: 30px solid white;
   overflow: hidden;
   height: 200px;
 }
 h2{
   font-size: 1.194em;
+}
+.note-title{
+  border-bottom: #A9A9A9 1px solid;
+  margin-bottom: 0.5em;
+}
+
+
+.bottom-bar{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: relative;
+  bottom: 45px;
+}
+
+.edit-date{
+  text-align: left;
+  font-size: 0.8em;
+  color: #A9A9A9;
+  width: 70%;
+  padding-left: 1.5em;
+}
+.buttons-bar{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: flex-end;
+}
+
+button{
+  height: 35px;
+  width: 35px;
+  background: #4a5258;
+  border-radius: 20px;
+  border: none;
+  margin-bottom: 0;
+  cursor: pointer;
+  transition: all .3s;
+  margin-right: 5px;
+}
+
+.buttons-bar>:last-child{
+  margin-right: 1.5em;
+}
+button:hover,button.saving{
+  opacity: .7;
+}
+.icon{
+  width: 20px;
+  height: 20px;
+  padding: 1px;
+  margin: 2px 0px 0 0.5px;
+}
+
+.active{
+  transition: background-color 0.3s;
+  background: #A9A9A9;
 }
