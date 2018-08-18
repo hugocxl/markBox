@@ -16,7 +16,10 @@ export class MdNoteComponent implements OnInit {
     _id: "",
     title: "",
     content: "",
+    pinned: false
   };
+
+  
   mdNewnote:any;
   markdown: any;
 
@@ -48,6 +51,7 @@ export class MdNoteComponent implements OnInit {
       .then(note => {
         this.mdNewnote = note
         this.mdNote = this.mdNewnote;
+        //this.mdnote = note
         this.markdown = this.mdNote.content;
         //If note.content -> ERROR (though it works)
       })
@@ -75,7 +79,8 @@ export class MdNoteComponent implements OnInit {
   saveFunction(){    
     const data = {
       title: this.mdNote.title,
-      content: this.markdown
+      content: this.markdown,
+      pinned: this.mdNote.pinned
     };
     this.mdNotesService.edit(this.mdNote._id, data)
     .then(data => {
@@ -97,6 +102,20 @@ export class MdNoteComponent implements OnInit {
 
   toggleEditClass(){
     document.getElementById('md-note-view').classList.toggle('active-preview')
+  }
+
+
+  togglePinned(){
+    this.mdNote.pinned = !this.mdNote.pinned;
+    const status = {
+      pinned: this.mdNote.pinned
+    }
+    this.mdNotesService.pin(this.mdNote._id, status)
+    .then((note)=> {
+    })
+    .catch(error =>{
+      console.error(error)
+    })
   }
 
 }

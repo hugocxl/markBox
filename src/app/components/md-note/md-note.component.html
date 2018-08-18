@@ -22,7 +22,7 @@
             <img class="icon" src="../../../assets/preview-icon.png">
         </button>
 
-        <button (click)="editModeIO()">
+        <button (click)="togglePinned()" [ngClass] = "{'active': mdNote.pinned }">
                 <img class="icon" src="../../../assets/fav-icon.png">
         </button>
       
