@@ -32,11 +32,11 @@ export class MdNotesService {
     return this.httpClient.put(`${this.mdNoteURL}/${id}`, data, options).toPromise();
   }
 
-  favourite(id, status){
+  pin(id, status){
     const options = {
       withCredentials: true
     };
-    return this.httpClient.put(`${this.mdNoteURL}/${id}/pinned`, status, options).toPromise();  
+    return this.httpClient.put(`${this.mdNoteURL}/${id}/pin`, status, options).toPromise();  
   }
 
   //DELETE NOTE - ID: Note - REQ.PARAMS;

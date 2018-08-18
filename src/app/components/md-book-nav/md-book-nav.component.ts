@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 })
 export class MdBookNavComponent implements OnInit {
 
+  
   mdBooks:any;
   mdNote : any;
   newMdNote: any;
