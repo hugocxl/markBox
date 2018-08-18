@@ -15,7 +15,9 @@
   -ms-overflow-style: none;
   overflow: -moz-scrollbars-none;
 }
-
+.md-books-list{
+  padding-left: 0;
+}
 #md-books-nav::-webkit-scrollbar{
   display: none;
 }
@@ -78,6 +80,7 @@ a{
   visibility: hidden;
   margin-bottom: 10px;
   list-style-type: none;
+  padding-left: 0;
 }
 
 .md-notes-list a{
@@ -88,8 +91,6 @@ a{
 ul>li.list-item:first-child{
   padding-top: 3%;
 }
-
-
 
 .md-notes-list.open{
   height: auto;
