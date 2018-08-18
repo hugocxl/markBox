@@ -14,7 +14,7 @@
         <img class="icon" src="../../../assets/edit-icon.png">
       </button>
     
-      <button (click)="activatePreview()" style="background: #F3B54A">
+      <button (click)="addToPinned()" [ngClass]="{'active': mdNote.pinned }">
           <img class="icon" src="../../../assets/fav-icon.png">
       </button>
   

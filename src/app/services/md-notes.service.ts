@@ -36,7 +36,7 @@ export class MdNotesService {
     const options = {
       withCredentials: true
     };
-    return this.httpClient.put(`${this.mdNoteURL}/${id}/pin`, status, options).toPromise();  
+    return this.httpClient.put(`${this.mdNoteURL}/${id}/pin`, status, options).toPromise() 
   }
 
   //DELETE NOTE - ID: Note - REQ.PARAMS;
