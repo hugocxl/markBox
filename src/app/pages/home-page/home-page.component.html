@@ -8,21 +8,10 @@
       <div class="latest-edited">
         <h4>Last edited</h4>
         <div class="latest-edited-grid">
-            <div class="md-note-card">
-              <h2 class="h5">titel</h2>
-              <p class="edit-date">date</p>
-              <p>content</p>
+            <div class="md-note-card" *ngFor="let latestNote of latestNotes" [routerLink]="['mdNotes', latestNote._id]">
+                <h5>{{latestNote.title}}</h5>
+                <p>Last edited:<br>{{latestNote.updatedAt|date : 'short'}}</p>
             </div>
-            <div class="md-note-card">
-                <h2 class="h5">titel</h2>
-                <p class="edit-date">date</p>
-                <p>content</p>
-              </div>
-              <div class="md-note-card">
-                  <h2 class="h5">titel</h2>
-                  <p class="edit-date">date</p>
-                  <p>content</p>
-                </div>
         </div>
       </div>
       <div class="pinned-notes">

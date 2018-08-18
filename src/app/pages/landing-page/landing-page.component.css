@@ -21,8 +21,9 @@ h1{
 }
 .app-title p{
   color: #828282;
-  font-size: 1.618em;
-  font-weight: 400;
+  font-size: 1.3em;
+  font-weight: 200;
+  font-family: barlow;
 }
 .form-wrapper{
   width: 100%;
@@ -43,11 +44,11 @@ h1{
     width: 60%;
   }
   .container{
-    width: 95%;
+    width: 80%;
     max-width: 1200px;
     margin: 0 auto;
     justify-content: space-between;
-    align-items: center;
+    align-items: baseline;
   }
   #landing{
     height: 100vh;
@@ -70,6 +71,6 @@ h1{
     margin-bottom: 50px;
   }
   .form-wrapper{
-    width: 80%;
+    width: 40%;
   }
 }

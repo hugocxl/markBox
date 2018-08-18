@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { ActivatedRoute } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { MdNotesService } from '../../services/md-notes.service';
 
@@ -11,18 +11,19 @@ import { MdNotesService } from '../../services/md-notes.service';
 })
 export class HomePageComponent implements OnInit {
   user: any;
-  latest:any;
+  latestNotes:any;
 
   constructor(
     private authService: AuthService,
-    private mdNotesService: MdNotesService
+    private mdNotesService: MdNotesService,
+    private route: ActivatedRoute,
   ) { }
 
   ngOnInit() {
     this.user = this.authService.getUser()
     this.mdNotesService.getLatest()
     .then(latestNotes => {
-      this.latest = latestNotes;
+      this.latestNotes = latestNotes;
     })
   }
 
