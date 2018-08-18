@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { AuthService } from '../../services/auth.service';
+import { MdNotesService } from '../../services/md-notes.service';
 
 
 @Component({
@@ -10,13 +11,19 @@ import { AuthService } from '../../services/auth.service';
 })
 export class HomePageComponent implements OnInit {
   user: any;
+  latest:any;
 
   constructor(
     private authService: AuthService,
+    private mdNotesService: MdNotesService
   ) { }
 
   ngOnInit() {
     this.user = this.authService.getUser()
+    this.mdNotesService.getLatest()
+    .then(latestNotes => {
+      this.latest = latestNotes;
+    })
   }
 
 }
