@@ -46,7 +46,6 @@ export class MdNoteComponent implements OnInit {
   getNote(val) {
     this.mdNotesService.getOne(val.id)
       .then(note => {
-        console.log(note);
         this.mdNewnote = note
         this.mdNote = this.mdNewnote;
         this.markdown = this.mdNote.content;

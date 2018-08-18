@@ -58,7 +58,6 @@ body.active{
 h1,h2,h3,h4,h5,h6{
   font-family: 'Barlow', sans-serif;
   font-weight: 700;
-  margin-top: 1em;
 }
 h1{
   font-size: 3.125em;
@@ -119,27 +118,33 @@ form.is-processing {
 	opacity: 0.5;
 }
 
-form input {
+form .field input {
   padding: 5px;
   width: 100%;
+  height: 45px;
   margin-bottom: 10px;
   font-weight: 100;
   font-size: 12px;
+  border-radius: 5px;
+  border: 1px solid #d6d6d6;
+  box-shadow: none;
+}
+form .field input:focus, form .field input:active, form button:focus, form button:active{
+  outline: none;
 }
 
 form .submit {
   margin-bottom: 5px;
 }
 
-form button {
-  padding: 5px 20px;
-  text-align: center;
-  font-size: 16px;
-  background:transparent;
-  color: rgb(120,120,120);
-  font-weight: 100;
-  font-size: 12px;
-  border: 1px solid rgb(120,120,120);
+.field.submit button{
+  background: #3C5977;
+  color: #fff;
+  border-radius: 5px;
+  padding: 15px 30px;
+  display: block;
+  width: 100%;
+  font-size: 1.618em;
 }
 
 form button:hover{
@@ -147,8 +152,8 @@ form button:hover{
   cursor: pointer;
 }
 
- .field.has-error label {
-	color: red;
+.field.has-error label {
+color: red;
 }
 
 form .validation {
@@ -160,11 +165,6 @@ form .field.has-error input {
 	border: 1px solid  red;
 }
 
-.form-wrapper{
-  width: 400px;
-  border: 1px solid rgb(120,120,120);
-  padding: 20px;
-}
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   font-weight: 100;
   font-size: 12px;
