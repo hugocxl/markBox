@@ -12,7 +12,6 @@ export class CardComponent implements OnInit {
 
   @Input() mdNote: any;
   @Input() mdBook: any;
-  // @Input('mdBook') book: any;
 
   constructor(
     private mdNotesService: MdNotesService,
@@ -33,6 +32,11 @@ export class CardComponent implements OnInit {
     .catch(err => {
       console.error(err);
     })
+  }
+
+  addToPinned(){
+    this.mdNote.pinned = !this.mdNote.pinned;
+    this.mdNotesService.pin(this.mdNote._id, this.mdNote.pinned);
   }
 
 

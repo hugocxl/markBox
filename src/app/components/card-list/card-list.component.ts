@@ -17,19 +17,6 @@ export class CardListComponent implements OnInit {
     private route: ActivatedRoute,
   ) { }
 
-  // ngOnInit() {
-  //   this.route.params.subscribe((value) => {
-  //     this.mdBooksService.getOne(value.id)
-  //     .then(mdBook => {
-  //       this.mdBook = mdBook;
-  //       this.mdNotes = this.mdBook.mdNotes;
-  //     })
-  //     .catch(err => {
-  //       console.error(err);
-  //     });
-  //   });
-  // }
-
   ngOnInit() {
     this.mdBooksService.currentMdBookChange$.subscribe((updatedMdBook) => {
         this.mdBook = updatedMdBook;
