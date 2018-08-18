@@ -42,12 +42,6 @@ export class MdBookNavComponent implements OnInit {
   }
 
   toggleNotes(id){
-    console.log('SUCESS')
-    let els = document.getElementsByClassName('md-notes-list');
-    for (let i = 0; i < els.length; i++) 
-    {
-      els[i].classList.remove('open')
-    }
     document.getElementById(id).classList.toggle('open');
   }
   
@@ -57,7 +51,6 @@ export class MdBookNavComponent implements OnInit {
       this.mdBooksService.updateCurrentMdBook(bookId);
       this.mdBooksService.updateMdBooksList();
       this.newNote.title = '';
-      this.toggleNotes(bookId);
     })
     .catch(err => {
       console.error(err);
