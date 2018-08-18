@@ -19,7 +19,6 @@ export class MdNoteComponent implements OnInit {
     pinned: false
   };
 
-  
   mdNewnote:any;
   markdown: any;
 

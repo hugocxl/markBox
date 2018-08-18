@@ -55,7 +55,7 @@ export class MdBooksService {
     const options = { withCredentials: true };
     return this.httpClient.get(`${this.mdBooksURL}/${id}`, options).toPromise()
     .then(book => {
-      this.setCurrentMdBook(book)
+      this.setCurrentMdBook(book);
     })
     .catch(err => {
       console.error(err);

@@ -21,7 +21,6 @@
 #md-books-nav::-webkit-scrollbar{
   display: none;
 }
-
 #md-books-nav.active{
   transform: translateX(0%);  
 }
@@ -50,14 +49,15 @@
   padding-left: 15px;
   margin-bottom: 10px;
 }
-
+.md-books-list > li{
+  padding-left: 15px;
+}
 #md-books-nav form{
   text-align: center;
 }
 
 .md-books-list, .md-notes-list{
   list-style:none;
-
 }
 
 .md-book-title{
@@ -78,26 +78,32 @@ a{
 .md-notes-list{
   height: 0;
   visibility: hidden;
-  margin-bottom: 10px;
   list-style-type: none;
   padding-left: 0;
 }
 
+.md-books-list .md-note-list-title{
+  background: url('../../../assets/close-list-icon.png') no-repeat left center;
+  background-size: 10px;
+  padding-left: 15px;
+}
+
 .md-notes-list a{
   display: inline-block;
-  padding: 3px 30px;
+  padding-left: 30px;
 }
 
-ul>li.list-item:first-child{
-  padding-top: 3%;
+.md-books-list .md-note-list-title.open{
+  background: url('../../../assets/open-list-icon.png') no-repeat left center;
+  background-size: 10px;
+  padding-left: 15px;
 }
-
-.md-notes-list.open{
+.md-books-list > li a.open + .md-notes-list{
   height: auto;
   transition: all 1s;
   visibility: visible;
-  margin-bottom: 10px;
 }
+
 .md-notes-list form{
   text-align: center;
   margin-top: 3px;
