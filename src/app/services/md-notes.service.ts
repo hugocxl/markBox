@@ -23,7 +23,13 @@ export class MdNotesService {
     };
     return this.httpClient.get(`${this.mdNoteURL}/${id}`, options).toPromise();
   }
-
+  // Get 6 latest updated notes
+  getLatest(){
+    const options = {
+      withCredentials: true
+    };
+    return this.httpClient.get(`${this.mdNoteURL}/latest`, options).toPromise();
+  }
   //EDIT NOTE - ID: Note - REQ.PARAMS; { title, content } = req.body;
   edit(id, data){
     const options = {
