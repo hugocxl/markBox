@@ -1,4 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { MdNotesService } from '../../services/md-notes.service';
+import { MdBooksService } from '../../services/md-books.service';
+
 
 @Component({
   selector: 'app-card',
@@ -7,12 +10,31 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class CardComponent implements OnInit {
 
-  @Input() mdNote: Object;
+  @Input() mdNote: any;
+  @Input() mdBook: any;
+  // @Input('mdBook') book: any;
 
-  constructor() { }
+  constructor(
+    private mdNotesService: MdNotesService,
+    private mdBooksService: MdBooksService
+  ) { }
 
   ngOnInit() {
   }
+
+  delete(){
+    this.mdNotesService.delete(this.mdNote._id)
+    .then(()=> {
+      this.mdBooksService.updateCurrentMdBook(this.mdBook._id);
+    })
+    .then(() =>{
+      this.mdBooksService.updateMdBooksList();
+    })
+    .catch(err => {
+      console.error(err);
+    })
+  }
+
 
 }
 

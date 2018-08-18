@@ -11,8 +11,6 @@ import { ActivatedRoute } from '@angular/router';
 export class CardListComponent implements OnInit {
 
   mdBook = {};
-  mdNotes: any;
-
 
   constructor(
     private mdBooksService: MdBooksService,
@@ -20,8 +18,8 @@ export class CardListComponent implements OnInit {
   ) { }
 
   // ngOnInit() {
-  //   this.route.params.subscribe((val) => {
-  //     this.mdBooksService.getOne(val.id)
+  //   this.route.params.subscribe((value) => {
+  //     this.mdBooksService.getOne(value.id)
   //     .then(mdBook => {
   //       this.mdBook = mdBook;
   //       this.mdNotes = this.mdBook.mdNotes;
@@ -31,7 +29,6 @@ export class CardListComponent implements OnInit {
   //     });
   //   });
   // }
-
 
   ngOnInit() {
     this.mdBooksService.currentMdBookChange$.subscribe((updatedMdBook) => {
