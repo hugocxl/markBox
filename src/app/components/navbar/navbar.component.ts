@@ -2,11 +2,14 @@ import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { Renderer2 } from '@angular/core';
+import { fadeAnimation } from '../../animations';
+
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.css']
+  styleUrls: ['./navbar.component.css'],
+  animations: [fadeAnimation]
 })
 
 export class NavbarComponent implements OnInit {

@@ -49,9 +49,7 @@
   padding-left: 15px;
   margin-bottom: 10px;
 }
-.md-books-list > li{
-  padding-left: 15px;
-}
+
 #md-books-nav form{
   text-align: center;
 }
@@ -86,6 +84,7 @@ a{
   background: url('../../../assets/close-list-icon.png') no-repeat left center;
   background-size: 10px;
   padding-left: 15px;
+  margin-left: 15px;
 }
 
 .md-notes-list a{
