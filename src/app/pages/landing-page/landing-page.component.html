@@ -1,12 +1,24 @@
 
-  <div class="flex-row jc-center" id="landing">
-    <div class="form-wrapper">
-        <div *ngIf="on" class="signup-form">
-            <app-signup-form></app-signup-form>
+  <div id="landing">
+    <header class="container">
+        <div class="logo">
+            <img src="../../../assets/logo-big.png" alt="">
         </div>
-        <div *ngIf="!on" class="login-form">
-            <app-login-form></app-login-form>
+    </header>
+    <div class="container flex-row-home">
+        <div class="app-title">
+            <h1>Note taking, made easy.</h1>
+            <p>Light, clean, and free. markHub is the simplest way of taking notes: use the simplicity 
+                of markdown typo and just focus on your writing.</p>
         </div>
-        <button class="toggle-form" (click)="toggle()">{{toggleText}}</button> 
+        <div class="form-wrapper">
+            <div *ngIf="!on" class="signup-form">
+                <app-signup-form></app-signup-form>
+            </div>
+            <div *ngIf="on" class="login-form">
+                <app-login-form></app-login-form>
+            </div>
+            <p class="toggle-form" (click)="toggle()">{{toggleText}}</p> 
+        </div>
     </div>
   </div>

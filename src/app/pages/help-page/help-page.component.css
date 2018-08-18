@@ -5,15 +5,21 @@
 
 .main>.left-side{
   width: 40%;
-  padding: 1em;
+  padding: 2em;
 }
-
 
 .main>.right-side{
   width: 60%;
   max-height: 100vh;
   overflow: scroll;
-  padding: 1em;
+  padding: 2em;
+  background: #F1F1F1;
+  -ms-overflow-style: none;
+  overflow: -moz-scrollbars-none;
+}
+
+.main>.right-side::-webkit-scrollbar{
+  display: none;
 }
 
 .main>.right-side table{

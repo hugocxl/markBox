@@ -1,6 +1,7 @@
-import { Component, OnInit, OnChanges } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MdBooksService } from '../../services/md-books.service';
 import { MdNotesService } from '../../services/md-notes.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -12,19 +13,23 @@ export class MdBookNavComponent implements OnInit {
 
   mdBooks:any;
   mdNote : any;
+  newMdNote: any;
   newMdBook:any;
+  mdBookId: number;
   id: number;
-  title:any;
+  
   newBook = {
     title : ''
   }
   newNote = {
-    title: ''
+    title: '',
+    content: ''
   }
 
   constructor( 
     private mdBooksService: MdBooksService,
     private mdNotesService: MdNotesService,
+    private router: Router
   ) { }
   
   
