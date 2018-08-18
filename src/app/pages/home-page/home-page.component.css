@@ -1,0 +1,25 @@
+#home{
+  padding: 1em;
+}
+.flex-row{
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.latest-edited, .pinned-notes{
+  width: 49%;
+}
+.latest-edited-grid, .pinned-notes-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.logo{
+  width: 20%;
+  margin-bottom: 50px;
+}
+.logo img{
+  max-width: 100%;
+}
+h4{
+  border-bottom: 1px solid;
+}
