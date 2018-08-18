@@ -26,46 +26,46 @@ export class MdBookNavComponent implements OnInit {
     private mdBooksService: MdBooksService,
     private mdNotesService: MdNotesService,
   ) { }
-
-
+  
+  
+  
   ngOnInit() {
-    this.mdBooksService.getAll()
-    .then(() =>{
-      this.mdBooks = this.mdBooksService.mdBooks;
-    })
-    .catch(err => {
-      console.error(err);
-    })
+    this.mdBooksService.mdBooksListChange$.subscribe((updatedList) => {
+        this.mdBooks = updatedList;
+    }); 
+    return this.mdBooksService.getAll()
   }
 
   toggleNotes(id){
+    console.log('SUCESS')
+    let els = document.getElementsByClassName('md-notes-list');
+    for (let i = 0; i < els.length; i++) 
+    {
+      els[i].classList.remove('open')
+    }
     document.getElementById(id).classList.toggle('open');
   }
+  
   addMdNote(form, bookId){
-    this.mdNotesService.new(this.newNote,bookId)
+    this.mdNotesService.new(this.newNote, bookId)
     .then(newNote => {
-      console.log(newNote);
-      let index = this.mdBooks.findIndex(x => x._id === bookId);
-      this.mdBooks[index].mdNotes.push(newNote);
-      this.newNote.title = "";
+      this.mdBooksService.updateCurrentMdBook(bookId);
+      this.mdBooksService.updateMdBooksList();
+      this.newNote.title = '';
+      this.toggleNotes(bookId);
     })
     .catch(err => {
       console.error(err);
     })
   }
-  addMdBook(form){
-    this.mdBooksService.new(this.newBook)
-    .then(book => {
-      this.newMdBook = book;
-      return this.mdNotesService.getOne(this.newMdBook.mdNotes[0])  
-    })
-    .then(newNote =>{
-      this.newMdBook.mdNotes.push(newNote);
-      this.mdBooks.push(this.newMdBook);
+
+  addMdBook(){
+    return this.mdBooksService.new(this.newBook)
+    .then(() => {
       this.newBook.title = '';
     })
-    .catch(err => {
-      console.error(err);
+    .catch(error => {
+      console.error(error);
     })
   } 
 

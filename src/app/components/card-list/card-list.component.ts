@@ -10,26 +10,36 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class CardListComponent implements OnInit {
 
-  mdBook:any;
-  mdNotes : any;
+  mdBook = {};
+  mdNotes: any;
 
 
   constructor(
     private mdBooksService: MdBooksService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
   ) { }
 
+  // ngOnInit() {
+  //   this.route.params.subscribe((val) => {
+  //     this.mdBooksService.getOne(val.id)
+  //     .then(mdBook => {
+  //       this.mdBook = mdBook;
+  //       this.mdNotes = this.mdBook.mdNotes;
+  //     })
+  //     .catch(err => {
+  //       console.error(err);
+  //     });
+  //   });
+  // }
+
+
   ngOnInit() {
-    this.route.params.subscribe((val) => {
+    this.mdBooksService.currentMdBookChange$.subscribe((updatedMdBook) => {
+        this.mdBook = updatedMdBook;
+    }); 
+    const id = this.route.params.subscribe((val) => {
       this.mdBooksService.getOne(val.id)
-      .then(mdBook => {
-        this.mdBook = mdBook;
-        this.mdNotes = this.mdBook.mdNotes;
-      })
-      .catch(err => {
-        console.error(err);
-      });
-    });
+    })
   }
 
 }

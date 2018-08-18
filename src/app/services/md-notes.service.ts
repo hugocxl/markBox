@@ -8,6 +8,7 @@ export class MdNotesService {
     
   mdNote:any;
   
+  
   constructor(
     private httpClient: HttpClient,
   ) { }
@@ -20,7 +21,7 @@ export class MdNotesService {
     const options = {
       withCredentials: true
     };
-    return this.httpClient.get(`${this.mdNoteURL}/${id}`, options).toPromise()
+    return this.httpClient.get(`${this.mdNoteURL}/${id}`, options).toPromise();
   }
 
   //EDIT NOTE - ID: Note - REQ.PARAMS; { title, content } = req.body;
@@ -28,10 +29,14 @@ export class MdNotesService {
     const options = {
       withCredentials: true
     };
-    return this.httpClient.put(`${this.mdNoteURL}/${id}`, data, options).toPromise()
-    .then(() => {
-      
-    })
+    return this.httpClient.put(`${this.mdNoteURL}/${id}`, data, options).toPromise();
+  }
+
+  favourite(id, status){
+    const options = {
+      withCredentials: true
+    };
+    return this.httpClient.put(`${this.mdNoteURL}/${id}/pinned`, status, options).toPromise();  
   }
 
   //DELETE NOTE - ID: Note - REQ.PARAMS;

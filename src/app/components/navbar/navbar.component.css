@@ -14,17 +14,10 @@
   z-index: 2;
 }
 .navbar li a{
-  padding: 17px 0;
+  padding: 15px 0;
   display: inline-block;
 }
 
-.navbar li:last-child{
-  margin-bottom: 20%;
-}
-
-.navbar li:first-child{
-  margin-top: 20%;
-}
 .icon{
   width: 25px;
   height: 25px;
@@ -35,18 +28,14 @@
 .navbar li a:hover{
   transition: background-color 0.3s;
   background: #808080;
-  width: 60px; 
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
+  width: 50px; 
   cursor: pointer;
 }
 
 
 
 .navbar-item a.active{
-  width: 60px;  
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
-  background:#c5c5c5; 
+  width: 50px;  
+  background:#2a3237; 
 }
 
