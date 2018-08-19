@@ -9,10 +9,10 @@ import { AuthService } from '../../services/auth.service';
 })
 export class SignupFormComponent implements OnInit {
 
-  newUser = {
-    email: '',
-    password: ''
-  }
+  emailFirst = '';
+  emailSecond = '';
+  password = '';
+ 
 
   constructor(
     private authService: AuthService,
@@ -23,13 +23,22 @@ export class SignupFormComponent implements OnInit {
   }
 
   submitForm(form) {
-    this.authService.signup(this.newUser)
-    .then(() => {
-        this.router.navigate(['/home']);
-    })
-    .catch(error => {
-        console.log(error);
-    });
+    if(this.emailFirst === this.emailSecond){
+      const newUser = {
+        email: this.emailFirst,
+        password: this.password
+      };
+    
+      this.authService.signup(newUser)
+      .then(() => {
+          this.router.navigate(['/home']);
+      })
+      .catch(error => {
+          console.log(error);
+      });
+
+    }
+
   }
 
 }
