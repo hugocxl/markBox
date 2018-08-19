@@ -38,7 +38,6 @@ export class MdNoteComponent implements OnInit {
   ) { }
 
   setActiveMessage(message){
-
     const activeMessage = this.renderer.createElement('span');
     activeMessage.classList.add('active-message');
     const text = this.renderer.createText(message);
@@ -123,7 +122,6 @@ export class MdNoteComponent implements OnInit {
   toggleEditClass(){
     document.getElementById('md-note-view').classList.toggle('active-preview');
   }
-
 
   togglePinned(){
     this.mdNote.pinned = !this.mdNote.pinned;
