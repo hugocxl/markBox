@@ -98,18 +98,23 @@ export class MdBookNavComponent implements OnInit {
   } 
 
   setNewTitle(form, id){
-    return this.mdNotesService.editNewTitle(id, this.newTitle)
-    .then(() => {
-      this.newTitle.title = '';
+    if(!this.newTitle.title){
       this.changeTitle = false;
-    })
-    .then(()=>{
+      this.newTitle.title = this.currentTitle;
       return this.mdBooksService.updateMdBooksList();
-    })
-    .catch(error => {
-      console.error(error);
-    })
-
+    } else {
+      return this.mdNotesService.editNewTitle(id, this.newTitle)
+      .then(() => {
+        this.newTitle.title = '';
+        this.changeTitle = false;
+      })
+      .then(()=>{
+        return this.mdBooksService.updateMdBooksList();
+      })
+      .catch(error => {
+        console.error(error);
+      })
+    }
   }
 
 }
