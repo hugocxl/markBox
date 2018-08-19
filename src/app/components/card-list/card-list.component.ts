@@ -10,8 +10,10 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class CardListComponent implements OnInit {
 
-  mdBook = {};
-
+  mdBook = {
+    mdNotes:[]
+  };
+  noteCount: String;
   constructor(
     private mdBooksService: MdBooksService,
     private route: ActivatedRoute,
@@ -20,6 +22,15 @@ export class CardListComponent implements OnInit {
   ngOnInit() {
     this.mdBooksService.currentMdBookChange$.subscribe((updatedMdBook) => {
         this.mdBook = updatedMdBook;
+        console.log(this.mdBook.mdNotes);
+        if(this.mdBook.mdNotes.length){
+          let checkNoteCount;
+          this.mdBook.mdNotes.length > 1 ? checkNoteCount = 'notes' : checkNoteCount = 'note';
+          this.noteCount = `You have: ${this.mdBook.mdNotes.length} ${checkNoteCount}`;
+        }
+        else{
+          this.noteCount = `You have no notes`;
+        }
     }); 
     const id = this.route.params.subscribe((val) => {
       this.mdBooksService.getOne(val.id)
