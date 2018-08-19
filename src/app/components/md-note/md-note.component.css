@@ -77,6 +77,10 @@ button:active, button:focus{
   transition: background-color 0.3s;
   background: #A9A9A9;
 }
+.active-pinned{
+  transition: background-color 0.3s;
+  background: #F3B54A;
+}
 
 #box-buttons{
   position: fixed;
@@ -84,6 +88,14 @@ button:active, button:focus{
   right:1em;
   display: flex;
   flex-direction: column;
+}
+.active-message{
+  position: fixed;
+  top: 1em;
+  right: 12%;
+  color: grey;
+  font-size: 12px;
+  font-style: italic;
 }
 /* 
 div button:hover{

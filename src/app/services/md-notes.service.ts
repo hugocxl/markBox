@@ -44,12 +44,6 @@ export class MdNotesService {
     });
   }
 
-
-
-
-
-
-
   //GET ONE NOTE - ID: Note - REQ.PARAMS;
   getOne(id){
     const options = {
@@ -63,6 +57,12 @@ export class MdNotesService {
       withCredentials: true
     };
     return this.httpClient.get(`${this.mdNoteURL}/latest`, options).toPromise();
+  }
+  getPinned(){
+    const options = {
+      withCredentials: true
+    };
+    return this.httpClient.get(`${this.mdNoteURL}/pinned`, options).toPromise();
   }
   //EDIT NOTE - ID: Note - REQ.PARAMS; { title, content } = req.body;
   edit(id, data){
@@ -82,6 +82,7 @@ export class MdNotesService {
       withCredentials: true
     };
     const pinned = { status };
+    console.log(pinned);
     return this.httpClient.put(`${this.mdNoteURL}/${id}/pin`, pinned, options).toPromise() 
   }
 

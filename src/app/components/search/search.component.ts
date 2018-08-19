@@ -20,6 +20,7 @@ export class SearchComponent implements OnInit {
   ngOnInit() {
     document.getElementById('search-input').addEventListener( "keyup", ()=>{
       if (this.searchContent) { 
+        console.log(this.searchContent);
         this.router.navigate(['/search']);
         this.mdNotesService.updateSearch(this.searchContent);
       } else {

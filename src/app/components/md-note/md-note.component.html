@@ -1,5 +1,6 @@
 <section class="mdNote" id="md-note-view">
     
+    
     <div class="edit-mdnote" *ngIf="editMode">
         <header>
             <h4>#{{mdNote.title}}</h4>
@@ -13,28 +14,27 @@
     <markdown [data]="markdown"></markdown>
   </div>
   <div id="box-buttons">
-
-        <button *ngIf="!editMode" (click)="editModeIO()">
+        <button title="Edit" *ngIf="!editMode" (click)="editModeIO()">
             <img class="icon" src="../../../assets/edit-icon.png">
         </button>
       
-        <button title="Active preview" *ngIf="editMode" (click)="activatePreview()" [ngClass]="{'active': previewActive }">
+        <button title="Preview" *ngIf="editMode" (click)="activatePreview()" [ngClass]="{'active': previewActive }">
             <img class="icon" src="../../../assets/preview-icon.png">
         </button>
 
-        <button (click)="togglePinned()" [ngClass] = "{'active': mdNote.pinned }">
+        <button title="Pin this note" (click)="togglePinned()" [ngClass] = "{'active-pinned': mdNote.pinned }">
                 <img class="icon" src="../../../assets/fav-icon.png">
         </button>
       
-        <button *ngIf="editMode" (click)="saveAndClose()" [ngClass]="{'saving': saving }" id="saveButton">
+        <button title="Save" *ngIf="editMode" (click)="saveAndClose()" [ngClass]="{'saving': saving }" id="saveButton">
             <img class="icon" src="../../../assets/save-icon.png">
         </button>
       
-        <button *ngIf="editMode" [ngClass]="{'active': autoSaveMode }" (click)="activateAutoSave()">
+        <button title="Activate autosave" *ngIf="editMode" [ngClass]="{'active': autoSaveMode }" (click)="activateAutoSave()">
             <img class="icon" src="../../../assets/auto-save-icon.png">
         </button>
     
-        <button *ngIf="editMode" (click)="closeEdit()">
+        <button title="Close edit mode" *ngIf="editMode" (click)="closeEdit()">
             <img class="icon" src="../../../assets/close-icon.png">
         </button>
     
