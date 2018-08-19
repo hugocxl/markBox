@@ -17,7 +17,7 @@ export class MdNoteComponent implements OnInit {
     content: "",
     pinned: false
   };
-
+  
   mdNewnote:any;
   markdown: any;
 
@@ -29,6 +29,8 @@ export class MdNoteComponent implements OnInit {
     editView: '',
     htmlView: ''
   };
+
+  editMode = false;
   autoSaveMode = false;
   previewActive = true;
   
@@ -81,73 +83,75 @@ export class MdNoteComponent implements OnInit {
   //EDIT MODE CONTROL:
   editModeIO(){
     this.setActiveMessage('Edit mode enabled');
+    this.editMode = !this.editMode;
+    this.previewActive = !this.previewActive;
   };
 
 
-  // activatePreview(){
-  //   this.previewActive = !this.previewActive;
-  //   if(this.previewActive){
-  //     this.setActiveMessage('Preview mode enabled');
-  //   } else {
-  //     this.setActiveMessage('Edit mode enabled');
-  //   }
-  //   this.toggleEditClass();
-  // };
-  // // AUTOSAVE MODE MANAGEMENT:
-  // activateAutoSave(){
-  //   this.autoSaveMode = !this.autoSaveMode;
-  //   if(this.autoSaveMode){
-  //     this.setActiveMessage('Autosave mode enabled');
-  //   } else {
-  //     this.setActiveMessage('Autosave mode disabled');
-  //   }
-  // }
-  // autoSave(){
-  //   if(this.autoSaveMode) { this.saveFunction() }
-  // }
-  // //SAVE EDITED NOTE: 
-  // saveFunction(){    
-  //   const data = {
-  //     title: this.mdNote.title,
-  //     content: this.markdown,
-  //     pinned: this.mdNote.pinned
-  //   };
-  //   this.mdNotesService.edit(this.mdNote._id, data)
-  //   .then(data => {
-  //     this.setActiveMessage('MdNote saved');
-  //   })
-  //   .catch(error => {
-  //     console.log('Fail Saving')
-  //   });
-  // };
-  // saveAndClose(){
-  //   this.saveFunction();
-  // }
-  // //CLOSE NOTE WITHOUT SAVING:
-  // closeEdit(){
-  //   this.editMode = false;
-  //   this.previewActive = true;
-  //   document.getElementById('md-note-view').classList.remove('active-preview');
-  // }
+  activatePreview(){
+    this.previewActive = !this.previewActive;
+    if(this.previewActive){
+      this.setActiveMessage('Preview mode enabled');
+    } else {
+      this.setActiveMessage('Edit mode enabled');
+    }
+    this.toggleEditClass();
+  };
+  // AUTOSAVE MODE MANAGEMENT:
+  activateAutoSave(){
+    this.autoSaveMode = !this.autoSaveMode;
+    if(this.autoSaveMode){
+      this.setActiveMessage('Autosave mode enabled');
+    } else {
+      this.setActiveMessage('Autosave mode disabled');
+    }
+  }
+  autoSave(){
+    if(this.autoSaveMode) { this.saveFunction() }
+  }
+  //SAVE EDITED NOTE: 
+  saveFunction(){    
+    const data = {
+      title: this.mdNote.title,
+      content: this.markdown,
+      pinned: this.mdNote.pinned
+    };
+    this.mdNotesService.edit(this.mdNote._id, data)
+    .then(data => {
+      this.setActiveMessage('MdNote saved');
+    })
+    .catch(error => {
+      console.log('Fail Saving')
+    });
+  };
+  saveAndClose(){
+    this.saveFunction();
+  }
+  //CLOSE NOTE WITHOUT SAVING:
+  closeEdit(){
+    this.editMode = false;
+    this.previewActive = true;
+    document.getElementById('md-note-view').classList.remove('active-preview');
+  }
 
-  // toggleEditClass(){
-  //   document.getElementById('md-note-view').classList.toggle('active-preview');
-  // }
+  toggleEditClass(){
+    document.getElementById('md-note-view').classList.toggle('active-preview');
+  }
 
 
-  // togglePinned(){
-  //   this.mdNote.pinned = !this.mdNote.pinned;
-  //   if(this.mdNote.pinned){
-  //     this.setActiveMessage('MdNote pinned');
-  //   } else {
-  //     this.setActiveMessage('MdNote removed from pinned');
-  //   }
-  //   this.mdNotesService.pin(this.mdNote._id, this.mdNote.pinned)
-  //   .then((note)=> {
-  //   })
-  //   .catch(error =>{
-  //     console.error(error)
-  //   })
-  // }
+  togglePinned(){
+    this.mdNote.pinned = !this.mdNote.pinned;
+    if(this.mdNote.pinned){
+      this.setActiveMessage('MdNote pinned');
+    } else {
+      this.setActiveMessage('MdNote removed from pinned');
+    }
+    this.mdNotesService.pin(this.mdNote._id, this.mdNote.pinned)
+    .then((note)=> {
+    })
+    .catch(error =>{
+      console.error(error)
+    })
+  }
 
 }

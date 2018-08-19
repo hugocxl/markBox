@@ -1,23 +1,27 @@
 
-<h2>Profile</h2>
+<h2>Profile Settings</h2>
+<p>Use this page to customize your email and password.</p>
 
-<h3>You can update your user info here:</h3>
+<div>
+  <h3>Email settings:</h3>
+  <p>Your current email is: <b>{{user.email}}</b></p>
+  <div class="form-group">
+    <input type="email" name="First email" [(ngModel)]="emailFirst" placeholder="New email..." required>
+    <input type="email" name="Second email" [(ngModel)]="emailSecond" placeholder="Confirm..." required>
+    <button (click)="updateInfo()" name="Go">Update email</button>
+  </div>
+</div>  
 
-<p>Current email: {{user.email}}</p>
-
-<div class="form-group">
-  <input type="email" name="First email" [(ngModel)]="emailFirst" placeholder="New email..." required>
-  <input type="email" name="Second email" [(ngModel)]="emailSecond" placeholder="Repeat new email..." required>
-  <button (click)="updateInfo()" name="Go">Update email</button>
+<div>
+  <h3>Password settings:</h3>
+  <p>Would you like to change your password?</p>
+  <div class="form-group">
+      <input type="password" name="First password" [(ngModel)]="passwordFirst" placeholder="New password..." required>
+      <input type="password" name="Second password" [(ngModel)]="passwordSecond" placeholder="Confirm..." required>
+      <button (click)="updateInfo()" name="Go">Update password</button>
+  </div>
 </div>
 
-
-
-<div class="form-group">
-    <input type="password" name="First password" [(ngModel)]="passwordFirst" placeholder="New password..." required>
-    <input type="password" name="Second password" [(ngModel)]="passwordSecond" placeholder="Repeat new password..." required>
-    <button (click)="updateInfo()" name="Go">Update password</button>
-</div>
     
        
     

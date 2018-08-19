@@ -35,6 +35,8 @@ import { CardComponent } from './components/card/card.component';
 import { SearchPageComponent } from './pages/search-page/search-page.component';
 import { SettingsPageComponent } from './pages/settings-page/settings-page.component';
 import { SearchComponent } from './components/search/search.component';
+import { PinnedPageComponent } from './pages/pinned-page/pinned-page.component';
+
 
 const routes: Routes = [
   { path: '',  component: LandingPageComponent, canActivate: [ RequireAnonGuard ] },
@@ -54,6 +56,7 @@ const routes: Routes = [
     ]
   },
   { path: 'search',  component: SearchPageComponent, canActivate: [ RequireUserGuard ] },
+  { path: 'pinned',  component: PinnedPageComponent , canActivate: [ RequireUserGuard ] },
   { path: 'settings',  component: SettingsPageComponent, canActivate: [ RequireUserGuard ] },
   { path: 'profile',  component: ProfilePageComponent , canActivate: [ RequireUserGuard ] },
   { path: 'help',  component: HelpPageComponent , canActivate: [ RequireUserGuard ] },
@@ -78,6 +81,8 @@ const routes: Routes = [
     SearchPageComponent,
     SettingsPageComponent,
     SearchComponent,
+    PinnedPageComponent,
+    
   ],
   imports: [
     BrowserModule,

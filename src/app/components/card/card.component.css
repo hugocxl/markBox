@@ -78,5 +78,5 @@ button:hover,button.saving{
 
 .active{
   transition: background-color 0.3s;
-  background: #F3B54A;
+  background: rgb(78, 107, 156);
 }
