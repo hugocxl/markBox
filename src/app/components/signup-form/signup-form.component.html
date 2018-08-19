@@ -1,10 +1,10 @@
 <form (ngSubmit)="submitForm(form)" #form="ngForm">
 
   <div class="field" [ngClass]="{'has-error': feedbackEnabled && usernameField.errors}">
-    <input type="email" name="email" placeholder="Email" [(ngModel)]="newUser.email" #usernameField="ngModel" required />
-    <!-- <input type="email" name="emailcheck" placeholder="Repeat email" [(ngModel)]="newUser.emailcheck" #usernameField="ngModel" required /> -->
+    <input type="email" name="email" placeholder="Email" [(ngModel)]="emailFirst" #usernameField="ngModel" required />
+    <input type="email" name="email" placeholder="Repeat email" [(ngModel)]="emailSecond" #usernameField="ngModel" required />
 
-    <input type="password" name="password" placeholder="Password" [(ngModel)]="newUser.password" #passwordField="ngModel" required />
+    <input type="password" name="password" placeholder="Password" [(ngModel)]="password" #passwordField="ngModel" required />
   </div>
 
   <div class="field submit">
