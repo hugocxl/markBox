@@ -20,14 +20,25 @@ export class MdBookNavComponent implements OnInit {
   id: number;
   open = false;
   selectedIndex: number;
-  
-  
+  changeTitle = false;
+
   newBook = {
     title : ''
   }
   newNote = {
     title: '',
     content: ''
+  }
+  newTitle = {
+    title: ''  
+  }
+
+  public currentTitle;
+
+  public setTitle = (title) => {
+    this.changeTitle = true;
+    if (this.currentTitle === title) return;
+    this.currentTitle = title;
   }
 
   constructor( 
@@ -84,5 +95,20 @@ export class MdBookNavComponent implements OnInit {
       console.error(error);
     })
   } 
+
+  setNewTitle(form, id){
+    return this.mdNotesService.editNewTitle(id, this.newTitle)
+    .then(() => {
+      this.newTitle.title = '';
+      this.changeTitle = false;
+    })
+    .then(()=>{
+      return this.mdBooksService.updateMdBooksList();
+    })
+    .catch(error => {
+      console.error(error);
+    })
+
+  }
 
 }
