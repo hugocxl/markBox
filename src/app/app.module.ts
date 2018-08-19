@@ -7,34 +7,42 @@ import { MarkdownModule, MarkedOptions } from 'ngx-markdown';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
-import { AppComponent } from './app.component';
+// Pages
+
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { MdBooksPageComponent } from './pages/md-books-page/md-books-page.component';
 import { ProfilePageComponent } from './pages/profile-page/profile-page.component';
 import { HelpPageComponent } from './pages/help-page/help-page.component';
+import { SearchPageComponent } from './pages/search-page/search-page.component';
+import { SettingsPageComponent } from './pages/settings-page/settings-page.component';
+
+// Components
+
+import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-
-//Services
-
-import { AuthService } from './services/auth.service';
-import { ProfileService } from './services/profile.service';
-import { MdBooksService } from './services/md-books.service';
-
-// Guards
-
-import { InitAuthGuard } from './guards/init-auth.guard';
-import { RequireAnonGuard } from './guards/require-anon.guard';
-import { RequireUserGuard } from './guards/require-user.guard';
 import { LoginFormComponent } from './components/login-form/login-form.component';
 import { SignupFormComponent } from './components/signup-form/signup-form.component';
 import { MdNoteComponent } from './components/md-note/md-note.component';
 import { MdBookNavComponent } from './components/md-book-nav/md-book-nav.component';
 import { CardListComponent } from './components/card-list/card-list.component';
 import { CardComponent } from './components/card/card.component';
-import { SearchPageComponent } from './pages/search-page/search-page.component';
-import { SettingsPageComponent } from './pages/settings-page/settings-page.component';
 import { SearchComponent } from './components/search/search.component';
+
+// Services
+
+import { AuthService } from './services/auth.service';
+import { ProfileService } from './services/profile.service';
+import { MdBooksService } from './services/md-books.service';
+import { FilesaverService } from './services/filesaver.service';
+
+// Guards
+
+import { InitAuthGuard } from './guards/init-auth.guard';
+import { RequireAnonGuard } from './guards/require-anon.guard';
+import { RequireUserGuard } from './guards/require-user.guard';
+
+
 
 const routes: Routes = [
   { path: '',  component: LandingPageComponent, canActivate: [ RequireAnonGuard ] },
@@ -107,7 +115,8 @@ const routes: Routes = [
     RequireAnonGuard,
     RequireUserGuard,
     MdBooksService,
-    ProfileService
+    ProfileService,
+    FilesaverService
   ],
   bootstrap: [AppComponent]
 })
