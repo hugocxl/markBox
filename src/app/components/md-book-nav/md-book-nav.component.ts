@@ -38,6 +38,7 @@ export class MdBookNavComponent implements OnInit {
   public setTitle = (title) => {
     this.changeTitle = true;
     if (this.currentTitle === title) return;
+    this.newTitle.title = title;
     this.currentTitle = title;
   }
 
