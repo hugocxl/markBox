@@ -43,7 +43,6 @@ export class MdNoteComponent implements OnInit {
   ) { }
 
   setActiveMessage(message){
-
     const activeMessage = this.renderer.createElement('span');
     activeMessage.classList.add('active-message');
     const text = this.renderer.createText(message);

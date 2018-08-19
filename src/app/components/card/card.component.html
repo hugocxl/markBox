@@ -11,15 +11,15 @@
 
     <div class="buttons-bar">
       <button [routerLink]="['mdNotes', mdNote._id]">
-        <img class="icon" src="../../../assets/edit-icon.png">
+        <img class="icon" src="../../../assets/images/edit-icon.png">
       </button>
     
       <button (click)="addToPinned()" [ngClass]="{'active': mdNote.pinned }">
-          <img class="icon" src="../../../assets/fav-icon.png">
+          <img class="icon" src="../../../assets/images/fav-icon.png">
       </button>
   
       <button (click)="delete()" style="background: rgb(180, 0, 0)">
-          <img class="icon" src="../../../assets/delete-icon.png">
+          <img class="icon" src="../../../assets/images/delete-icon.png">
       </button>
       </div>
   </div>

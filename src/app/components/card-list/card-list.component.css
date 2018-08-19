@@ -3,18 +3,47 @@
   border-bottom: 1px grey solid;
   padding-left: 2em;
   display: flex;
-  align-content: space-between;
+  justify-content: space-between;
   align-items: baseline;
   color: grey;
 }
 
 .book-title{
-  width: 60%;
+  width: auto;
+  position: relative;
+  padding-right: 20px;
+}
+.book-title h1, .change-mdBook-title input{
   padding: 0;
   margin: 0;
   font-weight: 400;
   font-size: 2.5em;
-  
+  display: inline;
+}
+.change-mdBook-title{
+  position: relative;
+}
+.change-mdBook-title input{
+  background: transparent;
+  border: none;
+  padding-left: 5px;
+  font-family: 'Barlow', sans-serif;
+  color: grey;
+  padding: 5px 0 6px;
+}
+.change-mdBook-title input:focus, .change-mdBook-title input:active{
+  outline: none;
+}
+
+.book-title .icon{
+  width: 10px;
+  position: absolute;
+  top: 13px;
+  right: 0;
+}
+.book-title .icon:hover{
+  cursor: pointer;
+  opacity: .7;
 }
 
 .note-number{
@@ -25,4 +54,20 @@
 .my-md-books{
   height: 100vh;
   background-color: #F1F1F1
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  font-weight: 100;
+  font-size: 1em;}
+::-moz-placeholder { /* Firefox 19+ */
+  font-weight: 100;
+  font-size: 1em;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  font-weight: 100;
+  font-size: 1em;
+}
+:-moz-placeholder { /* Firefox 18- */
+  font-weight: 100;
+  font-size: 1em;
 }

@@ -106,7 +106,6 @@ export class MdBooksService {
   //EDIT BOOK - DATA: Title - REQ.BODY; ID: Book - REQ.PARAMS;
   edit(id, data){
     const options = { withCredentials: true }
-    
     return this.httpClient.put(`${this.mdBooksURL}/${id}`, data, options).toPromise()
     .then(() => {
       this.updateMdBooksList();

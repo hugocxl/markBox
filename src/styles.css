@@ -198,11 +198,15 @@ form .field.has-error input {
   position: fixed;
   height: 100%;
   width: 100%;
-  background: white;
+  background: url('./assets/images/markBox.png') fixed no-repeat, white;
   padding-top: 0;
   text-align: center;
   z-index: 1;
-  transition: opacity 3s ease-out;
+  transition: opacity 3s ease;
+
+
+  
+  background-size: cover;
 }
 
 app-root:empty + .loading {

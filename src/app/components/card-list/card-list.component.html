@@ -1,6 +1,14 @@
 <div class="my-md-books">
 <div class="card-list-title">
-  <h1 class="book-title">{{mdBook.title}}</h1>
+  <div class="book-title">
+    <h1 *ngIf="!changeTitle">{{mdBook.title}}</h1>
+    <img (click)="setTitle(mdBook.title)" *ngIf="!changeTitle" class="icon" src="../../../assets/images/edit-icon-blue.png" title="Edit title">
+
+    <form *ngIf="changeTitle" (ngSubmit)="setNewTitle(form, mdBook._id)" #form="ngForm" class="change-mdBook-title">
+        <input placeholder="Title of your book" type="text" name="title" [(ngModel)]="newTitle.title" id="new-title">
+    </form>
+
+  </div>
   <p class="note-number">{{noteCount}}</p>
 </div>
 

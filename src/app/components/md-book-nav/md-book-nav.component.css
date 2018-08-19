@@ -26,7 +26,7 @@
 }
 
 #add-book-input{
-  background: url('../../../assets/plus-icon.png') no-repeat, rgba(0, 0, 0, 0.5);
+  background: url('../../../assets/images/plus-icon.png') no-repeat, rgba(0, 0, 0, 0.5);
   background-size: 17px 17px;
   border: none;
   color: white;
@@ -81,7 +81,7 @@ a{
 }
 
 .md-books-list .md-note-list-title{
-  background: url('../../../assets/close-list-icon.png') no-repeat left center;
+  background: url('../../../assets/images/close-list-icon.png') no-repeat left center;
   background-size: 10px;
   padding-left: 15px;
   margin-left: 15px;
@@ -93,7 +93,7 @@ a{
 }
 
 .md-books-list .md-note-list-title.open{
-  background: url('../../../assets/open-list-icon.png') no-repeat left center;
+  background: url('../../../assets/images/open-list-icon.png') no-repeat left center;
   background-size: 10px;
   padding-left: 15px;
 }
@@ -117,7 +117,7 @@ a{
 
 /* INPUT NEW NOTE */
 .md-notes-list input{
-  background: url('../../../assets/plus-icon.png') no-repeat, rgba(0, 0, 0, 0.5);
+  background: url('../../../assets/images/plus-icon.png') no-repeat, rgba(0, 0, 0, 0.5);
   background-size: 17px 17px;
   border: none;
   color: white;
