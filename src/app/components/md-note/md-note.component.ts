@@ -46,7 +46,7 @@ export class MdNoteComponent implements OnInit {
     this.renderer.appendChild(this.el.nativeElement, activeMessage);
     setTimeout( () => {
       this.renderer.removeChild(this.el.nativeElement, activeMessage);
-    }, 2000);
+    }, 1000);
   }
   //INIT: BIND SELECTED NOTE TO COMPONENT PROPERTIES THROUGH PARAMS SUB.
   ngOnInit(){
@@ -104,7 +104,7 @@ export class MdNoteComponent implements OnInit {
     };
     this.mdNotesService.edit(this.mdNote._id, data)
     .then(data => {
-      console.log('Succesfully saved')
+      this.setActiveMessage('MdNote saved');
     })
     .catch(error => {
       console.log('Fail Saving')
