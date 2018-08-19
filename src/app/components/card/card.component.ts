@@ -36,7 +36,13 @@ export class CardComponent implements OnInit {
 
   addToPinned(){
     this.mdNote.pinned = !this.mdNote.pinned;
-    this.mdNotesService.pin(this.mdNote._id, this.mdNote.pinned);
+    this.mdNotesService.pin(this.mdNote._id, this.mdNote.pinned)
+    .then(() => {
+      this.mdBooksService.updateCurrentMdBook(this.mdBook._id);
+    })
+    .catch(error => {
+      console.error(error);
+    })
   }
 
 

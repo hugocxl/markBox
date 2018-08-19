@@ -30,6 +30,7 @@ export class NavbarComponent implements OnInit {
       //DELETE FROM VIEW NAVBARS:
       document.getElementById('md-books-nav').classList.remove('active');
       document.getElementById('app-document').classList.remove('active');
+      document.getElementById('search-field').classList.remove('active');
       this.renderer.removeClass(document.body, 'logged-in');
 
       //LOGOUT:
@@ -45,6 +46,10 @@ export class NavbarComponent implements OnInit {
       } else {
         this.renderer.addClass(document.body, 'active');
       }
+    }
+
+    toggleSearchField(){
+      document.getElementById('search-field').classList.toggle('active');
     }
 
   }

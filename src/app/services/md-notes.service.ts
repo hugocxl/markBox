@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -7,7 +8,13 @@ import { HttpClient } from '@angular/common/http';
 export class MdNotesService {
     
   mdNote:any;
-  
+
+  //OBSERVABLE FOR SEARCH RESULTS
+  public searchNotes = [];
+  private searchChange: Subject<any> = new Subject(); 
+  searchChange$: Observable<any> = this.searchChange.asObservable();
+
+
   
   constructor(
     private httpClient: HttpClient,
@@ -15,6 +22,33 @@ export class MdNotesService {
   
   mdNoteURL = 'http://localhost:3000/api/mdnotes';
   mdBooksURL = 'http://localhost:3000/api/mdbooks';
+
+
+  private setSearchNotes(updatedSearch) {
+    this.searchNotes = updatedSearch;
+    this.searchChange.next(updatedSearch);
+    return updatedSearch;
+  } 
+
+  //UPDATE OBSERVABLE: SEARCH RESULTS ARRAY
+  updateSearch(search){
+    const options = { withCredentials: true };
+    const results = { search };
+    return this.httpClient.post(`${this.mdNoteURL}/search`, results, options).toPromise()
+    .then(notes => {
+      this.setSearchNotes(notes);
+      console.log(notes)
+    })
+    .catch(err => {
+      console.error(err);
+    });
+  }
+
+
+
+
+
+
 
   //GET ONE NOTE - ID: Note - REQ.PARAMS;
   getOne(id){

@@ -1,4 +1,7 @@
-<h1 class="card-list-title" >{{mdBook.title}}</h1>
+<div class="card-list-title">
+  <h1 class="book-title">{{mdBook.title}}</h1>
+  <p class="note-number">You have: <b>{{mdBook.mdNotes.length}} notes</b></p>
+</div>
 
 <div class="grid-row">
   <div *ngFor="let note of mdBook.mdNotes">
