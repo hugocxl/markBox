@@ -70,6 +70,7 @@ export class MdBookNavComponent implements OnInit {
     
     if(hasClass) {
       this.renderer.removeClass(event.target, 'open');
+      this.changeTitle = false;
     } else {
       this.renderer.addClass(event.target, 'open');
     }
@@ -97,24 +98,23 @@ export class MdBookNavComponent implements OnInit {
     })
   } 
 
-  setNewTitle(form, id){
+  setNewTitle(form, noteId, bookId){
     if(!this.newTitle.title){
-      this.changeTitle = false;
       this.newTitle.title = this.currentTitle;
-      return this.mdBooksService.updateMdBooksList();
+      this.changeTitle = false;
     } else {
-      return this.mdNotesService.editNewTitle(id, this.newTitle)
+      this.changeTitle = false;
+      this.mdNotesService.editNewTitle(noteId, this.newTitle)
       .then(() => {
         this.newTitle.title = '';
-        this.changeTitle = false;
       })
       .then(()=>{
-        return this.mdBooksService.updateMdBooksList();
+        this.mdBooksService.updateMdBooksList();
+        this.mdBooksService.updateCurrentMdBook(bookId);
       })
       .catch(error => {
         console.error(error);
       })
     }
   }
-
 }

@@ -1,3 +1,7 @@
-.card-list-title{
+.my-md-books{
+  height: 100vh;
   background-color: #F1F1F1
+}
+.my-md-books .grid-row{
+  height: auto;
 }

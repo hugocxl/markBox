@@ -104,9 +104,7 @@ a{
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   grid-gap: 2em;
   padding: 2em;
-  min-height: 100vh;
   background: #F1F1F1;
-
 }
 #app-document.active .grid-row{
   grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));

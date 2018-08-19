@@ -17,7 +17,7 @@
 
         <li *ngFor="let mdNote of mdBook.mdNotes" class="list-item">
           <a (dblclick)="setTitle(mdNote.title)" *ngIf="currentTitle != mdNote.title || !changeTitle"  id="note-selected" [routerLink]="['/mdBooks', mdBook._id, 'mdNotes', mdNote._id]" routerLinkActive="active">{{mdNote.title}}</a>
-          <form *ngIf="currentTitle === mdNote.title && changeTitle" (ngSubmit)="setNewTitle(form, mdNote._id)" #form="ngForm" class="change-mdNote-title">
+          <form *ngIf="currentTitle === mdNote.title && changeTitle" (ngSubmit)="setNewTitle(form, mdNote._id, mdBook._id)" #form="ngForm" class="change-mdNote-title">
               <input placeholder="Title of your note" type="text" name="title" [(ngModel)]="newTitle.title"/>
           </form>
         </li>
