@@ -72,4 +72,17 @@ export class AuthService {
   getUser(): any {
     return this.user;
   }
+
+  updateData(data){
+    const options = {
+      withCredentials: true
+    };
+    
+    return this.httpClient.put(`${this.API_URL}/edit`, data, options).toPromise()
+    .then(()=>{})
+    .catch(error => { console.log(error)})
+  }
+
+
+
 }
