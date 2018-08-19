@@ -50,6 +50,7 @@ export class NavbarComponent implements OnInit {
 
     toggleSearchField(){
       document.getElementById('search-field').classList.toggle('active');
+      document.getElementById('toggle-search').classList.toggle('active');
     }
 
   }

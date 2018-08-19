@@ -22,7 +22,6 @@ export class CardListComponent implements OnInit {
   ngOnInit() {
     this.mdBooksService.currentMdBookChange$.subscribe((updatedMdBook) => {
         this.mdBook = updatedMdBook;
-        console.log(this.mdBook.mdNotes);
         if(this.mdBook.mdNotes.length){
           let checkNoteCount;
           this.mdBook.mdNotes.length > 1 ? checkNoteCount = 'notes' : checkNoteCount = 'note';

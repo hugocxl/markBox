@@ -1,11 +1,11 @@
 #search-field{
   position: absolute;
   left: 50px;
-  top: 180px;
+  top: 183px;
   transform: translateX(-100%);
   transition: all 0.5s linear; 
 
-  height: 60px;
+  height: 61px;
   width: 190px;
 
   background-color: grey;
@@ -18,10 +18,11 @@
   height: 25px;
   border-radius: 7px;
   border: none;
+  padding-left: 3px;
 }
-
-
-
+#search-input:active, #search-input:focus{
+  outline: none;
+}
 #search-field.active{
   transform: translateX(0%);  
 }
