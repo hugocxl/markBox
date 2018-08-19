@@ -1,31 +1,24 @@
-<div class="main">
-  <div class="flex-row jc-center full-page-wrapper">
-    <div class="page-wrapper">
-      <h2>Profile</h2>
 
-      <p>Current email: {{user.email}}</p>
-      <form method="post" action="/profile/edit" role="register">
-        <div class="form-group">
-      
-          <div class="email-edit">
-            <input type="text" name="email1" placeholder="New email">
-            <input type="text" name="email2" placeholder="Repeat new email">
-          </div>
-          <div class="password-edit">
-            <input type="password" name="password1" placeholder="New password">
-            <input type="password" name="password2" placeholder="Repeat new password">
-          </div>
-      
-        </div>
-    
-        <div class="form-group">
-          <h2>Everything ready?</h2>
-          <button type="submit" name="go">Update info</button>
-        </div>
-    
-      </form>
-    </div>
-     
-  </div>
- 
+<h2>Profile</h2>
+
+<h3>You can update your user info here:</h3>
+
+<p>Current email: {{user.email}}</p>
+
+<div class="form-group">
+  <input type="email" name="First email" [(ngModel)]="emailFirst" placeholder="New email..." required>
+  <input type="email" name="Second email" [(ngModel)]="emailSecond" placeholder="Repeat new email..." required>
+  <button (click)="updateEmail()" name="Go">Update email</button>
 </div>
+
+
+
+<div class="form-group">
+    <input type="password" name="First password" [(ngModel)]="passwordFirst" placeholder="New password..." required>
+    <input type="password" name="Second password" [(ngModel)]="passwordSecond" placeholder="Repeat new password..." required>
+    <button (click)="updateInfo()" name="Go">Update password</button>
+</div>
+    
+       
+    
+  
