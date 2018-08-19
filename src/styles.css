@@ -192,6 +192,26 @@ form .field.has-error input {
   margin-top: 15px;
 }
 
+
+.loading {
+  opacity: 0;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background: white;
+  padding-top: 0;
+  text-align: center;
+  z-index: 1;
+  transition: opacity 3s ease-out;
+}
+
+app-root:empty + .loading {
+opacity: 1;
+z-index: 100;
+}
+
 @media (min-width:768px) {
   
 }
+
+

@@ -1,7 +1,7 @@
 <section class="mdNote" id="md-note-view">
     
     
-    <div class="edit-mdnote" *ngIf="editMode">
+    <div class="edit-mdnote" *ngIf="settings.editView">
         <header>
             <h4>#{{mdNote.title}}</h4>
             <p>{{mdNote.createdAt | date: M/d/yy }}</p>
@@ -10,9 +10,10 @@
         <textarea id="md-note-editor" (keypress)="autoSave()" [(ngModel)]="markdown"></textarea>
     </div>
     
-    <div *ngIf="previewActive" class="render-mdnote">
+    <div *ngIf="settings.htmlView" class="render-mdnote">
     <markdown [data]="markdown"></markdown>
   </div>
+
   <div id="box-buttons">
         <button title="Edit" *ngIf="!editMode" (click)="editModeIO()">
             <img class="icon" src="../../../assets/edit-icon.png">
