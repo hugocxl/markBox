@@ -201,11 +201,8 @@ form .field.has-error input {
   background: url('./assets/images/markBox.png') fixed no-repeat, white;
   padding-top: 0;
   text-align: center;
-  z-index: 1;
+  z-index: -1;
   transition: opacity 3s ease;
-
-
-  
   background-size: cover;
 }
 
