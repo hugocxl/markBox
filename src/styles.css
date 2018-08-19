@@ -47,8 +47,8 @@ body.active{
   width: calc(100% - 50px);
 }
 #app-document.active{
-  transform: translateX(180px);
-  width: calc(100% - 235px);
+  transform: translateX(190px);
+  width: calc(100% - 245px);
 }
 #app-document.active #md-note-view{
   margin-left: 6px;
@@ -101,13 +101,14 @@ a{
 }
 .grid-row{
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   grid-gap: 2em;
   padding: 2em;
   background: #F1F1F1;
 }
 #app-document.active .grid-row{
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  transition: all 1s;
 }
 /* -- forms -- */
 
