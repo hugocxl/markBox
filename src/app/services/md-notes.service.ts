@@ -71,7 +71,12 @@ export class MdNotesService {
     };
     return this.httpClient.put(`${this.mdNoteURL}/${id}`, data, options).toPromise();
   }
-
+  editNewTitle(id, data){
+    const options = {
+      withCredentials: true
+    };
+    return this.httpClient.put(`${this.mdNoteURL}/${id}/title`, data, options).toPromise();
+  }
   pin(id, status){
     const options = {
       withCredentials: true
