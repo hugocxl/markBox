@@ -25,7 +25,7 @@ export class ProfilePageComponent implements OnInit {
   }
 
   saveFile(){
-    this.filesaverService.onTestSaveFile();
+    this.filesaverService.onTestSaveFile()
   }
 
   updateInfo(){
