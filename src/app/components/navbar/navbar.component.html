@@ -1,6 +1,6 @@
  <ul class="navbar">
 
-  <div>
+  <div>     
     <li class="navbar-item">
       <a [routerLink]="['/home']" routerLinkActive="active">
         <img class="icon" src="../../../assets/home-icon.png">
@@ -18,23 +18,30 @@
         <img class="icon" src="../../../assets/user-icon.png">
       </a> 
     </li>
-    
-    <li class="navbar-item">
-        <a [routerLink]="['/settings']" routerLinkActive="active">
-          <img class="icon" src="../../../assets/settings-icon.png">
-        </a>
-      </li>
 
     <li class="navbar-item">
+      <a (click)=toggleSearchField() routerLinkActive="active">
+        <img class="icon" src="../../../assets/search-icon.png">
+      </a>
+    </li>
+    
+    <li class="navbar-item">
+      <a [routerLink]="['/settings']" routerLinkActive="active">
+        <img class="icon" src="../../../assets/settings-icon.png">
+      </a>
+    </li>
+    
+    
+    
+  </div>
+  
+  <div>
+    <li class="navbar-item">
       <a [routerLink]="['/help']" routerLinkActive="active">
-        <img class="icon" src="../../../assets/info-icon.png">
+        <img class="icon" src="../../../assets/help-icon.png">
       </a>
     </li>
 
-
-  </div>
-
-  <div>
     <li class="navbar-item" (click)="logout()" id="last-nav-item">
       <a>
         <img class="icon" src="../../../assets/logout-icon.png">

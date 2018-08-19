@@ -32,15 +32,13 @@ import { MdNoteComponent } from './components/md-note/md-note.component';
 import { MdBookNavComponent } from './components/md-book-nav/md-book-nav.component';
 import { CardListComponent } from './components/card-list/card-list.component';
 import { CardComponent } from './components/card/card.component';
+import { SearchPageComponent } from './pages/search-page/search-page.component';
+import { SettingsPageComponent } from './pages/settings-page/settings-page.component';
+import { SearchComponent } from './components/search/search.component';
 
 const routes: Routes = [
   { path: '',  component: LandingPageComponent, canActivate: [ RequireAnonGuard ] },
   { path: 'home',  component: HomePageComponent, canActivate: [ RequireUserGuard ] },
-  // { path: 'mdBooks/:id', component: CardListComponent, canActivate: [ RequireUserGuard ],
-  //   children: [
-  //     { path: 'mdNotes/:id', component: MdNoteComponent }
-  //   ]
-  // },
   { path: 'mdBooks',  
   component: MdBooksPageComponent, 
   canActivate: [ RequireUserGuard ],
@@ -55,6 +53,8 @@ const routes: Routes = [
       }
     ]
   },
+  { path: 'search',  component: SearchPageComponent, canActivate: [ RequireUserGuard ] },
+  { path: 'settings',  component: SettingsPageComponent, canActivate: [ RequireUserGuard ] },
   { path: 'profile',  component: ProfilePageComponent , canActivate: [ RequireUserGuard ] },
   { path: 'help',  component: HelpPageComponent , canActivate: [ RequireUserGuard ] },
   { path: '**', redirectTo: '' },
@@ -75,6 +75,9 @@ const routes: Routes = [
     MdBookNavComponent,
     CardListComponent,
     CardComponent,
+    SearchPageComponent,
+    SettingsPageComponent,
+    SearchComponent,
   ],
   imports: [
     BrowserModule,
