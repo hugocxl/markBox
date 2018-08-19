@@ -12,8 +12,8 @@ export class ProfilePageComponent implements OnInit {
   emailSecond = "";
   passwordFirst = "";
   passwordSecond = "";
-
   user:any;
+  
   constructor(
     private authService: AuthService
    ) { }
@@ -23,18 +23,19 @@ export class ProfilePageComponent implements OnInit {
   }
 
   updateInfo(){
-    if(this.emailFirst === this.emailSecond){
+    if(this.emailFirst === this.emailSecond && this.emailFirst){
       const data = { 
         email: this.emailFirst 
       };
       return this.authService.updateData(data)
     }
-    if(this.passwordFirst === this.passwordSecond){
+    if(this.passwordFirst === this.passwordSecond && this.passwordFirst){
       const data = { 
         password: this.passwordFirst 
       };
       return this.authService.updateData(data)
     }
+    this.user = this.authService.getUser();
   }
 
 }
