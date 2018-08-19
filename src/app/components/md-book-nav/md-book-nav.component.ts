@@ -51,7 +51,6 @@ export class MdBookNavComponent implements OnInit {
   ) { }
   
   
-  
   ngOnInit() {
     this.mdBooksService.mdBooksListChange$.subscribe((updatedList) => {
         this.mdBooks = updatedList;
