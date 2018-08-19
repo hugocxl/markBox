@@ -65,9 +65,7 @@ export class MdBookNavComponent implements OnInit {
   }
   
   toggleClass(event: any, id) {
-    const hasClass = event.target.classList.contains('open');
-    console.log(hasClass);
-    
+    const hasClass = event.target.classList.contains('open');    
     if(hasClass) {
       this.renderer.removeClass(event.target, 'open');
       this.changeTitle = false;

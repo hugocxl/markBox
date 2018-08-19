@@ -16,20 +16,12 @@
       </div>
       <div class="pinned-notes">
           <h4>Pinned notes</h4>
-        <div class="pinned-notes-grid">
-            <div class="md-pinned-card">
-                <h2 class="h5">titel</h2>
-                <p class="edit-date">date</p>
+          <div class="pinned-notes-grid">
+              <div class="md-pinned-card" *ngFor="let pinnedNote of pinnedNotes">
+                <h5>{{pinnedNote.title}}</h5>
+                <p>Last edited:<br>{{pinnedNote.updatedAt|date : 'short'}}</p>
               </div>
-              <div class="md-pinned-card">
-                  <h2 class="h5">titel</h2>
-                  <p class="edit-date">date</p>
-                </div>
-                <div class="md-pinned-card">
-                    <h2 class="h5">titel</h2>
-                    <p class="edit-date">date</p>
-                  </div>
-        </div>
+          </div>
       </div>
     </div>
   </div>

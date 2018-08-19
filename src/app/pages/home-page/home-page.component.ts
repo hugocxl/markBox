@@ -12,6 +12,7 @@ import { MdNotesService } from '../../services/md-notes.service';
 export class HomePageComponent implements OnInit {
   user: any;
   latestNotes:any;
+  pinnedNotes:any;
 
   constructor(
     private authService: AuthService,
@@ -24,6 +25,10 @@ export class HomePageComponent implements OnInit {
     this.mdNotesService.getLatest()
     .then(latestNotes => {
       this.latestNotes = latestNotes;
+    });
+    this.mdNotesService.getPinned()
+    .then(pinnedNotes => {
+      this.pinnedNotes = pinnedNotes;
     })
   }
 

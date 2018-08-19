@@ -17,22 +17,22 @@
 }
 .logo{
   width: 20%;
-  margin-bottom: 50px;
+  margin-bottom: 1em;
 }
 .logo img{
   max-width: 100%;
 }
 h4{
-  border-bottom: 1px solid;
+  border-bottom: 1px solid #cecece;
 }
 
-.md-note-card{
+.md-note-card, .md-pinned-card{
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
   padding: 1.5em;
   border: 1px solid #cecece;
   background: #fff;
 }
-.md-note-card:hover{
+.md-note-card:hover, .md-pinned-card:hover{
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
   cursor: pointer;
 }
