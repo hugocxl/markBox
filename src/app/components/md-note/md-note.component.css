@@ -7,10 +7,12 @@
 .render-mdnote{
   padding: 3em;
   width: 80%;
-  background: #F1F1F1;
+  background: #fff;
   height: 100vh;
   max-height: 100vh;
   overflow: scroll;
+  border-left: 1px solid #F1F1F1;
+  border-right: 1px solid #F1F1F1;
 }
 
 .edit-mdnote{
@@ -24,7 +26,7 @@
   width: 50%;
 }
 #md-note-view.active-preview .edit-mdnote{
-  background: #fff;
+  background: #F1F1F1;
 }
 #md-note-view.active-preview{
   width: calc(100%);

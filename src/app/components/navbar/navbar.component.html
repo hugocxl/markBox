@@ -3,31 +3,31 @@
   <div>     
     <li class="navbar-item">
       <a [routerLink]="['/home']" routerLinkActive="active">
-        <img class="icon" src="../../../assets/home-icon.png">
+        <img class="icon" src="../../../assets/images/home-icon.png">
       </a>
     </li>
   
     <li class="navbar-item">
         <a routerLinkActive="active" (click)="toggleBooksNav()">
-          <img class="icon" src="../../../assets/notebook-icon.png">
+          <img class="icon" src="../../../assets/images/notebook-icon.png">
       </a>
     </li>
   
     <li class="navbar-item">
       <a [routerLink]="['/profile']" routerLinkActive="active">
-        <img class="icon" src="../../../assets/user-icon.png">
+        <img class="icon" src="../../../assets/images/user-icon.png">
       </a> 
     </li>
 
     <li class="navbar-item">
       <a (click)=toggleSearchField() id="toggle-search">
-        <img class="icon" src="../../../assets/search-icon.png">
+        <img class="icon" src="../../../assets/images/search-icon.png">
       </a>
     </li>
     
     <li class="navbar-item">
       <a [routerLink]="['/settings']" routerLinkActive="active">
-        <img class="icon" src="../../../assets/settings-icon.png">
+        <img class="icon" src="../../../assets/images/settings-icon.png">
       </a>
     </li>
     
@@ -38,13 +38,13 @@
   <div>
     <li class="navbar-item">
       <a [routerLink]="['/help']" routerLinkActive="active">
-        <img class="icon" src="../../../assets/help-icon.png">
+        <img class="icon" src="../../../assets/images/help-icon.png">
       </a>
     </li>
 
     <li class="navbar-item" (click)="logout()" id="last-nav-item">
       <a>
-        <img class="icon" src="../../../assets/logout-icon.png">
+        <img class="icon" src="../../../assets/images/logout-icon.png">
       </a>
     </li>
   </div>

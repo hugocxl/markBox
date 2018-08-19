@@ -15,27 +15,27 @@
   </div>
   <div id="box-buttons">
         <button title="Edit" *ngIf="!editMode" (click)="editModeIO()">
-            <img class="icon" src="../../../assets/edit-icon.png">
+            <img class="icon" src="../../../assets/images/edit-icon.png">
         </button>
       
         <button title="Preview" *ngIf="editMode" (click)="activatePreview()" [ngClass]="{'active': previewActive }">
-            <img class="icon" src="../../../assets/preview-icon.png">
+            <img class="icon" src="../../../assets/images/preview-icon.png">
         </button>
 
         <button title="Pin this note" (click)="togglePinned()" [ngClass] = "{'active-pinned': mdNote.pinned }">
-                <img class="icon" src="../../../assets/fav-icon.png">
+                <img class="icon" src="../../../assets/images/fav-icon.png">
         </button>
       
         <button title="Save" *ngIf="editMode" (click)="saveAndClose()" [ngClass]="{'saving': saving }" id="saveButton">
-            <img class="icon" src="../../../assets/save-icon.png">
+            <img class="icon" src="../../../assets/images/save-icon.png">
         </button>
       
         <button title="Activate autosave" *ngIf="editMode" [ngClass]="{'active': autoSaveMode }" (click)="activateAutoSave()">
-            <img class="icon" src="../../../assets/auto-save-icon.png">
+            <img class="icon" src="../../../assets/images/auto-save-icon.png">
         </button>
     
         <button title="Close edit mode" *ngIf="editMode" (click)="closeEdit()">
-            <img class="icon" src="../../../assets/close-icon.png">
+            <img class="icon" src="../../../assets/images/close-icon.png">
         </button>
     
       </div>
