@@ -4,7 +4,7 @@ import { MdNotesService } from '../../services/md-notes.service';
 @Component({
   selector: 'app-pinned-page',
   templateUrl: './pinned-page.component.html',
-  styleUrls: ['./pinned-page.component.scss']
+  styleUrls: ['./pinned-page.component.css']
 })
 export class PinnedPageComponent implements OnInit {
 

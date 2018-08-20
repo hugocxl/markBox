@@ -1,0 +1,11 @@
+.grid-column{
+  width: 40%;
+  position: relative;
+  overflow-y: scroll;
+}
+
+
+.preview-pinned{
+  width: 60%;
+  position: fixed;
+}
