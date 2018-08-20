@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
-import { Observable, Subject } from 'rxjs';
 
 @Component({
   selector: 'app-profile-page',
@@ -9,42 +8,43 @@ import { Observable, Subject } from 'rxjs';
 })
 export class ProfilePageComponent implements OnInit {
 
-  emailFirst = "";
-  emailSecond = "";
-  passwordFirst = "";
-  passwordSecond = "";
+  private emailFirst: any;
+  private emailSecond: any;
+  private passwordFirst: any;
+  private passwordSecond: any;
 
-
-  public user: any;
-  private userChange: Subject<any> = new Subject(); 
-  userChange$: Observable<any> = this.userChange.asObservable();
-
+  private user = {
+    email: '',
+    password: '',
+    settings: ''
+  };
   
   constructor(
     private authService: AuthService,
    ) { }
 
+
   ngOnInit() {
-    this.user = this.authService.getUser();
-    console.log(this.user)
+    this.authService.userChange$.subscribe((user) => {
+      this.user = user;
+    });
+    const currentUser = this.authService.getUser();
+    this.authService.updateData(currentUser);
   }
-  
 
   updateInfo(){
-    console.log("das", this.emailFirst, this.emailSecond)
     if(this.emailFirst === this.emailSecond){
       const data = { 
         email: this.emailFirst 
       };
-      return this.authService.updateData(data)
-
+      return this.authService.updateData(data);
+    }
     if(this.passwordFirst === this.passwordSecond){
       const data = {
         password: this.passwordFirst 
       };
-      return this.authService.updateData(data)
+      return this.authService.updateData(data);
     }
-
   };
 
 }

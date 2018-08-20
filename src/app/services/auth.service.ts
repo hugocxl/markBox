@@ -24,7 +24,6 @@ export class AuthService {
   private setUser(user?: any) {
     this.user = user;
     this.userChange.next(user);
-
     return user;
   }
 
@@ -82,7 +81,9 @@ export class AuthService {
     .then((user)=>{
       this.setUser(user);
     })
-    .catch(error => { console.log(error)})
+    .catch(error => { 
+      console.log(error)
+    });
   }
 
 }
