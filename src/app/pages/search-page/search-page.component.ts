@@ -8,7 +8,7 @@ import { MdNotesService } from '../../services/md-notes.service';
 })
 export class SearchPageComponent implements OnInit {
 
-  mdNotesSearch: any;
+  searchResult: any;
 
   constructor(
     private mdNotesService: MdNotesService
@@ -16,7 +16,7 @@ export class SearchPageComponent implements OnInit {
 
   ngOnInit() {
       this.mdNotesService.searchChange$.subscribe(updatedSearch => {
-        this.mdNotesSearch = updatedSearch
+        this.searchResult = updatedSearch;
       })
   }
 

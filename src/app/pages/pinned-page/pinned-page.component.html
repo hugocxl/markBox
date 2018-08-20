@@ -1,10 +1,11 @@
+<router-outlet></router-outlet>
 
 <div id="pinned-notes-page">
   <div class="flex-row">
     <div class="flex-column pinned-list-column">
         <div class="card-list-title">
             <div class="book-title">
-              <h4>Your Pinned Notes:</h4>
+              <h2>Your Pinned Notes:</h2>
             </div>
             <!-- <p class="note-number">{{noteCount}}</p> -->
           </div> 
@@ -17,9 +18,6 @@
               </div>
           </div>
     </div>
-    <div id="pinned-preview">
-      <router-outlet></router-outlet>
-    </div>
+    <app-pinned-preview id="pinned-preview"></app-pinned-preview>
   </div>
 
-  </div>

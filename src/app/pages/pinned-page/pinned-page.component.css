@@ -1,10 +1,14 @@
-
+h2{
+  font-size: 1em;
+  padding: 1em;
+}
 .preview-pinned{
   width: 60%;
   position: fixed;
 }
 .pinned-list-column{
   width: 30%;
+  border-right: 1px solid #cecece;
 }
 #pinned-preview{
   width: 70%;
@@ -32,15 +36,18 @@
 .pinned-card p{
   font-size: .8em;
 }
-.ng-star-inserted:nth-child(even){
+.ng-star-inserted:nth-child(odd){
   background: #fff;
   border-top: 1px solid #cecece;
   border-bottom: 1px solid #cecece;
 }
 .ng-star-inserted:hover, .ng-star-inserted.active{
-  background:#ffc;
+  background:rgb(250,221,229);
   cursor: pointer;
 }
 .ng-star-inserted:active, .ng-star-inserted:focus{
   outline: none;
+}
+.ng-star-inserted:last-child{
+  border-bottom: 1px solid #cecece;
 }

@@ -9,7 +9,7 @@
             <div class="md-note-card" *ngFor="let latestNote of latestNotes" [routerLink]="['/mdBooks', latestNote.book_id, 'mdNotes', latestNote._id]">
                 <h5>{{latestNote.title}}</h5>
                 <p>Last edited:<br>{{latestNote.updatedAt|date : 'short'}}</p>
-            </div>
+            </div> 
         </div>
       </div>
       <div class="pinned-notes">

@@ -64,8 +64,6 @@ export class MdBooksService {
     });
   }
 
-
-
   //GET ALL BOOKS - no data needed;
   getAll(){
     const options = { withCredentials: true };
@@ -77,7 +75,6 @@ export class MdBooksService {
       console.error(error);
     })
   }
-    
 
   //GET ONE BOOK - ID: Note - REQ.PARAMS;
   getOne(id){
@@ -125,6 +122,14 @@ export class MdBooksService {
     .catch(error => {
       console.error(error);
     })
+  }
+
+  // GET PINNED NOTE - WITH BOOK ID
+  getPinned(){
+    const options = {
+      withCredentials: true
+    };
+    return this.httpClient.get(`${this.mdBooksURL}/pinned`, options).toPromise();
   }
   
 }

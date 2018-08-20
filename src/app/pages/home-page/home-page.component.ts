@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { MdNotesService } from '../../services/md-notes.service';
+import { MdBooksService } from '../../services/md-books.service'
 
 
 @Component({
@@ -11,24 +12,45 @@ import { MdNotesService } from '../../services/md-notes.service';
 })
 export class HomePageComponent implements OnInit {
   user: any;
-  latestNotes:any;
-  pinnedNotes:any;
+  notes: any;
+  latestNotesInBook:any;
+  latestNotes = [];
+  pinnedNotesInBook:any;
+  pinnedNotes = [];
+
 
   constructor(
     private authService: AuthService,
     private mdNotesService: MdNotesService,
+    private mdBooksService: MdBooksService,
     private route: ActivatedRoute,
   ) { }
 
   ngOnInit() {
     this.user = this.authService.getUser()
+
+
     this.mdNotesService.getLatest()
     .then(latestNotes => {
-      this.latestNotes = latestNotes;
+      this.latestNotesInBook = latestNotes;
+      this.latestNotesInBook.forEach(book => {
+        book.mdNotes.forEach(note => {
+          note.book_id = book._id;
+          this.latestNotes.push(note);
+        })
+      })
     });
-    this.mdNotesService.getPinned()
+
+
+    this.mdBooksService.getPinned()
     .then(pinnedNotes => {
-      this.pinnedNotes = pinnedNotes;
+      this.pinnedNotesInBook = pinnedNotes;
+      this.pinnedNotesInBook.forEach(book => {
+        book.mdNotes.forEach(note => {
+          note.book_id = book._id;
+          this.pinnedNotes.push(note);
+        })
+      });
     })
   }
 
