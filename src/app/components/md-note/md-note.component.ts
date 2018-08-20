@@ -25,14 +25,16 @@ export class MdNoteComponent implements OnInit {
   
   newTitle:any;
   
-  settings: {
-    editView: '',
-    htmlView: ''
+  settings = {
+    editView: false,
+    htmlView: false,
+    autoSave: false,
+    preview: false
   };
 
-  editMode = false;
-  autoSaveMode = false;
-  previewActive = true;
+  // editMode = false;
+  // autoSaveMode = false;
+  // previewActive = true;
   
   // id: number;
 
@@ -45,28 +47,18 @@ export class MdNoteComponent implements OnInit {
     private filesaverService: FilesaverService
   ) { }
 
-  setActiveMessage(message){
-    const activeMessage = this.renderer.createElement('span');
-    activeMessage.classList.add('active-message');
-    const text = this.renderer.createText(message);
-    this.renderer.appendChild(activeMessage,text);
-    this.renderer.appendChild(this.el.nativeElement, activeMessage);
-    setTimeout( () => {
-      this.renderer.removeChild(this.el.nativeElement, activeMessage);
-    }, 1000);
-  }
+
+
   //INIT: BIND SELECTED NOTE TO COMPONENT PROPERTIES THROUGH PARAMS SUB.
   ngOnInit(){
     this.route.params.subscribe((val) => {
+      
+      this.settings = { ...this.appSettingsService.settings};  
+      document.getElementById('md-note-view').classList.remove('active-preview');
+
       this.getNote(val);
     });
-    this.appSettingsService.settingsChange$.subscribe((updatedSettings) => {
-      this.settings = updatedSettings;
-
-    const settings = this.appSettingsService.settings;
-    this.appSettingsService.updateStatus(settings)  
-  });
-}
+  }
 
   //GET NOTE FUNCTION:
   getNote(val) {
@@ -80,34 +72,37 @@ export class MdNoteComponent implements OnInit {
         console.error(err);
       });
   }
+
   //EDIT MODE CONTROL:
   editModeIO(){
     this.setActiveMessage('Edit mode enabled');
-    this.editMode = !this.editMode;
-    this.previewActive = !this.previewActive;
+    this.settings.editView = !this.settings.editView;
+    this.settings.htmlView = !this.settings.htmlView;
   };
 
 
   activatePreview(){
-    this.previewActive = !this.previewActive;
-    if(this.previewActive){
-      this.setActiveMessage('Preview mode enabled');
+    this.settings.preview = !this.settings.preview;
+    if(this.settings.preview){
+      this.setActiveMessage('Preview enabled');
     } else {
-      this.setActiveMessage('Edit mode enabled');
+      this.setActiveMessage('Preview disabled');
     }
     this.toggleEditClass();
   };
   // AUTOSAVE MODE MANAGEMENT:
   activateAutoSave(){
-    this.autoSaveMode = !this.autoSaveMode;
-    if(this.autoSaveMode){
+    this.settings.autoSave = !this.settings.autoSave;
+    if(this.settings.autoSave){
       this.setActiveMessage('Autosave mode enabled');
     } else {
       this.setActiveMessage('Autosave mode disabled');
     }
   }
   autoSave(){
-    if(this.autoSaveMode) { this.saveFunction() }
+    if(this.settings.autoSave) { 
+      this.saveFunction() 
+    }
   }
   //SAVE EDITED NOTE: 
   saveFunction(){    
@@ -118,19 +113,16 @@ export class MdNoteComponent implements OnInit {
     };
     this.mdNotesService.edit(this.mdNote._id, data)
     .then(data => {
-      this.setActiveMessage('MdNote saved');
+      this.setActiveMessage('MdNote saved!');
     })
     .catch(error => {
       console.log('Fail Saving')
     });
   };
-  saveAndClose(){
-    this.saveFunction();
-  }
   //CLOSE NOTE WITHOUT SAVING:
   closeEdit(){
-    this.editMode = false;
-    this.previewActive = true;
+    this.settings.editView = !this.settings.editView
+    this.settings.htmlView = !this.settings.htmlView 
     document.getElementById('md-note-view').classList.remove('active-preview');
   }
 
@@ -154,8 +146,21 @@ export class MdNoteComponent implements OnInit {
     })
   }
 
-  saveFile(){
+  exportFile(){
     this.filesaverService.onTestSaveFile(this.markdown, this.mdNote.title);
+  }
+
+
+
+  setActiveMessage(message){
+    const activeMessage = this.renderer.createElement('span');
+    activeMessage.classList.add('active-message');
+    const text = this.renderer.createText(message);
+    this.renderer.appendChild(activeMessage,text);
+    this.renderer.appendChild(this.el.nativeElement, activeMessage);
+    setTimeout( () => {
+      this.renderer.removeChild(this.el.nativeElement, activeMessage);
+    }, 1000);
   }
 
 }

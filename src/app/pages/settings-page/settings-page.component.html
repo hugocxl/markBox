@@ -1,3 +1,16 @@
-<p>
-  settings-page works!
-</p>
+{{user|json}}
+
+<h1>Settings</h1>
+<p>Here you can update your user settings.</p>
+
+
+<div>
+  <h3>Autosave</h3>
+  {{user.settings.autoSave}}
+  <label class="switch switch_type1" role="switch">
+    <input type="checkbox" class="switch__toggle" checked>
+    <span class="switch__label"></span>
+  </label>
+</div>
+
+<button title="Save" (click)="saveChanges()">Save</button>

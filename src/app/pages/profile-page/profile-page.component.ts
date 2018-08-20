@@ -8,17 +8,26 @@ import { AuthService } from '../../services/auth.service';
 })
 export class ProfilePageComponent implements OnInit {
 
-  emailFirst = "";
-  emailSecond = "";
-  passwordFirst = "";
-  passwordSecond = "";
-  user:any;
+  private emailFirst: any;
+  private emailSecond: any;
+  private passwordFirst: any;
+  private passwordSecond: any;
+
+  private user = {
+    email: '',
+    password: '',
+    settings: ''
+  };
   
   constructor(
     private authService: AuthService,
    ) { }
 
+
   ngOnInit() {
+    this.authService.userChange$.subscribe((user) => {
+      this.user = user;
+    });
     this.user = this.authService.getUser();
   }
 
@@ -27,15 +36,14 @@ export class ProfilePageComponent implements OnInit {
       const data = { 
         email: this.emailFirst 
       };
-      return this.authService.updateData(data)
+      return this.authService.updateData(data);
     }
     if(this.passwordFirst === this.passwordSecond && this.passwordFirst){
-      const data = { 
+      const data = {
         password: this.passwordFirst 
       };
-      return this.authService.updateData(data)
+      return this.authService.updateData(data);
     }
-    this.user = this.authService.getUser();
-  }
+  };
 
 }

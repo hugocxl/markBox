@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpResponse } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Subject, Observable } from 'rxjs';
 import { Router } from '@angular/router';
 
@@ -9,7 +9,7 @@ import { environment } from '../../environments/environment';
 @Injectable()
 export class AuthService {
 
-  private user: any;
+  public user: any;
   private userChange: Subject<any> = new Subject();
 
   private API_URL = environment.API_URL;
@@ -24,7 +24,6 @@ export class AuthService {
   private setUser(user?: any) {
     this.user = user;
     this.userChange.next(user);
-
     return user;
   }
 
@@ -79,10 +78,12 @@ export class AuthService {
     };
     
     return this.httpClient.put(`${this.API_URL}/edit`, data, options).toPromise()
-    .then(()=>{})
-    .catch(error => { console.log(error)})
+    .then((user)=>{
+      this.setUser(user);
+    })
+    .catch(error => { 
+      console.log(error)
+    });
   }
-
-
 
 }

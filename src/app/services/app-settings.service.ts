@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Observable, Subject } from 'rxjs';
+import { AuthService } from './auth.service';
+import { HttpClient } from '@angular/common/http';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -7,23 +9,27 @@ import { Observable, Subject } from 'rxjs';
 export class AppSettingsService {
 
   public settings = {
-    editView: false,
-    htmlView: true
+    editView: true,
+    htmlView: false,
+    autoSave: true,
+    preview: false
   };
 
-  private settingsChange: Subject<any> = new Subject(); 
-  settingsChange$: Observable<any> = this.settingsChange.asObservable();
+  private API_URL = environment.API_URL;
   
-  constructor() { }
+  
+  constructor(
+    private httpClient: HttpClient, 
+    private authService: AuthService
+  ) { }
 
-  private setCurrentEditMode(updatedSettings: any) {
-    this.settings = updatedSettings;
-    this.settingsChange.next(updatedSettings);
-    return updatedSettings;
-  };
+  getSettings() {
+    this.settings = this.authService.user.settings
+    return this.settings;
+  }
 
-  updateStatus(status){
-    this.setCurrentEditMode(status);
-  };
-
+  updateSettings(settings){
+    this.authService.updateData(settings);
+    this.getSettings();
+  }
 }
