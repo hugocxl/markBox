@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
+import { Observable, Subject } from 'rxjs';
 
 @Component({
   selector: 'app-profile-page',
@@ -12,7 +13,12 @@ export class ProfilePageComponent implements OnInit {
   emailSecond = "";
   passwordFirst = "";
   passwordSecond = "";
-  user:any;
+
+
+  public user: any;
+  private userChange: Subject<any> = new Subject(); 
+  userChange$: Observable<any> = this.userChange.asObservable();
+
   
   constructor(
     private authService: AuthService,
@@ -20,22 +26,25 @@ export class ProfilePageComponent implements OnInit {
 
   ngOnInit() {
     this.user = this.authService.getUser();
+    console.log(this.user)
   }
+  
 
   updateInfo(){
-    if(this.emailFirst === this.emailSecond && this.emailFirst){
+    console.log("das", this.emailFirst, this.emailSecond)
+    if(this.emailFirst === this.emailSecond){
       const data = { 
         email: this.emailFirst 
       };
       return this.authService.updateData(data)
-    }
-    if(this.passwordFirst === this.passwordSecond && this.passwordFirst){
-      const data = { 
+
+    if(this.passwordFirst === this.passwordSecond){
+      const data = {
         password: this.passwordFirst 
       };
       return this.authService.updateData(data)
     }
-    this.user = this.authService.getUser();
-  }
+
+  };
 
 }
