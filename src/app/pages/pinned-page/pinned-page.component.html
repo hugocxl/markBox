@@ -1,18 +1,25 @@
+
 <div id="pinned-notes-page">
-  <div class="grid-row">
-    <div class="card-list-title">
-      <div class="book-title">
-        <h1>Your Pinned Notes:</h1>
-      </div>
-      <p class="note-number"> You have: <b>{{pinnedNotes.length}} pins</b></p>
+  <div class="flex-row">
+    <div class="flex-column pinned-list-column">
+        <div class="card-list-title">
+            <div class="book-title">
+              <h4>Your Pinned Notes:</h4>
+            </div>
+            <!-- <p class="note-number">{{noteCount}}</p> -->
+          </div> 
+          <div class="pinned-list">
+              <div *ngFor="let note of pinnedNotes" [routerLink]="['/pinned', note._id]" [routerLinkActive]="['active']">
+                <div class="pinned-card">
+                  <h3 class="h5 note-title">{{note.title}}</h3>
+                  <p>{{note.updatedAt|date : 'short'}}</p>
+                </div>
+              </div>
+          </div>
+    </div>
+    <div id="pinned-preview">
+      <router-outlet></router-outlet>
     </div>
   </div>
-  <div class="grid-row">
-      <div *ngFor="let note of pinnedNotes">
-        <app-card [mdNote]="note"></app-card>
-      </div>
-  </div>
-
-  <div class="preview-pinned">
 
   </div>

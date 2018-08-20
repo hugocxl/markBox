@@ -1,16 +1,46 @@
-.grid-column{
-  width: 40%;
-  position: relative;
-  overflow-y: scroll;
-}
-
 
 .preview-pinned{
   width: 60%;
   position: fixed;
 }
+.pinned-list-column{
+  width: 30%;
+}
+#pinned-preview{
+  width: 70%;
+}
+#pinned-preview{
+  background: #fff;
+  height: 100vh;
+}
 
 #pinned-notes-page{
   min-height: 100vh;
   background: #F1F1F1;
+}
+.flex-column{
+  display: flex;
+  flex-direction: column;
+}
+.pinned-card{
+  padding: .5em 1em;
+}
+.pinned-card h3{
+  font-size: 1em;
+  text-transform: uppercase;
+}
+.pinned-card p{
+  font-size: .8em;
+}
+.ng-star-inserted:nth-child(even){
+  background: #fff;
+  border-top: 1px solid #cecece;
+  border-bottom: 1px solid #cecece;
+}
+.ng-star-inserted:hover, .ng-star-inserted.active{
+  background:#ffc;
+  cursor: pointer;
+}
+.ng-star-inserted:active, .ng-star-inserted:focus{
+  outline: none;
 }
