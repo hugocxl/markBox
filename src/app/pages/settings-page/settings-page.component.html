@@ -6,10 +6,11 @@
 
 <div>
   <h3>Autosave</h3>
+  {{user.settings.autoSave}}
   <label class="switch switch_type1" role="switch">
     <input type="checkbox" class="switch__toggle" checked>
     <span class="switch__label"></span>
   </label>
-
-
 </div>
+
+<button title="Save" (click)="saveChanges()">Save</button>

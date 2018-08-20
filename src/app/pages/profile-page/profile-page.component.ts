@@ -28,18 +28,17 @@ export class ProfilePageComponent implements OnInit {
     this.authService.userChange$.subscribe((user) => {
       this.user = user;
     });
-    const currentUser = this.authService.getUser();
-    this.authService.updateData(currentUser);
+    this.user = this.authService.getUser();
   }
 
   updateInfo(){
-    if(this.emailFirst === this.emailSecond){
+    if(this.emailFirst === this.emailSecond && this.emailFirst){
       const data = { 
         email: this.emailFirst 
       };
       return this.authService.updateData(data);
     }
-    if(this.passwordFirst === this.passwordSecond){
+    if(this.passwordFirst === this.passwordSecond && this.passwordFirst){
       const data = {
         password: this.passwordFirst 
       };
