@@ -42,6 +42,7 @@ import { FilesaverService } from './services/filesaver.service';
 import { InitAuthGuard } from './guards/init-auth.guard';
 import { RequireAnonGuard } from './guards/require-anon.guard';
 import { RequireUserGuard } from './guards/require-user.guard';
+import { CardPinnedComponent } from './components/card-pinned/card-pinned.component';
 
 
 const routes: Routes = [
@@ -88,6 +89,7 @@ const routes: Routes = [
     SettingsPageComponent,
     SearchComponent,
     PinnedPageComponent,
+    CardPinnedComponent,
     
   ],
   imports: [

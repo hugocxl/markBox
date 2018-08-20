@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
-import { FilesaverService } from '../../services/filesaver.service';
 
 @Component({
   selector: 'app-profile-page',
@@ -17,15 +16,10 @@ export class ProfilePageComponent implements OnInit {
   
   constructor(
     private authService: AuthService,
-    private filesaverService: FilesaverService
    ) { }
 
   ngOnInit() {
     this.user = this.authService.getUser();
-  }
-
-  saveFile(){
-    this.filesaverService.onTestSaveFile()
   }
 
   updateInfo(){

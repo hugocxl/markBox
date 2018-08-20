@@ -18,8 +18,7 @@
           <h4>Pinned notes</h4>
           <div class="pinned-notes-grid">
               <div class="md-pinned-card" *ngFor="let pinnedNote of pinnedNotes">
-                <h5>{{pinnedNote.title}}</h5>
-                <p>Last edited:<br>{{pinnedNote.updatedAt|date : 'short'}}</p>
+                <app-card-pinned [pinnedNote]="pinnedNote"></app-card-pinned>
               </div>
           </div>
       </div>

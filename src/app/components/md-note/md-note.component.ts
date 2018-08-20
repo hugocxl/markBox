@@ -2,7 +2,7 @@ import { Component, OnInit, ElementRef, Renderer2 } from '@angular/core';
 import { MdNotesService } from '../../services/md-notes.service';
 import { ActivatedRoute } from '@angular/router';
 import { AppSettingsService } from '../../services/app-settings.service'
-
+import { FilesaverService } from '../../services/filesaver.service';
 
 @Component({
   selector: 'app-md-note',
@@ -41,7 +41,8 @@ export class MdNoteComponent implements OnInit {
     private route: ActivatedRoute,
     private renderer: Renderer2,
     private el: ElementRef,
-    private appSettingsService: AppSettingsService
+    private appSettingsService: AppSettingsService,
+    private filesaverService: FilesaverService
   ) { }
 
   setActiveMessage(message){
@@ -66,7 +67,6 @@ export class MdNoteComponent implements OnInit {
     this.appSettingsService.updateStatus(settings)  
   });
 }
-
 
   //GET NOTE FUNCTION:
   getNote(val) {
@@ -152,6 +152,10 @@ export class MdNoteComponent implements OnInit {
     .catch(error =>{
       console.error(error)
     })
+  }
+
+  saveFile(){
+    this.filesaverService.onTestSaveFile(this.markdown, this.mdNote.title);
   }
 
 }
