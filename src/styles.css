@@ -203,14 +203,7 @@ form .field.has-error input {
   padding-top: 0;
   text-align: center;
   z-index: -1;
-<<<<<<< HEAD
-  transition: opacity 5s step-start;
-
-
-  
-=======
-  transition: opacity 3s ease;
->>>>>>> e0af8e428c3b4f3c09cb5221bff1f8c159f880cb
+  transition: opacity step-start;
   background-size: cover;
 }
 
