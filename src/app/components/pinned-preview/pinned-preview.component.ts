@@ -22,7 +22,6 @@ export class PinnedPreviewComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe((val) => {
-      console.log(val);
       if(val.id){
         this.getNote(val);
       }
@@ -32,7 +31,6 @@ export class PinnedPreviewComponent implements OnInit {
   getNote(val){
     this.mdNotesService.getOne(val.id)
     .then(note => {
-      console.log(note);
       this.mdNewnote = note
       this.mdNote = this.mdNewnote;
       this.markdown = this.mdNote.content;

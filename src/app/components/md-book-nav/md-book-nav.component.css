@@ -161,8 +161,12 @@ a.active{
   justify-content: center
 }
 
+.logo{
+ position: fixed;
+ bottom: 0;
+ width: 190px;
+ text-align: center;
+}
 .logo img{
-  margin-top: 545px;
-  width: 130px;
-  height: auto;
+  width: 80%;
 }
