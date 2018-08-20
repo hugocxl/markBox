@@ -32,8 +32,6 @@
   cursor: pointer;
 }
 
-
-
 .navbar-item a.active{
   width: 50px;  
   background:#2a3237; 

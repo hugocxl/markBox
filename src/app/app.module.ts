@@ -29,6 +29,7 @@ import { MdBookNavComponent } from './components/md-book-nav/md-book-nav.compone
 import { CardListComponent } from './components/card-list/card-list.component';
 import { CardComponent } from './components/card/card.component';
 import { SearchComponent } from './components/search/search.component';
+import { PinnedPreviewComponent } from './components/pinned-preview/pinned-preview.component';
 
 // Services
 
@@ -63,7 +64,16 @@ const routes: Routes = [
     ]
   },
   { path: 'search',  component: SearchPageComponent, canActivate: [ RequireUserGuard ] },
-  { path: 'pinned',  component: PinnedPageComponent , canActivate: [ RequireUserGuard ] },
+  { path: 'pinned',  
+  component: PinnedPageComponent, 
+  canActivate: [ RequireUserGuard ],
+  children: [
+      { 
+        path: ':id', 
+        component: PinnedPreviewComponent,
+      }
+    ]
+  },
   { path: 'settings',  component: SettingsPageComponent, canActivate: [ RequireUserGuard ] },
   { path: 'profile',  component: ProfilePageComponent , canActivate: [ RequireUserGuard ] },
   { path: 'help',  component: HelpPageComponent , canActivate: [ RequireUserGuard ] },
@@ -90,7 +100,7 @@ const routes: Routes = [
     SearchComponent,
     PinnedPageComponent,
     CardPinnedComponent,
-    
+    PinnedPreviewComponent,
   ],
   imports: [
     BrowserModule,

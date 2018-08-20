@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MdNotesService } from '../../services/md-notes.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-pinned-page',
@@ -10,9 +12,11 @@ export class PinnedPageComponent implements OnInit {
 
   pinnedNotes:any;
   noteCount:String;
+  hasParams = false;
 
   constructor(
     private mdNotesService: MdNotesService,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -28,6 +32,10 @@ export class PinnedPageComponent implements OnInit {
         this.noteCount = `You have no pinned notes`;
       }
     })
+  }
+  
+  handleClick() {
+    this.hasParams = true;
   }
 
 }
