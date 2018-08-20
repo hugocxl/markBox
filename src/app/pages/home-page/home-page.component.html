@@ -6,7 +6,7 @@
       <div class="latest-edited">
         <h4>Last edited</h4>
         <div class="latest-edited-grid">
-            <div class="md-note-card" *ngFor="let latestNote of latestNotes" [routerLink]="['mdNotes', latestNote._id]">
+            <div class="md-note-card" *ngFor="let latestNote of latestNotes" [routerLink]="['/mdBooks', latestNote.book_id, 'mdNotes', latestNote._id]">
                 <h5>{{latestNote.title}}</h5>
                 <p>Last edited:<br>{{latestNote.updatedAt|date : 'short'}}</p>
             </div>
@@ -15,7 +15,7 @@
       <div class="pinned-notes">
           <h4>Pinned notes</h4>
           <div class="pinned-notes-grid">
-              <div class="md-pinned-card" *ngFor="let pinnedNote of pinnedNotes">
+              <div class="md-pinned-card" *ngFor="let pinnedNote of pinnedNotes" [routerLink]="['/mdBooks', pinnedNote.book_id, 'mdNotes', pinnedNote._id]">
                 <app-card-pinned [pinnedNote]="pinnedNote"></app-card-pinned>
               </div>
           </div>
