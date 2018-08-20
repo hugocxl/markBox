@@ -8,9 +8,10 @@ export class FilesaverService {
 
   constructor() { }
 
-  onTestSaveFile() {
-    const blob = new Blob(["Hol\nSoy un puto amo\n\n## hola\n\n### hola\n\n### bajs"], {type: "text/plain;charset=utf-8"});
-    FileSaver.saveAs(blob, "hello world.md");
+  onTestSaveFile(content,title) {
+    const blob = new Blob([content], {type: "text/plain;charset=utf-8"});
+    const fileName = `${title}.md`;
+    FileSaver.saveAs(blob, fileName);
   }
 }
 

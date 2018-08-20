@@ -1,4 +1,13 @@
-<div class="grid-column">
+<div id="pinned-notes-page">
+  <div class="grid-row">
+    <div class="card-list-title">
+      <div class="book-title">
+        <h1>Your Pinned Notes:</h1>
+      </div>
+      <p class="note-number"> You have: <b>{{pinnedNotes.length}} pins</b></p>
+    </div>
+  </div>
+  <div class="grid-row">
       <div *ngFor="let note of pinnedNotes">
         <app-card [mdNote]="note"></app-card>
       </div>

@@ -9,3 +9,8 @@
   width: 60%;
   position: fixed;
 }
+
+#pinned-notes-page{
+  min-height: 100vh;
+  background: #F1F1F1;
+}
