@@ -45,7 +45,7 @@ export class AuthService {
     const options = {
       withCredentials: true
     };
-    return this.httpClient.post(`${this.API_URL}/auth//login`, user, options)
+    return this.httpClient.post(`${this.API_URL}/auth/login`, user, options)
       .toPromise()
       .then((data) => {this.setUser(data)})
   }
@@ -83,6 +83,7 @@ export class AuthService {
     
     return this.httpClient.put(`${this.API_URL}/auth/edit`, data, options).toPromise()
     .then((user)=>{
+      console.log(user);
       this.setUser(user);
 
     })

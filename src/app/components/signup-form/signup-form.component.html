@@ -1,6 +1,6 @@
 <form (ngSubmit)="submitForm(form)" #form="ngForm">
 
-  <div class="field" [ngClass]="{'has-error': feedbackEnabled && usernameField.errors}">
+  <div class="field">
     <input type="email" name="email" placeholder="Email" [(ngModel)]="emailFirst" #usernameField="ngModel" required />
     <input type="email" name="email" placeholder="Repeat email" [(ngModel)]="emailSecond" #usernameField="ngModel" required />
 
