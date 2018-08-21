@@ -42,9 +42,8 @@ header.edit-mdnote{}
   background: transparent!important;
   border: none!important;
   margin-top: 2em;
-  padding: 0 5em 5em;
   height: auto;
-  resize: both;
+  resize: none;
   height: 100%;
   overflow: auto;
 
@@ -107,7 +106,7 @@ button.active{
 }
 .active-pinned{
   transition: background-color 0.3s;
-  background: #F3B54A;
+  background: rgb(172, 156, 126);;
 }
 
 #box-buttons{

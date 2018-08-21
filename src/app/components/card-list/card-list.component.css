@@ -1,11 +1,11 @@
 .card-list-title{
-  background-color: #F1F1F1;
-  border-bottom: 1px grey solid;
-  padding-left: 2em;
+  /* border-bottom: 8px #4A5259 solid; */
+  margin: 3em 2em 0em 2em;
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  color: grey;
+  
+  
 }
 
 .book-title{
@@ -28,7 +28,6 @@
   border: none;
   padding-left: 5px;
   font-family: 'Barlow', sans-serif;
-  color: grey;
   padding: 5px 0 6px;
 }
 .change-mdBook-title input:focus, .change-mdBook-title input:active{
@@ -53,7 +52,6 @@
 }
 .my-md-books{
   height: 100vh;
-  background-color: #F1F1F1
 }
 
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */

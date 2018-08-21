@@ -1,31 +1,39 @@
-<!-- {{user|json}} -->
+<div class="main-info">
 
-<h1>Settings</h1>
-<p>Here you can update your user settings.</p>
+  <div class="left-side">
+    <h1>Settings</h1>
+    <p>Here you can update your user settings.</p>
+  </div>
+
+  <div class="right-side">
+    <div>
+      <h3>Autosave</h3>
+      <!-- {{user.settings.autoSave}} -->
+      <label class="switch switch_type1" role="switch">
+        <input type="checkbox" class="switch__toggle" checked>
+        <span class="switch__label"></span>
+      </label>
+    </div>
+    
+    <button title="Save" (click)="saveChanges()">Save</button>
+    
+    <div>
+      <h4>Edit view</h4>
+      <textarea [(ngModel)]="user.settings.editView"></textarea>
+    </div>
+    
+    <div>
+      <h4>Html view</h4>
+      <textarea [(ngModel)]="user.settings.htmlView"></textarea>
+    </div>
+    
+    <div>
+      <h4>Autosave</h4>
+      <textarea [(ngModel)]="user.settings.autoSave"></textarea>
+    </div>
 
 
-<div>
-  <h3>Autosave</h3>
-  <!-- {{user.settings.autoSave}} -->
-  <label class="switch switch_type1" role="switch">
-    <input type="checkbox" class="switch__toggle" checked>
-    <span class="switch__label"></span>
-  </label>
+  </div>
 </div>
 
-<button title="Save" (click)="saveChanges()">Save</button>
 
-<div>
-  <h4>Edit view</h4>
-  <textarea [(ngModel)]="user.settings.editView"></textarea>
-</div>
-
-<div>
-  <h4>Html view</h4>
-  <textarea [(ngModel)]="user.settings.htmlView"></textarea>
-</div>
-
-<div>
-  <h4>Autosave</h4>
-  <textarea [(ngModel)]="user.settings.autoSave"></textarea>
-</div>

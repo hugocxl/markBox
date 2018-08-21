@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Barlow:200, 400,700');
 
 #md-books-nav{
-  background:#383838;
+  background:rgb(56, 62, 68);
   position: fixed;
   height: 100%;
   width: 190px;
@@ -26,11 +26,11 @@
 }
 
 #add-book-input{
-  background: url('../../../assets/images/plus-icon.png') no-repeat, rgba(0, 0, 0, 0.5);
+  background: url('../../../assets/images/plus-icon.png') no-repeat, rgba(0, 0, 0, 0.3);
   background-size: 17px 17px;
   border: none;
   color: white;
-  border-radius:7px;
+  border-radius:0px;
   height: 30px;
   background-position: 5% 50%;
   padding-left: 30px;
@@ -117,11 +117,11 @@ a{
 
 /* INPUT NEW NOTE */
 .md-notes-list input{
-  background: url('../../../assets/images/plus-icon.png') no-repeat, rgba(0, 0, 0, 0.5);
+  background: url('../../../assets/images/plus-icon.png') no-repeat, rgba(0, 0, 0, 0.3);
   background-size: 17px 17px;
   border: none;
   color: white;
-  border-radius: 7px;
+  border-radius: 0px;
   height: 27px;
   background-position: 5% 50%;
   margin: 0;
