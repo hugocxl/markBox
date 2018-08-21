@@ -36,7 +36,7 @@ export class SettingsPageComponent implements OnInit {
       settings: { 
         editView: this.user.settings.editView,
         htmlView: this.user.settings.htmlView,
-        autoSave: this.user.settings.editView,
+        autoSave: this.user.settings.autoSave,
         preview: this.user.settings.preview,
       }
     }
