@@ -3,6 +3,7 @@ import { MdNotesService } from '../../services/md-notes.service';
 import { ActivatedRoute } from '@angular/router';
 import { AppSettingsService } from '../../services/app-settings.service'
 import { FilesaverService } from '../../services/filesaver.service';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-md-note',
@@ -25,18 +26,8 @@ export class MdNoteComponent implements OnInit {
   
   newTitle:any;
   
-  settings = {
-    editView: false,
-    htmlView: false,
-    autoSave: false,
-    preview: false
-  };
+  private user: any;
 
-  // editMode = false;
-  // autoSaveMode = false;
-  // previewActive = true;
-  
-  // id: number;
 
   constructor(  
     private mdNotesService: MdNotesService,
@@ -44,7 +35,8 @@ export class MdNoteComponent implements OnInit {
     private renderer: Renderer2,
     private el: ElementRef,
     private appSettingsService: AppSettingsService,
-    private filesaverService: FilesaverService
+    private filesaverService: FilesaverService,
+    private authService: AuthService
   ) { }
 
 
@@ -52,12 +44,13 @@ export class MdNoteComponent implements OnInit {
   //INIT: BIND SELECTED NOTE TO COMPONENT PROPERTIES THROUGH PARAMS SUB.
   ngOnInit(){
     this.route.params.subscribe((val) => {
-      
-      this.settings = { ...this.appSettingsService.settings};  
       document.getElementById('md-note-view').classList.remove('active-preview');
-
       this.getNote(val);
     });
+    this.authService.userChange$.subscribe((user) => {
+      this.user = user;
+    });
+    this.user = this.authService.getUser();
   }
 
   //GET NOTE FUNCTION:
@@ -76,14 +69,14 @@ export class MdNoteComponent implements OnInit {
   //EDIT MODE CONTROL:
   editModeIO(){
     this.setActiveMessage('Edit mode enabled');
-    this.settings.editView = !this.settings.editView;
-    this.settings.htmlView = !this.settings.htmlView;
+    this.user.settings.editView = !this.user.settings.editView;
+    this.user.settings.htmlView = !this.user.settings.htmlView;
   };
 
 
   activatePreview(){
-    this.settings.preview = !this.settings.preview;
-    if(this.settings.preview){
+    this.user.settings.preview = !this.user.settings.preview;
+    if(this.user.settings.preview){
       this.setActiveMessage('Preview enabled');
     } else {
       this.setActiveMessage('Preview disabled');
@@ -92,15 +85,15 @@ export class MdNoteComponent implements OnInit {
   };
   // AUTOSAVE MODE MANAGEMENT:
   activateAutoSave(){
-    this.settings.autoSave = !this.settings.autoSave;
-    if(this.settings.autoSave){
+    this.user.settings.autoSave = !this.user.settings.autoSave;
+    if(this.user.settings.autoSave){
       this.setActiveMessage('Autosave mode enabled');
     } else {
       this.setActiveMessage('Autosave mode disabled');
     }
   }
   autoSave(){
-    if(this.settings.autoSave) { 
+    if(this.user.settings.autoSave) { 
       this.saveFunction() 
     }
   }
@@ -121,8 +114,8 @@ export class MdNoteComponent implements OnInit {
   };
   //CLOSE NOTE WITHOUT SAVING:
   closeEdit(){
-    this.settings.editView = !this.settings.editView
-    this.settings.htmlView = !this.settings.htmlView 
+    this.user.settings.editView = !this.user.settings.editView
+    this.user.settings.htmlView = !this.user.settings.htmlView 
     document.getElementById('md-note-view').classList.remove('active-preview');
   }
 
