@@ -82,7 +82,6 @@ export class MdNotesService {
       withCredentials: true
     };
     const pinned = { status };
-    console.log(pinned);
     return this.httpClient.put(`${this.mdNoteURL}/${id}/pin`, pinned, options).toPromise() 
   }
 
