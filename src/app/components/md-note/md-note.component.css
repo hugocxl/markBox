@@ -45,12 +45,9 @@ app-md-note{
   background: transparent!important;
   border: none!important;
   margin-top: 2em;
-  padding: 0 5em 5em;
   height: auto;
-  resize: both;
-  /* height: 100%; */
+  resize: none;
   overflow: auto;
-
   font-family: 'Overpass Mono', monospace;
   font-weight: 100;
   font-size: 0.9em;
@@ -110,7 +107,7 @@ button.active{
 }
 .active-pinned{
   transition: background-color 0.3s;
-  background: #F3B54A;
+  background: rgb(172, 156, 126);;
 }
 
 #box-buttons{

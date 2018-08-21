@@ -6,3 +6,15 @@
   font-size: 12px;
   font-style: italic;
 }
+
+
+.main-container{
+  display: flex;
+  flex-direction: row;
+}
+
+.left-side{
+  width: 40%;
+  background-color: rgba(0, 0, 0, 0.05);
+  height: 100vh;
+}

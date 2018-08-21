@@ -1,12 +1,12 @@
 <div class="card-container">
   <div class="md-note-card" [routerLink]="['mdNotes', mdNote._id]">
-    <h2 class="h5 note-title">{{mdNote.title}}</h2>
+    <h4 class="note-title">{{mdNote.title}}</h4>
     <p class="note-content" >{{mdNote.content}}</p>
   </div>
   
   <div class="bottom-bar">
-    <div class="edit-date">
-        <p>Last edited:<br>{{mdNote.updatedAt|date : 'short'}}</p>
+    <div>
+        <p class="edit-date">Last edited:<br>{{mdNote.updatedAt|date : 'short'}}</p>
     </div>  
 
     <div class="buttons-bar">
@@ -18,7 +18,7 @@
           <img class="icon" src="../../../assets/images/pinned-icon.png">
       </button>
   
-      <button (click)="delete()" style="background: rgb(165, 85, 85)">
+      <button (click)="delete()">
           <img class="icon" src="../../../assets/images/delete-icon.png">
       </button>
       </div>

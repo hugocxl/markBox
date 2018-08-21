@@ -4,14 +4,14 @@
   position: relative;
 }
 .md-note-card{
-  /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); */
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+  background-color: white;
   padding: 1.5em;
-  border: 1px solid #cecece;
-  background: #fff;
+  border: 1px solid #d8d8d8;
   
 }
 .md-note-card:hover{
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
   cursor: pointer;
 }
 .md-note-card p:last-child{
@@ -19,17 +19,15 @@
   overflow: hidden;
   height: 200px;
 }
-h2{
-  font-size: 1.5em;
-}
+
+
+
 .note-title{
-  border-bottom: #A9A9A9 1px solid;
-  margin-bottom: 0.7em;
-  
+  /* border-bottom: #A9A9A9 1px solid; */
+  margin: 0 0 0.5em 0;
 }
 
 .note-content{
-  color: grey;
   font-size: 0.9em
 }
 
@@ -40,27 +38,30 @@ h2{
   position: absolute;
   bottom: 1em;
   width: 100%;
-
+  align-content: end;
 }
 
 .edit-date{
   text-align: left;
+  display:flex;
   font-size: 0.8em;
-  color: #A9A9A9;
-  padding-left: 1.5em;
+  color: rgb(194, 194, 194);
+  padding: 0 0 0 2em;
+  font-weight: 400;
+  margin-top: 1em;
 }
 
 .buttons-bar{
   display: flex;
   flex-direction: row;
   right: 0;
+  padding-top: 20px;
 }
 
 button{
   height: 35px;
   width: 35px;
-  background: #4a5258;
-  border-radius: 20px;
+  background: #4A5259;
   border: none;
   margin-bottom: 0;
   cursor: pointer;
@@ -72,7 +73,7 @@ button{
   margin-right: 1.5em;
 }
 button:hover,button.saving{
-  opacity: .7;
+  background: #979797;
 }
 .icon{
   width: 20px;
@@ -83,5 +84,5 @@ button:hover,button.saving{
 
 .active{
   transition: background-color 0.3s;
-  background: rgb(78, 107, 156);
+  background: rgb(172, 156, 126);
 }
