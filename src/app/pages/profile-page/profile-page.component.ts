@@ -13,7 +13,7 @@ export class ProfilePageComponent implements OnInit {
   private passwordFirst: any;
   private passwordSecond: any;
 
-  private user = {
+  public user = {
     email: '',
     password: '',
     settings: ''
