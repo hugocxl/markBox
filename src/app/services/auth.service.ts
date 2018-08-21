@@ -31,7 +31,7 @@ export class AuthService {
     const options = {
       withCredentials: true
     };
-    return this.httpClient.get(`${this.API_URL}/me`, options)
+    return this.httpClient.get(`${this.API_URL}/auth/me`, options)
       .toPromise()
       .then((user) => this.setUser(user))
       .catch((err) => {
@@ -45,7 +45,7 @@ export class AuthService {
     const options = {
       withCredentials: true
     };
-    return this.httpClient.post(`${this.API_URL}/login`, user, options)
+    return this.httpClient.post(`${this.API_URL}/auth//login`, user, options)
       .toPromise()
       .then((data) => {this.setUser(data)})
   }
@@ -54,7 +54,7 @@ export class AuthService {
     const options = {
       withCredentials: true
     };
-    return this.httpClient.post(`${this.API_URL}/signup`, user, options)
+    return this.httpClient.post(`${this.API_URL}/auth/signup`, user, options)
       .toPromise()
       .then((data) => this.setUser(data));
   }
@@ -63,9 +63,13 @@ export class AuthService {
     const options = {
       withCredentials: true
     };
-    return this.httpClient.post(`${this.API_URL}/logout`, null, options)
+    return this.httpClient.post(`${this.API_URL}/auth/logout`, null, options)
       .toPromise()
-      .then(() => this.setUser());
+      .then(() => this.router.navigate(['/login']))
+      .then(() => this.setUser())
+      .catch(err => {
+        console.error(err);
+      });
   }
 
   getUser(): any {
@@ -77,7 +81,7 @@ export class AuthService {
       withCredentials: true
     };
     
-    return this.httpClient.put(`${this.API_URL}/edit`, data, options).toPromise()
+    return this.httpClient.put(`${this.API_URL}/auth/edit`, data, options).toPromise()
     .then((user)=>{
       this.setUser(user);
 

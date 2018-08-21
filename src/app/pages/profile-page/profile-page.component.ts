@@ -28,7 +28,7 @@ export class ProfilePageComponent implements OnInit {
     this.authService.userChange$.subscribe((user) => {
       this.user = user;
     });
-    this.user = this.authService.getUser();
+      this.user = this.authService.getUser();
   }
 
   updateInfo(){

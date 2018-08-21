@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  API_URL: 'http://localhost:3000/api/auth'
+  API_URL: 'https://markbox-api.herokuapp.com/api'
 };
 
 /*

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, Subject } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
-
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -24,7 +24,8 @@ export class MdBooksService {
     private route: ActivatedRoute,
   ) { }
   
-  mdBooksURL = 'http://localhost:3000/api/mdbooks';
+  private API_URL = environment.API_URL;
+
   mdBooks:any;
 
 
@@ -44,7 +45,7 @@ export class MdBooksService {
   //UPDATE SERVICE PROPERTY - MDBOOKS ARRAY
   updateMdBooksList(){
     const options = { withCredentials: true };
-    return this.httpClient.get(`${this.mdBooksURL}`, options).toPromise()
+    return this.httpClient.get(`${this.API_URL}/mdbooks`, options).toPromise()
     .then(books => {
       this.setMdBooksList(books)
     })
@@ -55,7 +56,7 @@ export class MdBooksService {
 
   updateCurrentMdBook(id){
     const options = { withCredentials: true };
-    return this.httpClient.get(`${this.mdBooksURL}/${id}`, options).toPromise()
+    return this.httpClient.get(`${this.API_URL}/mdbooks/${id}`, options).toPromise()
     .then(book => {
       this.setCurrentMdBook(book);
     })
@@ -67,7 +68,7 @@ export class MdBooksService {
   //GET ALL BOOKS - no data needed;
   getAll(){
     const options = { withCredentials: true };
-    return this.httpClient.get(`${this.mdBooksURL}`, options).toPromise()
+    return this.httpClient.get(`${this.API_URL}/mdbooks`, options).toPromise()
     .then(() => {
       this.updateMdBooksList();
     })
@@ -79,7 +80,7 @@ export class MdBooksService {
   //GET ONE BOOK - ID: Note - REQ.PARAMS;
   getOne(id){
     const options = { withCredentials: true };
-    return this.httpClient.get(`${this.mdBooksURL}/${id}`, options).toPromise()
+    return this.httpClient.get(`${this.API_URL}/mdbooks/${id}`, options).toPromise()
     .then(book => {
       this.setCurrentMdBook(book)
     })
@@ -91,7 +92,7 @@ export class MdBooksService {
   //CREATE NEW BOOK - DATA: Title - REQ.BODY;
   new(data){
     const options = { withCredentials: true }
-    return this.httpClient.post(`${this.mdBooksURL}/new`, data, options).toPromise()
+    return this.httpClient.post(`${this.API_URL}/mdbooks/new`, data, options).toPromise()
     .then(() => {
       this.updateMdBooksList();
     })
@@ -103,7 +104,7 @@ export class MdBooksService {
   //EDIT BOOK - DATA: Title - REQ.BODY; ID: Book - REQ.PARAMS;
   edit(id, data){
     const options = { withCredentials: true }
-    return this.httpClient.put(`${this.mdBooksURL}/${id}`, data, options).toPromise()
+    return this.httpClient.put(`${this.API_URL}/mdbooks/${id}`, data, options).toPromise()
     .then(() => {
       this.updateMdBooksList();
     })
@@ -115,7 +116,7 @@ export class MdBooksService {
   //DELETE BOOK - ID: Book - REQ.PARAMS;
   delete(id){
     const options = { withCredentials: true }
-    return this.httpClient.delete(`${this.mdBooksURL}/${id}`, options).toPromise()
+    return this.httpClient.delete(`${this.API_URL}/mdbooks/${id}`, options).toPromise()
     .then(() => {
       this.updateMdBooksList();
     })
@@ -129,7 +130,7 @@ export class MdBooksService {
     const options = {
       withCredentials: true
     };
-    return this.httpClient.get(`${this.mdBooksURL}/pinned`, options).toPromise();
+    return this.httpClient.get(`${this.API_URL}/mdbooks/pinned`, options).toPromise();
   }
   
 }

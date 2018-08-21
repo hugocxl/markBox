@@ -36,8 +36,9 @@ router-outlet ~ * {
 }
 #pinned-notes-page router-outlet ~ * {
   position: static;
-  height: auto;
-  width: auto;
+  height: 100vh;
+  width: 70%;
+  background: #fff;
 }
 body.logged-in #app-document{
   margin-left: 50px;
