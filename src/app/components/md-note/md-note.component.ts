@@ -1,7 +1,6 @@
 import { Component, OnInit, ElementRef, Renderer2 } from '@angular/core';
 import { MdNotesService } from '../../services/md-notes.service';
 import { ActivatedRoute } from '@angular/router';
-import { AppSettingsService } from '../../services/app-settings.service'
 import { FilesaverService } from '../../services/filesaver.service';
 import { AuthService } from '../../services/auth.service';
 
@@ -27,24 +26,22 @@ export class MdNoteComponent implements OnInit {
   newTitle:any;
   
   
-  public user = {
+ public user = {
     email: '',
     password: '',
     settings : {
-      editView: false, 
+      editView: true, 
       htmlView: false,
       autoSave: false,
       preview:  false
     }
   };
 
-
   constructor(  
     private mdNotesService: MdNotesService,
     private route: ActivatedRoute,
     private renderer: Renderer2,
     private el: ElementRef,
-    private appSettingsService: AppSettingsService,
     private filesaverService: FilesaverService,
     private authService: AuthService
   ) { }
@@ -55,11 +52,16 @@ export class MdNoteComponent implements OnInit {
   ngOnInit(){
     this.route.params.subscribe((val) => {
       document.getElementById('md-note-view').classList.remove('active-preview');
-      const currentUser = this.authService.getUser();
-      this.user.settings = {...currentUser.settings};
-      console.log(this.user.settings);
+      this.updatedUserSettings();
       this.getNote(val);
     });
+  }
+
+  updatedUserSettings(){
+    const currentUser = this.authService.getUser();
+    console.log('HOLA',currentUser);
+    this.user = currentUser;
+    this.user.settings = {...currentUser.settings};
   }
 
   //GET NOTE FUNCTION:
@@ -151,8 +153,6 @@ export class MdNoteComponent implements OnInit {
   exportFile(){
     this.filesaverService.onTestSaveFile(this.markdown, this.mdNote.title);
   }
-
-
 
   setActiveMessage(message){
     const activeMessage = this.renderer.createElement('span');

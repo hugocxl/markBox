@@ -12,10 +12,10 @@ export class SettingsPageComponent implements OnInit {
     email: '',
     password: '',
     settings : {
-      editView: false, 
-      htmlView: false,
-      autoSave: false,
-      preview:  false
+      editView: true, 
+      htmlView: true,
+      autoSave: true,
+      preview:  true
     }
   };
 
@@ -28,7 +28,7 @@ export class SettingsPageComponent implements OnInit {
       this.user = user;
     });
     this.user = this.authService.getUser();
-    
+    console.log(this.user);
   }
 
   saveChanges(){
@@ -40,7 +40,10 @@ export class SettingsPageComponent implements OnInit {
         preview: this.user.settings.preview,
       }
     }
-    return this.authService.updateData(data);
+    this.authService.updateData(data)
+    .then(()=> {
+      console.log('SETTINGS:', this.user)
+    })
     
   };
 
