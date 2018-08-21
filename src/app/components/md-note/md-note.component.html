@@ -3,14 +3,14 @@
     
     <div class="edit-mdnote" *ngIf="user.settings.editView">
         <header>
-            <h4>#{{mdNote.title}}</h4>
+            <h2>#{{mdNote.title}}</h2>
             <p>{{mdNote.createdAt | date: M/d/yy }}</p>
             <p>{{mdNote.updatedAt }}</p>
         </header>
-        <textarea id="md-note-editor" (keypress)="autoSave()" [(ngModel)]="markdown"></textarea>
+        <textarea id="md-note-editor" (keypress)="autoSave()" [(ngModel)]="markdown" [ngClass]="{'active': user.settings.preview}" ></textarea>
     </div>
 
-    <div *ngIf="user.settings.preview" class="render-mdnote">
+    <div *ngIf="user.settings.preview" class="render-mdnote preview">
         <markdown [data]="markdown"></markdown>
     </div>
     
@@ -19,31 +19,37 @@
     </div>
 
     <div id="box-buttons">
-        <button title="Edit" *ngIf="!user.settings.editView" (click)="editModeIO()">
-            <img class="icon" src="../../../assets/images/edit-icon.png">
-        </button>
-      
-        <button title="Preview" *ngIf="user.settings.editView" (click)="activatePreview()" [ngClass]="{'active': user.settings.preview }">
-            <img class="icon" src="../../../assets/images/preview-icon.png">
-        </button>
 
-        <button title="Pin this note" (click)="togglePinned()" [ngClass] = "{'active-pinned': mdNote.pinned }">
-            <img class="icon" src="../../../assets/images/pinned-icon.png">
-        </button>
-      
-        <button title="Save" *ngIf="user.settings.editView" (click)="saveFunction()" [ngClass]="{'saving': saving }" id="saveButton">
-            <img class="icon" src="../../../assets/images/save-icon.png">
-        </button>
-      
-        <button title="Activate autosave" *ngIf="user.settings.editView" [ngClass]="{'active': user.settings.autoSave }" (click)="activateAutoSave()">
-            <img class="icon" src="../../../assets/images/auto-save-icon.png">
-        </button>
-    
-        <button title="Close edit mode" *ngIf="user.settings.editView" (click)="closeEdit()">
-            <img class="icon" src="../../../assets/images/switch-view-icon.png">
-        </button>
-        <button title="Download note" (click)="exportFile()">
-            <img class="icon" src="../../../assets/images/export-icon.png">
-        </button>
+        <div>
+            <button title="Edit" *ngIf="!user.settings.editView" (click)="editModeIO()">
+                <img class="icon" src="../../../assets/images/edit-icon.png">
+            </button>
+
+            <button title="Preview" *ngIf="user.settings.editView" (click)="activatePreview()" [ngClass]="{'active': user.settings.preview }">
+                <img class="icon" src="../../../assets/images/preview-icon.png">
+            </button>
+        
+            <button title="Close edit mode" *ngIf="user.settings.editView" (click)="closeEdit()">
+                <img class="icon" src="../../../assets/images/switch-view-icon.png">
+            </button>
+        </div>
+        
+        <div>
+
+            <button title="Pin this note" (click)="togglePinned()" [ngClass] = "{'active-pinned': mdNote.pinned }">
+                <img class="icon" src="../../../assets/images/pinned-icon.png">
+            </button>
+            
+            <button title="Save" *ngIf="user.settings.editView" (click)="saveFunction()" [ngClass]="{'saving': saving }" id="saveButton">
+                <img class="icon" src="../../../assets/images/save-icon.png">
+            </button>
+            
+            <button title="Activate autosave" *ngIf="user.settings.editView" [ngClass]="{'active': user.settings.autoSave }" (click)="activateAutoSave()">
+                <img class="icon" src="../../../assets/images/auto-save-icon.png">
+            </button>
+            <button title="Download note" (click)="exportFile()">
+                <img class="icon" src="../../../assets/images/export-icon.png">
+            </button>
+        </div>
     </div>
 </section>

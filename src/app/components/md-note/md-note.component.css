@@ -4,7 +4,9 @@
   justify-content: center;
 }
 
-.render-mdnote{
+header.edit-mdnote{}
+
+.render-mdnote, .render-preview{
   padding: 3em;
   width: 80%;
   background: #fff;
@@ -13,6 +15,9 @@
   overflow: scroll;
   border-left: 1px solid #F1F1F1;
   border-right: 1px solid #F1F1F1;
+}
+.render-mdnote.preview{
+  padding: 3em 5em 3em 3em;
 }
 
 .edit-mdnote{
@@ -38,29 +43,47 @@
   border: none!important;
   margin-top: 2em;
   padding: 0 5em 5em;
-  height: calc(100% - 9em);
-  max-height: calc(100% -9em);
-  resize: none;
+  height: auto;
+  resize: both;
+  height: 100%;
   overflow: auto;
-  font-family: 'IBM Plex Mono', monospace;
+
+  font-family: 'Overpass Mono', monospace;
   font-weight: 100;
-  font-size: 1em;
-  color: #707070;
-  line-height: 1.5;
+  font-size: 0.9em;
+  color: #808080;
+  line-height: 2;
+  caret-color: rgb(0, 174, 255);
+  
+
 }
+
+.edit-mdnote textarea:caret-color{
+  outline: none!important;
+}
+
+
 .edit-mdnote textarea:focus{
   outline: none!important;
 }
 
+
+#md-note-editor.active{
+
+}
+
+
+
 button{
-  height: 40px;
-  width: 40px;
-  background: #4a5258;
-  border-radius: 10px;
+  height: 35px;
+  width: 35px;
+  background: #4F575E;
+  border-radius: 0px;
   border: none;
   margin-bottom: 5px;
   cursor: pointer;
   transition: all .3s;
+  display: block
 }
 button:hover,button.saving{
   opacity: .7;
@@ -70,13 +93,15 @@ button:active, button:focus{
 }
 
 .icon{
-  width: 25px;
-  height: 25px;
+  width: 18px;
+  height: 18px;
   padding: 0;
   margin: 0;
 }
 
-.active{
+
+
+button.active{
   transition: background-color 0.3s;
   background: #A9A9A9;
 }
@@ -87,10 +112,14 @@ button:active, button:focus{
 
 #box-buttons{
   position: fixed;
-  top: 1em;
+  padding: 1em 0;
+
   right:1em;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  
 }
 .active-message{
   position: fixed;

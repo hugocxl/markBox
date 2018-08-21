@@ -10,7 +10,7 @@
   z-index: 1;
   transform: translateX(-100%);
   transition: all 0.5s linear; 
-  left: 50px;
+  left: 45px;
   overflow-x: hidden;
   -ms-overflow-style: none;
   overflow: -moz-scrollbars-none;
