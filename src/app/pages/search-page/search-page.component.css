@@ -3,19 +3,20 @@
   background: #F1F1F1;
 }
 
-.card-container{
+/* .card-container{
   display: flex;
   flex-direction: column;
   position: relative;
 }
 .md-note-card{
   /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); */
-  padding: 1.5em;
+  /* padding: 1.5em;
   border: 1px solid #cecece;
-  background: #fff;
+  background: #fff; 
+  }*/
   
-}
-.md-note-card:hover{
+
+/* .md-note-card:hover{
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
   cursor: pointer;
 }
@@ -61,9 +62,17 @@ h2{
   right: 0;
 }
 
-button{
-  height: 35px;
-  width: 35px;
+ */
+h1,h2,h3{
+  font-size: 1em;
+}
+ul{
+  list-style:none;
+}
+
+ button{
+  height: 20px;
+  width: 20px;
   background: #4a5258;
   border-radius: 20px;
   border: none;
@@ -71,6 +80,7 @@ button{
   cursor: pointer;
   transition: all .3s;
   margin-right: 5px;
+  position: relative;
 }
 
 .buttons-bar>:last-child{
@@ -80,10 +90,12 @@ button:hover,button.saving{
   opacity: .7;
 }
 .icon{
-  width: 20px;
-  height: 20px;
+  width: 15px;
+  height: 15px;
   padding: 1px;
-  margin: 2px 0px 0 0.5px;
+  position: absolute;
+  left: 3px;
+  top: 2px;
 }
 
 .active{

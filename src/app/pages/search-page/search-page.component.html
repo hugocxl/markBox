@@ -5,36 +5,37 @@
   </div> -->
 <div id="search">
 
-  <div class="grid-row">
-    <div *ngFor="let mdBook of searchResult">
-        <div class="card-container" *ngFor="let mdNote of mdBook.mdNotes">
-            <div class="md-note-card" [routerLink]="['/mdBooks', mdBook._id, 'mdNotes', mdNote._id]">
-              <h2 class="h5 note-title">{{mdNote.title}}</h2>
-              <p class="note-content" >{{mdNote.content}}</p>
-            </div>
-            
-            <div class="bottom-bar">
-              <div class="edit-date">
-                  <p>Last edited:<br>{{mdNote.updatedAt|date : 'short'}}</p>
-              </div>  
+  <div *ngFor="let mdBook of searchResult" class="flex-row">
+    <ul>
+      <li><h2>{{mdBook.title}}</h2></li>
+    
+    <li *ngFor="let mdNote of mdBook.mdNotes">
+        <div class="search-list-item flex-row" [routerLink]="['/mdBooks', mdBook._id, 'mdNotes', mdNote._id]">
+          <h2 class="h5 note-title">{{mdNote.title}}</h2>
+          <p class="note-content" >{{mdNote.content}}</p>
+
+        </div>
+        
+        <div class="bottom-bar">
+           
+      
+          <div class="buttons-bar">
+            <button [routerLink]="['mdNotes', mdNote._id]">
+              <img class="icon" src="../../../assets/images/edit-icon.png">
+            </button>
           
-              <div class="buttons-bar">
-                <button [routerLink]="['mdNotes', mdNote._id]">
-                  <img class="icon" src="../../../assets/images/edit-icon.png">
-                </button>
-              
-                <button (click)="addToPinned()" [ngClass]="{'active': mdNote.pinned }">
-                    <img class="icon" src="../../../assets/images/pinned-icon.png">
-                </button>
-            
-                <button (click)="delete()" style="background: rgb(165, 85, 85)">
-                    <img class="icon" src="../../../assets/images/delete-icon.png">
-                </button>
-                </div>
-            </div>
-          
+            <button (click)="addToPinned()" [ngClass]="{'active': mdNote.pinned }">
+                <img class="icon" src="../../../assets/images/pinned-icon.png">
+            </button>
+        
+            <button (click)="delete()" style="background: rgb(165, 85, 85)">
+                <img class="icon" src="../../../assets/images/delete-icon.png">
+            </button>
           </div>
-    </div>
+        </div>
+      
+      </li>
+    </ul>
   </div>
 
 </div>

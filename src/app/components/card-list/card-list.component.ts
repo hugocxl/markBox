@@ -44,6 +44,9 @@ export class CardListComponent implements OnInit, AfterViewChecked {
           this.noteCount = `You have no notes`;
         }
     }); 
+    const id = this.route.params.subscribe((val) => {
+      this.mdBooksService.getOne(val.id)
+    })
   }
   setTitle(title){
     this.changeTitle = !this.changeTitle;
