@@ -14,3 +14,18 @@
 </div>
 
 <button title="Save" (click)="saveChanges()">Save</button>
+
+<div>
+  <h4>Edit view</h4>
+  <textarea [(ngModel)]="user.settings.editView"></textarea>
+</div>
+
+<div>
+  <h4>Html view</h4>
+  <textarea [(ngModel)]="user.settings.htmlView"></textarea>
+</div>
+
+<div>
+  <h4>Autosave</h4>
+  <textarea [(ngModel)]="user.settings.autoSave"></textarea>
+</div>

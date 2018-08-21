@@ -26,7 +26,17 @@ export class MdNoteComponent implements OnInit {
   
   newTitle:any;
   
-  private user: any;
+  
+  public user = {
+    email: '',
+    password: '',
+    settings : {
+      editView: false, 
+      htmlView: false,
+      autoSave: false,
+      preview:  false
+    }
+  };
 
 
   constructor(  
@@ -45,12 +55,11 @@ export class MdNoteComponent implements OnInit {
   ngOnInit(){
     this.route.params.subscribe((val) => {
       document.getElementById('md-note-view').classList.remove('active-preview');
+      const currentUser = this.authService.getUser();
+      this.user.settings = {...currentUser.settings};
+      console.log(this.user.settings);
       this.getNote(val);
     });
-    this.authService.userChange$.subscribe((user) => {
-      this.user = user;
-    });
-    this.user = this.authService.getUser();
   }
 
   //GET NOTE FUNCTION:
