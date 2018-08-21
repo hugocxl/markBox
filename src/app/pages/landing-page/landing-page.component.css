@@ -41,7 +41,7 @@ h1{
     width: 100%;
   }
   .app-title p{
-    width: 60%;
+    width: 84%;
   }
   .container{
     width: 90%;
@@ -67,6 +67,9 @@ h1{
   }
   .form-wrapper{
     width: 60%;
+  }
+  .app-title p{
+    width: 89%;
   }
 }
 @media (min-width:1200px){

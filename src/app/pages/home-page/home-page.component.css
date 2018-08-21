@@ -7,7 +7,7 @@
   justify-content: space-around;
 }
 .latest-edited, .pinned-notes{
-  width: 49%;
+  width: 100%;
 }
 .latest-edited-grid, .pinned-notes-grid{
   display: grid;
@@ -45,4 +45,15 @@ h4{
   border: 1px solid #cecece;
   background: #ffc url('../../../assets/images/chincheta.png') no-repeat center top;
   background-size: 21px;
+}
+@media (min-width:768px){
+  
+}
+@media (min-width:992px){
+  .latest-edited, .pinned-notes{
+    width: 49%;
+  }
+}
+@media (min-width:1200px){
+  
 }

@@ -16,17 +16,18 @@
 }
 
 .edit-mdnote{
-  padding: 3em;
-  width: 80%;
+  padding: 3em 9em;
+  width: 100%;
   min-height: 100vh;
   height: auto;
-  background: #F1F1F1;
+  background: url('.././../../assets/images/background-grid.png');
 }
 #md-note-view.active-preview .render-mdnote, #md-note-view.active-preview .edit-mdnote{
   width: 50%;
 }
 #md-note-view.active-preview .edit-mdnote{
-  background: #F1F1F1;
+  background: url('.././../../assets/images/background-grid.png');
+  padding: 3em 3em;
 }
 #md-note-view.active-preview{
   width: calc(100%);
@@ -42,7 +43,7 @@
   resize: none;
   overflow: auto;
   font-family: 'IBM Plex Mono', monospace;
-  font-weight: 500;
+  font-weight: 100;
   font-size: 1em;
   color: #707070;
   line-height: 1.5;
