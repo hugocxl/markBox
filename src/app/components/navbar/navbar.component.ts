@@ -34,8 +34,7 @@ export class NavbarComponent implements OnInit {
       this.renderer.removeClass(document.body, 'logged-in');
 
       //LOGOUT:
-      this.authService.logout()
-        .then(() => this.router.navigate(['/login']));
+      this.authService.logout();
     }
 
     toggleBooksNav(){
