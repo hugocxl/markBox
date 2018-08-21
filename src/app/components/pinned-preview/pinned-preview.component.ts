@@ -14,11 +14,12 @@ export class PinnedPreviewComponent implements OnInit {
     private mdNotesService: MdNotesService,
   ) { }
 
-  public pipeMarkDown = '# Markdown';
 
   mdNote:any;
   mdNewnote:any;
   markdown: any;
+
+  public pipeMarkDown = '# Markdown';
 
   ngOnInit() {
     this.route.params.subscribe((val) => {
@@ -34,6 +35,7 @@ export class PinnedPreviewComponent implements OnInit {
       this.mdNewnote = note
       this.mdNote = this.mdNewnote;
       this.markdown = this.mdNote.content;
+      console.log(this.markdown);
     })
     .catch(err => {
       console.error(err);

@@ -9,12 +9,6 @@ h2{
 .pinned-list-column{
   width: 30%;
   border-right: 1px solid #cecece;
-}
-#pinned-preview{
-  width: 70%;
-}
-#pinned-preview{
-  background: #fff;
   height: 100vh;
 }
 
