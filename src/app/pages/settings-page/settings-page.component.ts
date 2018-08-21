@@ -8,7 +8,7 @@ import { AuthService } from '../../services/auth.service';
 })
 export class SettingsPageComponent implements OnInit {
 
-  private user = {
+  public user = {
     email: '',
     password: '',
     settings : {
