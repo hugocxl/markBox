@@ -1,4 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Overpass+Mono:300,400,600,700');
+
 * {
   margin: 0;
   box-sizing: border-box;
@@ -42,7 +44,7 @@ router-outlet ~ * {
   background: #fff;
 }
 body.logged-in #app-document{
-  margin-left: 50px;
+  margin-left: 45px;
 }
 body.active{
   overflow-x: hidden;
@@ -51,7 +53,7 @@ body.active{
   transform: translateX(0%);
   transition: all 0.5s linear; 
   margin:0 auto;
-  width: calc(100% - 50px);
+  width: calc(100% - 45px);
 }
 #app-document.active{
   transform: translateX(190px);
@@ -60,16 +62,21 @@ body.active{
 #app-document.active #md-note-view{
   margin-left: 6px;
 }
-/* You can add global styles to this file, and also import other style files */
+
+
+/*TEXT SETTINGS:*/
 h1,h2,h3,h4,h5,h6{
   font-family: 'Barlow', sans-serif;
   font-weight: 400;
+  color: #4F575E;
+  line-height: 1;
+  margin-top:1.2em;
 }
 h1{
-  font-size: 3.125em;
+  font-size: 2.8em;
 }
 h2{
-  font-size: 2.618em
+  font-size: 2.1em
 }
 h3{
   font-size: 1.931em;
@@ -86,14 +93,19 @@ h6{
 a{
   color: #3c5877;
 }
-
 p{
-  color: #828282;
+  color: #808080;
   font-size: 1em;
   font-weight: 200;
   font-family: Barlow;
-  margin: 1em 0;
+  margin: .8em 0;
 }
+
+
+
+
+
+
 
 
 
