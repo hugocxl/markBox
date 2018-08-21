@@ -8,10 +8,10 @@ import { AuthService } from '../../services/auth.service';
 })
 export class ProfilePageComponent implements OnInit {
 
-  private emailFirst: any;
-  private emailSecond: any;
-  private passwordFirst: any;
-  private passwordSecond: any;
+  public emailFirst: any;
+  public emailSecond: any;
+  public passwordFirst: any;
+  public passwordSecond: any;
 
   public user = {
     email: '',
