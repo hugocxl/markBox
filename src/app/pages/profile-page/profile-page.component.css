@@ -1,0 +1,8 @@
+.active-message{
+  position: fixed;
+  top: 1em;
+  right: 12%;
+  color: grey;
+  font-size: 12px;
+  font-style: italic;
+}
