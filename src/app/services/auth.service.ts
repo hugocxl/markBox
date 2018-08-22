@@ -83,11 +83,7 @@ export class AuthService {
     
     return this.httpClient.put(`${this.API_URL}/auth/edit`, data, options).toPromise()
     .then((user)=>{
-      const newUserConfig = {...user};
-      console.log('AUTH SERVICE, AFTER API:', newUserConfig)
-      this.setUser(newUserConfig);
-      console.log('USER IN AUTH, AFTER UPDATE', this.getUser())
-
+      this.setUser(user);
     })
     .catch(error => { 
       console.log(error)

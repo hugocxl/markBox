@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef, Renderer2 } from '@angular/core';
+import { Component, OnInit, ElementRef, Renderer2, AfterViewChecked } from '@angular/core';
 import { MdNotesService } from '../../services/md-notes.service';
 import { ActivatedRoute } from '@angular/router';
 import { FilesaverService } from '../../services/filesaver.service';
@@ -46,20 +46,33 @@ export class MdNoteComponent implements OnInit {
     private authService: AuthService
   ) { }
 
+  public ngAfterViewChecked(): void {
+    if (this.user.settings.editView) {
+      this.renderer.selectRootElement('#md-note-editor').focus();
+      this.autogrow();
+    }
+  }
 
+  autogrow(){
+    let  textArea = this.renderer.selectRootElement('#md-note-editor');
+    textArea.style.overflow = 'hidden';
+    textArea.style.height = '0px';
+    textArea.style.height = textArea.scrollHeight + 'px';
+  }
 
   //INIT: BIND SELECTED NOTE TO COMPONENT PROPERTIES THROUGH PARAMS SUB.
   ngOnInit(){
+    this.authService.userChange$.subscribe((user) => {
+      this.user = user;
+    });
     this.route.params.subscribe((val) => {
       document.getElementById('md-note-view').classList.remove('active-preview');
-      this.updatedUserSettings();
       this.getNote(val);
     });
   }
 
   updatedUserSettings(){
     const currentUser = this.authService.getUser();
-    console.log('HOLA', currentUser);
     this.user.settings = {...currentUser.settings};
   }
 

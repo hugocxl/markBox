@@ -8,7 +8,8 @@ import { AuthService } from '../../services/auth.service';
 })
 export class SettingsPageComponent implements OnInit {
 
-  public user = {
+  user:any;
+  public currentUser = {
     email: '',
     password: '',
     settings : {
@@ -28,7 +29,6 @@ export class SettingsPageComponent implements OnInit {
       this.user = user;
     });
     this.user = this.authService.getUser();
-    console.log('USER ON INIT SETTINGS PAGE', this.user);
   }
 
   saveChanges(){
@@ -40,13 +40,7 @@ export class SettingsPageComponent implements OnInit {
         preview: this.user.settings.preview,
       }
     }
-    this.authService.updateData(data)
-    .then(()=> {
-      console.log('USER IN COMPONENT AFTER UPDATE:', this.user)
-    })
-    
+    this.authService.updateData(data);
   };
-
-
 
 }

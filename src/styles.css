@@ -32,11 +32,11 @@ body{
   line-height: 1.5;
   background:url('./assets/images/background-grid.png');
 }
-router-outlet ~ * {
+/* router-outlet ~ * {
   position: absolute;
   height: 100%;
   width: 100%;
-}
+} */
 #pinned-notes-page router-outlet ~ * {
   position: static;
   height: 100vh;
