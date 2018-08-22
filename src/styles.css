@@ -258,23 +258,29 @@ z-index: 100;
   .loading {
     background-size: 20%;
   }
+
+  .page-container{
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+
+  }
   
   .page-info{
     display: flex;
     flex-direction: column;
     width: 40%;
-    height: 100vh;
-    background: #808080;
+    background: #dddddd;
+    padding: 200px 20px 20px 20px;
+    
   }
 
   .page-content{
     display: flex;
     flex-direction: column;
     width: 60%;
-    height: 100vh;
+    padding: 200px 20px 20px 50px;
     
-    
-
   }
 
 }
