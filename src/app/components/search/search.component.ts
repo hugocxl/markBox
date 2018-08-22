@@ -20,11 +20,14 @@ export class SearchComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    console.log('LOADED COMPONENT');
+    
     this.route.params.subscribe((val) => {
+      console.log('LOADED COMPONENT');
       this.searchContent = '';
       document.getElementById('search-input').classList.remove('active');
-      
     });
+
     document.getElementById('search-input').addEventListener( "keyup", ()=>{
       if (this.searchContent) { 
         this.router.navigate(['/search']);
@@ -34,5 +37,8 @@ export class SearchComponent implements OnInit {
       }
     }, false )
   }
+
+
+
 
 }

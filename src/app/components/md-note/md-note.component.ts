@@ -62,11 +62,13 @@ export class MdNoteComponent implements OnInit {
 
   //INIT: BIND SELECTED NOTE TO COMPONENT PROPERTIES THROUGH PARAMS SUB.
   ngOnInit(){
+    this.updatedUserSettings();
     this.authService.userChange$.subscribe((user) => {
       this.user = user;
     });
     this.route.params.subscribe((val) => {
       document.getElementById('md-note-view').classList.remove('active-preview');
+      this.updatedUserSettings();
       this.getNote(val);
     });
   }
