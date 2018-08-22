@@ -19,7 +19,8 @@ export class SearchPageComponent implements OnInit {
   ngOnInit() {
       this.mdNotesService.searchChange$.subscribe(updatedSearch => {
         this.searchResult = updatedSearch;
-      })
+      });
+      
   }
 
   delete(mdNote, mdBook){

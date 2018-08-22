@@ -17,17 +17,16 @@ export class SearchComponent implements OnInit {
     private router: Router,
     private mdNotesService: MdNotesService,
     private route: ActivatedRoute
+    
   ) { }
 
   ngOnInit() {
-    console.log('LOADED COMPONENT');
-    
-    this.route.params.subscribe((val) => {
-      console.log('LOADED COMPONENT');
-      this.searchContent = '';
-      document.getElementById('search-input').classList.remove('active');
+    this.router.events.subscribe((val) => {
+      if(this.searchContent.length > 2){
+        this.searchContent = '';
+        document.getElementById('search-field').classList.remove('active');
+      }
     });
-
     document.getElementById('search-input').addEventListener( "keyup", ()=>{
       if (this.searchContent) { 
         this.router.navigate(['/search']);
@@ -35,10 +34,12 @@ export class SearchComponent implements OnInit {
       } else {
         this.router.navigate(['/home']);
       }
-    }, false )
-  }
+
+  })
+}
 
 
 
 
 }
+
