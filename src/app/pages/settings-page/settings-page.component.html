@@ -15,8 +15,8 @@
 
   <div class="page-content">
 
+    <h3>View Mode</h3>
     <div class="settings-section-container">
-      <h4>View Mode</h4>
       <p>Select the default view you prefer when entering in a note.</p>
       <div class="settings-buttons" id="buttons-viewMode" (click)="switchViewMode()">
 
@@ -48,8 +48,8 @@
     </div>
 
     
+    <h3>Autosave</h3>
     <div class="settings-section-container">
-      <h4>Autosave</h4>
       <p>Select wheter you prefer autosaving active when editing or not.</p>
       
       <div class="settings-buttons" id="buttons-autoSaveMode" (click)="switchAutoSaveMode()">
@@ -76,10 +76,11 @@
       </div>
     </div>
 
+    <h3>Preview</h3>
     <div class="settings-section-container">
-      <h4>Preview</h4>
       <p>If active, you can have the preview by default when editing 
         <br>*This option can only be activated if Edit mode is active</p>
+
       <div class="settings-buttons" id="buttons-previewMode" (click)="switchPreviewMode()">
           <div class="inner-container">
             <div class="button-settings">
@@ -103,10 +104,6 @@
       
       </div>
     </div>
-
-    
-    
-    <button class="save-button" title="Save" (click)="saveChanges()">Save</button>
     
   </div>
 </div>

@@ -7,13 +7,19 @@
   font-style: italic;
 }
 
-.main-container{
-  display: flex;
-  flex-direction: row;
+
+.profile-section-container{
+  margin-bottom: 30px;
+  width: 100%;
 }
 
-.left-side{
-  width: 40%;
-  background-color: rgba(0, 0, 0, 0.05);
-  height: 100vh;
+.profile-form-group{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
+
+.profile-form-group div{
+  width: 100%;
+}
+

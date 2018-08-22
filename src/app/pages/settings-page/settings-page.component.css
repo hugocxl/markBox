@@ -18,14 +18,16 @@ a:hover {
 
 
 .settings-buttons{
-  width: 70%;
-  height: 40px;
-  margin: auto;
+  width: 30%;
+  height: 30px;
   position: relative;
   border-radius: 0px;
   overflow: hidden;
   user-select: none;
   cursor: pointer;
+  align-self: flex-end;
+  
+  
 }
 
 
@@ -33,7 +35,7 @@ a:hover {
   position: absolute;
   left: 0;
   top: 0;
-  width: inherit;
+  width: 100%;
   height: inherit;
   text-transform: uppercase;
   font-size: .6em;
@@ -62,6 +64,9 @@ a:hover {
 
 .button-settings p {
   margin: auto;
+  color: white;
+  font-family: Barlow;
+  
 }
 
 .button-settings:nth-child(1) {
@@ -69,21 +74,18 @@ a:hover {
 }
 
 .settings-section-container{
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
 
-.save-button{
-  background: #4d5d6c;
-  color: #fff;
-  border-radius: 10px;
-  margin: auto;
-  padding: 15px 30px;
-  display: block;
-  position: absolute;
-  left: 20px;
-  bottom: 20px;
-  width: 200px;
-  font-size: 1em;
-  font-weight: 200;
-  font-family: Barlow;
+.settings-section-container p{
+  text-align: center;
+}
+
+
+.settings-section-container>p{
+  text-align: left;
+  margin-bottom: 0;
 }
