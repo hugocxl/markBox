@@ -28,7 +28,7 @@ export class SettingsPageComponent implements OnInit {
       this.user = user;
     });
     this.user = this.authService.getUser();
-    console.log(this.user);
+    console.log('USER ON INIT SETTINGS PAGE', this.user);
   }
 
   saveChanges(){
@@ -42,7 +42,7 @@ export class SettingsPageComponent implements OnInit {
     }
     this.authService.updateData(data)
     .then(()=> {
-      console.log('SETTINGS:', this.user)
+      console.log('USER IN COMPONENT AFTER UPDATE:', this.user)
     })
     
   };

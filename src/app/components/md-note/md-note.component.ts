@@ -59,8 +59,7 @@ export class MdNoteComponent implements OnInit {
 
   updatedUserSettings(){
     const currentUser = this.authService.getUser();
-    console.log('HOLA',currentUser);
-    this.user = currentUser;
+    console.log('HOLA', currentUser);
     this.user.settings = {...currentUser.settings};
   }
 
