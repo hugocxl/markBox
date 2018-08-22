@@ -27,8 +27,11 @@ export class HomePageComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.user = this.authService.getUser()
-    this.mdNotesService.getLatest()
+    this.getLatest();
+    this.getPinned();
+  }
+  getLatest(){
+    this.mdNotesService.getLatest() 
     .then(latestNotes => {
       this.latestNotesInBook = latestNotes;
       this.latestNotesInBook.forEach(book => {
@@ -38,8 +41,8 @@ export class HomePageComponent implements OnInit {
         })
       })
     });
-
-
+  }
+  getPinned(){
     this.mdBooksService.getPinned()
     .then(pinnedNotes => {
       this.pinnedNotesInBook = pinnedNotes;
