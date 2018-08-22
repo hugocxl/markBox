@@ -8,7 +8,9 @@ app-md-note{
     width: 100%;
     height: 100%;
 }
-
+.render-mdnote{
+  min-height: 100vh;
+}
 .render-mdnote, .render-preview{
   padding: 3em;
   width: 80%;
@@ -54,25 +56,17 @@ app-md-note{
   color: #808080;
   line-height: 2;
   caret-color: rgb(0, 174, 255);
-  
-
 }
 
 .edit-mdnote textarea:caret-color{
   outline: none!important;
 }
-
-
 .edit-mdnote textarea:focus{
   outline: none!important;
 }
-
-
 #md-note-editor.active{
 
 }
-
-
 
 button{
   height: 35px;

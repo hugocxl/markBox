@@ -21,6 +21,7 @@ export class MdBookNavComponent implements OnInit {
   open = false;
   selectedIndex: number;
   changeTitle = false;
+  bookOpen = false;
   inputField:any;
   
 
@@ -66,7 +67,7 @@ export class MdBookNavComponent implements OnInit {
   }
 
   toggleClass(event: any, id) {
-    const hasClass = event.target.classList.contains('open');    
+    const hasClass = event.target.classList.contains('open');  
     if(hasClass) {
       this.renderer.removeClass(event.target, 'open');
       this.changeTitle = false;

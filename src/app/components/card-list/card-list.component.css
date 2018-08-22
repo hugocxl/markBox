@@ -22,6 +22,7 @@
 }
 .change-mdBook-title{
   position: relative;
+  margin-top: -4px;
 }
 .change-mdBook-title input{
   background: transparent;
@@ -37,8 +38,8 @@
 .book-title .icon{
   width: 10px;
   position: absolute;
-  top: 13px;
-  right: 0;
+  top: 5px;
+  right: 2px;
 }
 .book-title .icon:hover{
   cursor: pointer;

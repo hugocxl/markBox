@@ -2,7 +2,7 @@
 
 
   <form (ngSubmit)="addMdBook()">
-    <input id="add-book-input" type="text" placeholder="New mdBook..." name="title" [(ngModel)]="newBook.title"/>
+    <input id="add-book-input" type="text" placeholder="Add mdBook..." name="title" [(ngModel)]="newBook.title"/>
   </form>
 
   <p id="list-title">Your mdBooks:</p>
@@ -10,10 +10,9 @@
 
   <ul class="md-books-list">
     <li *ngFor="let mdBook of mdBooks; let i=index">
-      <a class="md-note-list-title" [routerLink]="['/mdBooks', mdBook._id]" [routerLinkActive]="['active', 'open']"
-      (click)="toggleClass($event, mdBooks._id)"
+       <a class="md-note-list-title"  [routerLink]="['/mdBooks', mdBook._id]" [routerLinkActive]="['active', 'open']"
       >{{mdBook.title}}</a>
-      
+      <span class="toggle-book-trigger" (click)="toggleClass($event, mdBooks._id)"></span>
       <ul class="md-notes-list" [id]="mdBook._id" [ngClass]="{'open': selectedIndex == i}">
 
         <li *ngFor="let mdNote of mdBook.mdNotes" class="list-item">
@@ -24,7 +23,7 @@
         </li>
 
         <form (ngSubmit)="addMdNote(form ,mdBook._id)" #form="ngForm">
-            <input id="new-note-input" placeholder="New mdNote..." type="text" name="title" [(ngModel)]="newNote.title" #titleField="ngModel"/>
+            <input id="new-note-input" placeholder="Add mdNote..." type="text" name="title" [(ngModel)]="newNote.title" #titleField="ngModel"/>
         </form>
 
       </ul>
