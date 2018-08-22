@@ -5,14 +5,12 @@
 
 .main>.left-side{
   width: 40%;
-  padding: 2em;
 }
 
 .main>.right-side{
   width: 60%;
   max-height: 100vh;
   overflow: scroll;
-  padding: 2em;
   background: #F1F1F1;
   -ms-overflow-style: none;
   overflow: -moz-scrollbars-none;
@@ -34,5 +32,5 @@ td{
 }
 tr{
   margin-bottom: 10px;
-overflow: hidden;
+  overflow: hidden;
 }

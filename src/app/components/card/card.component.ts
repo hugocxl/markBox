@@ -11,7 +11,7 @@ import { MdBooksService } from '../../services/md-books.service';
 export class CardComponent implements OnInit {
 
   @Input() mdNote: any;
-  @Input() mdBook: any;
+  @Input() mdBook_id: any;
 
   constructor(
     private mdNotesService: MdNotesService,
@@ -24,7 +24,7 @@ export class CardComponent implements OnInit {
   delete(){
     this.mdNotesService.delete(this.mdNote._id)
     .then(()=> {
-      this.mdBooksService.updateCurrentMdBook(this.mdBook._id);
+      this.mdBooksService.updateCurrentMdBook(this.mdBook_id);
     })
     .then(() =>{
       this.mdBooksService.updateMdBooksList();
@@ -38,7 +38,7 @@ export class CardComponent implements OnInit {
     this.mdNote.pinned = !this.mdNote.pinned;
     this.mdNotesService.pin(this.mdNote._id, this.mdNote.pinned)
     .then(() => {
-      this.mdBooksService.updateCurrentMdBook(this.mdBook._id);
+      this.mdBooksService.updateCurrentMdBook(this.mdBook_id);
     })
     .catch(error => {
       console.error(error);
