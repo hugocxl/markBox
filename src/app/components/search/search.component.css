@@ -1,7 +1,7 @@
 #search-field{
   position: fixed;
   left: 45px;
-  top: 275px;
+  top: 280px;
   transform: translateX(-100%);
   transition: all 0.17s ease-in-out; 
 

@@ -40,6 +40,7 @@ export class NavbarComponent implements OnInit {
     toggleBooksNav(){
       document.getElementById('md-books-nav').classList.toggle('active');
       document.getElementById('app-document').classList.toggle('active');
+      document.getElementById('toggle-books').classList.toggle('active');
       if(document.getElementsByTagName('body')[0].classList.contains('active')){
         this.renderer.removeClass(document.body, 'active');
       } else {
