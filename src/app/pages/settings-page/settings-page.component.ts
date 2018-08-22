@@ -28,16 +28,7 @@ export class SettingsPageComponent implements OnInit {
     this.authService.userChange$.subscribe((user) => {
       this.user = user;
     });
-    
     this.user = this.authService.getUser();
-    console.log('nginit: ', this.user);
-  }
-
-  updatedUserSettings(user){
-    const currentUser = user;
-    this.user = currentUser;
-    this.user.settings = {...currentUser.settings};
-    console.log(this.user);
   }
 
   saveChanges(){
@@ -49,16 +40,7 @@ export class SettingsPageComponent implements OnInit {
         preview: this.user.settings.preview,
       }
     }
-    this.updatedUserSettings(data);
-    this.authService.updateData(data)
-    .then(()=> {
-      //this.updatedUserSettings(data);
-      console.log('updated settings');
-    })
-    .catch(err => {
-      console.error(err);
-    })
-    
+    this.authService.updateData(data);
   };
 
 }
