@@ -87,3 +87,8 @@ a:hover {
 .button-settings:nth-child(1) {
   right: 0;
 }
+
+
+h1{
+  margin-top: 0;
+}
