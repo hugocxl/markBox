@@ -1,4 +1,4 @@
-import { Component, OnInit, Renderer2 } from '@angular/core';
+import { Component, OnInit, Renderer2, ElementRef } from '@angular/core';
 import { MdBooksService } from '../../services/md-books.service';
 import { MdNotesService } from '../../services/md-notes.service';
 import { Router } from '@angular/router';
@@ -21,6 +21,8 @@ export class MdBookNavComponent implements OnInit {
   open = false;
   selectedIndex: number;
   changeTitle = false;
+  inputField:any;
+  
 
   newBook = {
     title : ''
@@ -47,6 +49,7 @@ export class MdBookNavComponent implements OnInit {
     private mdNotesService: MdNotesService,
     private router: Router,
     private renderer: Renderer2,
+    private el: ElementRef
   ) { }
   
   
@@ -61,7 +64,7 @@ export class MdBookNavComponent implements OnInit {
     this.selectedIndex = index;
     this.open = !this.open;
   }
-  
+
   toggleClass(event: any, id) {
     const hasClass = event.target.classList.contains('open');    
     if(hasClass) {

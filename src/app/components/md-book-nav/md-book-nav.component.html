@@ -24,7 +24,7 @@
         </li>
 
         <form (ngSubmit)="addMdNote(form ,mdBook._id)" #form="ngForm">
-            <input placeholder="New mdNote..." type="text" name="title" [(ngModel)]="newNote.title" #titleField="ngModel"/>
+            <input id="new-note-input" placeholder="New mdNote..." type="text" name="title" [(ngModel)]="newNote.title" #titleField="ngModel"/>
         </form>
 
       </ul>

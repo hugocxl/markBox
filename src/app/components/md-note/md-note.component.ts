@@ -48,7 +48,7 @@ export class MdNoteComponent implements OnInit {
 
   public ngAfterViewChecked(): void {
     if (this.user.settings.editView) {
-      this.renderer.selectRootElement('#md-note-editor').focus();
+      //this.renderer.selectRootElement('#md-note-editor').focus();
       this.autogrow();
     }
   }
