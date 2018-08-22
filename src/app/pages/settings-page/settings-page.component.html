@@ -1,15 +1,24 @@
-<div class="main-info flex-row">
+<div class="page-container">
 
   <div class="page-info">
     <h1>Settings</h1>
     <p>Here you can update your user settings.</p>
+    <p></p>
+    <p>
+      Each setting can be adjusted by pressing toggle buttons. 
+      When finishing, press the Save button.
+      The new setting config overrides the previous one.
+    </p>
+
+    
   </div>
 
   <div class="page-content">
 
-    <div>
-      <h4>Edit view</h4>
-      <div id="buttons-viewMode" (click)="switchViewMode()">
+    <div class="settings-section-container">
+      <h4>View Mode</h4>
+      <p>Select the default view you prefer when entering in a note.</p>
+      <div class="settings-buttons" id="buttons-viewMode" (click)="switchViewMode()">
 
           <div class="inner-container">
       
@@ -39,10 +48,11 @@
     </div>
 
     
-    <div>
+    <div class="settings-section-container">
       <h4>Autosave</h4>
+      <p>Select wheter you prefer autosaving active when editing or not.</p>
       
-      <div id="buttons-autoSaveMode" (click)="switchAutoSaveMode()">
+      <div class="settings-buttons" id="buttons-autoSaveMode" (click)="switchAutoSaveMode()">
         <div class="inner-container">
           <div class="button-settings">
             <p>Autosave On</p>
@@ -66,9 +76,11 @@
       </div>
     </div>
 
-    <div>
+    <div class="settings-section-container">
       <h4>Preview</h4>
-      <div id="buttons-previewMode" (click)="switchPreviewMode()">
+      <p>If active, you can have the preview by default when editing 
+        <br>*This option can only be activated if Edit mode is active</p>
+      <div class="settings-buttons" id="buttons-previewMode" (click)="switchPreviewMode()">
           <div class="inner-container">
             <div class="button-settings">
                 <p>Preview On</p>
@@ -92,19 +104,12 @@
       </div>
     </div>
 
-    <button title="Save" (click)="saveChanges()">Save</button>
-
-
-
+    
+    
+    <button class="save-button" title="Save" (click)="saveChanges()">Save</button>
+    
   </div>
 </div>
-
-
-
-
-
-
-
 
 
 
