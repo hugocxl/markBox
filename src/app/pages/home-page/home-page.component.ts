@@ -28,8 +28,6 @@ export class HomePageComponent implements OnInit {
 
   ngOnInit() {
     this.user = this.authService.getUser()
-
-
     this.mdNotesService.getLatest()
     .then(latestNotes => {
       this.latestNotesInBook = latestNotes;
