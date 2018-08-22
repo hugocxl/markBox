@@ -53,11 +53,13 @@ export class SettingsPageComponent implements OnInit {
 
     if(this.user.settings.htmlView) { this.user.settings.preview = false; }
     this.drawFunction();
+    this.saveChanges();
   }
 
   switchAutoSaveMode(){
     this.user.settings.autoSave = !this.user.settings.autoSave;
-    this.drawFunction()
+    this.drawFunction();
+    this.saveChanges();
   }
 
 
@@ -69,13 +71,12 @@ export class SettingsPageComponent implements OnInit {
     } else {
       this.user.settings.preview = !this.user.settings.preview;
     }
-    this.drawFunction()
-    
+    this.drawFunction();
+    this.saveChanges();
   }
 
 
   drawFunction(){
-    console.log('DRAW')
     let viewModeSetContainer = document.getElementById('toggle-buttons-viewMode');
     let autoSaveSetContainer = document.getElementById('toggle-buttons-autoSaveMode');
     let previewSetContainer = document.getElementById('toggle-buttons-previewMode');
@@ -83,30 +84,30 @@ export class SettingsPageComponent implements OnInit {
 
     if (this.user.settings.editView) {
       viewModeSetContainer.style.clipPath = 'inset(0 0 0 50%)';
-      viewModeSetContainer.style.backgroundColor = '#D74046';
+      viewModeSetContainer.style.backgroundColor = '#4F575E';
     }
 
     if (this.user.settings.htmlView) {      
       viewModeSetContainer.style.clipPath = 'inset(0 50% 0 0)';
-      viewModeSetContainer.style.backgroundColor = 'dodgerblue';
+      viewModeSetContainer.style.backgroundColor = '#4F575E';
     }
 
     if (this.user.settings.autoSave) {
       autoSaveSetContainer.style.clipPath = 'inset(0 0 0 50%)';
-      autoSaveSetContainer.style.backgroundColor = '#D74046';
+      autoSaveSetContainer.style.backgroundColor = '#4F575E';
     } 
     if (!this.user.settings.autoSave) {   
       autoSaveSetContainer.style.clipPath = 'inset(0 50% 0 0)';
-      autoSaveSetContainer.style.backgroundColor = 'dodgerblue';
+      autoSaveSetContainer.style.backgroundColor = '#909090';
     }
 
     if (this.user.settings.preview) {
       previewSetContainer.style.clipPath = 'inset(0 0 0 50%)';
-      previewSetContainer.style.backgroundColor = '#D74046';
+      previewSetContainer.style.backgroundColor = '#4F575E';
     } 
     if (!this.user.settings.preview) { 
       previewSetContainer.style.clipPath = 'inset(0 50% 0 0)';
-      previewSetContainer.style.backgroundColor = 'dodgerblue';
+      previewSetContainer.style.backgroundColor = '#909090';
     }
   }
 

@@ -249,6 +249,20 @@ form .field.has-error input {
   transition: opacity ease-out;
 }
 
+.save-button{
+  background: #4d5d6c;
+  color: #fff;
+  border-radius: 0px;
+  margin: 0 auto;
+  display: block;
+  width: 150px;
+  height: 30px;
+  font-size: 0.8em;
+  font-weight: 200;
+  font-family: Barlow;
+  border: none;
+}
+
 app-root:empty + .loading {
 opacity: 1;
 z-index: 100;
@@ -260,7 +274,7 @@ z-index: 100;
   }
 
   .page-container{
-    height: 100vh;
+    
     display: flex;
     flex-direction: row;
 
@@ -270,8 +284,10 @@ z-index: 100;
     display: flex;
     flex-direction: column;
     width: 40%;
-    background: #dddddd;
-    padding: 200px 20px 20px 20px;
+    background: #EDEDED;
+    padding: 0px 2em 0px 2em;
+    justify-content: center;
+    height: 100vh;
     
   }
 
@@ -279,8 +295,17 @@ z-index: 100;
     display: flex;
     flex-direction: column;
     width: 60%;
-    padding: 200px 20px 20px 50px;
-    
+    height: 100vh;
+    padding: 0px 2em 0px 2em;
+    justify-content: center;
+  }
+
+  .profile-form-group input{
+    height: 30px;
+    width: 180px;
+    font-family: Barlow;
+    font-size: 0.8rem;
+    margin-right: 10px;
   }
 
 }
