@@ -1,25 +1,22 @@
 <div id="home">
-    <header>
-        
-    </header>
-    <h1>Home</h1>
-    <div class="flex-row">
-      <div class="latest-edited">
-        <h4>Last edited</h4>
-        <div class="latest-edited-grid">
-            <div class="md-note-card" *ngFor="let latestNote of latestNotes" [routerLink]="['/mdBooks', latestNote.book_id, 'mdNotes', latestNote._id]">
-                <h5>{{latestNote.title}}</h5>
-                <p>Last edited:<br>{{latestNote.updatedAt|date : 'short'}}</p>
+    <div class="latest-edited">
+        <div class="grid-row">
+            <h4>Last edited</h4>
+        </div>
+        <div class="grid-row">
+            <div *ngFor="let latestNote of latestNotes">
+                <app-card [mdNote]="latestNote" [mdBook_id]="latestNote.book_id"></app-card>
             </div> 
         </div>
-      </div>
-      <div class="pinned-notes">
-          <h4>Pinned notes</h4>
-          <div class="pinned-notes-grid">
-              <div class="md-pinned-card" *ngFor="let pinnedNote of pinnedNotes" [routerLink]="['/mdBooks', pinnedNote.book_id, 'mdNotes', pinnedNote._id]">
-                <app-card-pinned [pinnedNote]="pinnedNote"></app-card-pinned>
-              </div>
-          </div>
-      </div>
     </div>
-  </div>
+    <div class="pinned-notes">
+        <div class="grid-row">
+            <h4>Pinned notes</h4>
+        </div>
+        <div class="grid-row">
+            <div *ngFor="let pinnedNote of pinnedNotes">
+                <app-card [mdNote]="pinnedNote" [mdBook_id]="pinnedNote.book_id"></app-card>
+            </div>
+        </div>
+    </div>
+</div>

@@ -51,7 +51,7 @@ body.active{
 }
 #app-document{
   transform: translateX(0%);
-  transition: all 0.4s linear; 
+  transition: all 0.3s linear; 
   margin:0 auto;
   width: calc(100% - 45px);
 }
@@ -100,8 +100,15 @@ p{
   font-family: Barlow;
   margin: .8em 0;
 }
-
-
+.gutter-small{
+  padding: 1em;
+}
+.gutter-med{
+  padding: 2em;
+}
+.gutter-large{
+  padding: 3em;
+}
 
 
 
@@ -137,7 +144,7 @@ p{
 }
 #app-document.active .grid-row{
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  transition: all 1s;
+  transition: all .3s linear;
 }
 /* -- forms -- */
 
