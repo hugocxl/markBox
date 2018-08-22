@@ -28,11 +28,11 @@ h4{
 
 .md-note-card{
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-  padding: 1.5em;
+  padding: 1em;
   border: 1px solid #cecece;
   background: #fff;
 }
-.md-note-card:hover{
+.md-note-card:hover, .md-pinned-card:hover{
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
   cursor: pointer;
 }
@@ -43,7 +43,8 @@ h4{
   height: auto;
   padding:1em;
   border: 1px solid #cecece;
-  background: #ffc url('../../../assets/images/chincheta.png') no-repeat center top;
+  background: #ececec;
+  /*background: #ffc url('../../../assets/images/chincheta.png') no-repeat center top;*/
   background-size: 21px;
 }
 @media (min-width:768px){

@@ -13,6 +13,7 @@ export class PinnedPageComponent implements OnInit {
   pinnedNotes:any;
   noteCount:String;
   hasParams = false;
+  content;
 
   constructor(
     private mdNotesService: MdNotesService,

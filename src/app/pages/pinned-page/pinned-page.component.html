@@ -10,8 +10,11 @@
           <div class="pinned-list">
               <div *ngFor="let note of pinnedNotes" [routerLink]="['/pinned', note._id]" [routerLinkActive]="['active']">
                 <div class="pinned-card">
-                  <h3 class="h5 note-title">{{note.title}}</h3>
-                  <p>{{note.updatedAt|date : 'short'}}</p>
+                  <div class="flex-row">
+                      <h3 class="h5 note-title">{{note.title}}</h3>
+                      <p>{{note.updatedAt|date : 'short'}}</p>
+                  </div>
+                  <p class="content">{{note.content | slice:0:40}}...</p>
                 </div>
               </div>
           </div>

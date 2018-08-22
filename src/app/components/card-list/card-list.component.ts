@@ -38,7 +38,7 @@ export class CardListComponent implements OnInit, AfterViewChecked {
         if(this.mdBook.mdNotes.length){
           let checkNoteCount;
           this.mdBook.mdNotes.length > 1 ? checkNoteCount = 'notes' : checkNoteCount = 'note';
-          this.noteCount = `You have: ${this.mdBook.mdNotes.length} ${checkNoteCount}`;
+          this.noteCount = `You have ${this.mdBook.mdNotes.length} ${checkNoteCount} in this book.`;
         }
         else{
           this.noteCount = `You have no notes`;
