@@ -7,7 +7,6 @@
   height: 100%;
   width: 190px;
   color: white;
-  border-bottom: 1em solid #383838;
   z-index: 1;
   transform: translateX(-100%);
   transition: all 0.3s linear; 
@@ -27,19 +26,32 @@
   transform: translateX(0%);  
 }
 #md-books-nav > form{
-  border-bottom: 1px solid rgba(0,0,0,.4);
+  height: 56px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background:rgba(0, 0, 0, 0.3);
 }
 #add-book-input{
-  background: url('../../../assets/images/plus-icon.png') no-repeat, rgba(0, 0, 0, 0.3);
+  background: url('../../../assets/images/plus-icon.png') no-repeat;
   background-size: 17px 17px;
   border: none;
   color: white;
   border-radius:0px;
-  height: 55px;
   background-position: 4% 50%;
   padding-left: 30px;
   width: 100%;
-  border-bottom: 1px solid rgba(0,0,0,.4);
+  position: relative;
+  height: 40px;
+}
+#add-book-input::before{
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 30px;
+  width: 70%;
+  height: 1px;
+  background:white;
 }
 
 #list-title{
@@ -65,11 +77,13 @@
 }
 .md-books-list > li{
   background:rgb(56, 62, 68);
-  border-bottom: 1px solid rgba(0,0,0,.4);
-  border-top: 1px solid rgb(51,51,51);
-  padding: 5px 0 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.3);
+  padding: 6px 0 0;
   position: relative;
-  min-height: 33px;
+  min-height: 35px;
+}
+.md-books-list > li:first-child{
+  border-top: none;
 }
 .md-book-title{
   padding: 0;
