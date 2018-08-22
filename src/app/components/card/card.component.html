@@ -1,24 +1,21 @@
-<div class="card-container">
-  <div class="md-note-card" [routerLink]="['/mdBooks', mdBook_id, 'mdNotes', mdNote._id]">
+<div class="card">
+  <div [routerLink]="['/mdBooks', mdBook_id, 'mdNotes', mdNote._id]">
     <h4 class="note-title">{{mdNote.title}}</h4>
-    <p class="note-content" >{{mdNote.content}}</p>
+    <p class="note-content">{{mdNote.content | slice:0:500}}...</p>
   </div>
   
-  <div class="bottom-bar">
-    <div>
-        <p class="edit-date">Last edited:<br>{{mdNote.updatedAt|date : 'short'}}</p>
-    </div>  
-
+  <div class="flex-row">
+    <p class="edit-date">Last edited:<br>{{mdNote.updatedAt|date : 'short'}}</p>
     <div class="buttons-bar">
-      <button [routerLink]="['mdNotes', mdNote._id]">
+      <button [routerLink]="['/mdBooks', mdBook_id, 'mdNotes', mdNote._id]" title="Edit">
         <img class="icon" src="../../../assets/images/edit-icon.png">
       </button>
     
-      <button (click)="addToPinned()" [ngClass]="{'active': mdNote.pinned }">
+      <button (click)="addToPinned()" [ngClass]="{'active': mdNote.pinned }" title="Pin this note">
           <img class="icon" src="../../../assets/images/pinned-icon.png">
       </button>
   
-      <button (click)="delete()">
+      <button (click)="delete()" title="Delete">
           <img class="icon" src="../../../assets/images/delete-icon.png">
       </button>
       </div>

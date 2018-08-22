@@ -154,10 +154,10 @@ a{
 }
 .md-notes-list .change-mdNote-title input{
   background-image: none;
-  padding-left: 2px;
+  padding:2px 0 5px 30px;
   padding-top: 0;
   padding-bottom: 0;
-  height: 22px;
+  height: 26px;
   border-radius: 0;
   font-weight: 100;
   font-size: .9em;
@@ -165,7 +165,9 @@ a{
 a.active{
   color: white;
 }
-
+input:focus, input:active{
+  outline: none;
+}
 #note-selected.active{
   display: inline-block;
   font-weight: 200;
