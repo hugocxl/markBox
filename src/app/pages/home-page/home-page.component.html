@@ -1,8 +1,6 @@
 <div id="home">
     <div class="latest-edited">
-        <div class="grid-row">
-            <h4>Last edited</h4>
-        </div>
+        <h2>Last edited</h2>
         <div class="grid-row">
             <div *ngFor="let latestNote of latestNotes">
                 <app-card [mdNote]="latestNote" [mdBook_id]="latestNote.book_id"></app-card>
@@ -10,9 +8,7 @@
         </div>
     </div>
     <div class="pinned-notes">
-        <div class="grid-row">
-            <h4>Pinned notes</h4>
-        </div>
+         <h2>Pinned notes</h2>
         <div class="grid-row">
             <div *ngFor="let pinnedNote of pinnedNotes">
                 <app-card [mdNote]="pinnedNote" [mdBook_id]="pinnedNote.book_id"></app-card>

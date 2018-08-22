@@ -16,13 +16,11 @@ export class MdNotesService {
   searchChange$: Observable<any> = this.searchChange.asObservable();
 
 
-  
   constructor(
     private httpClient: HttpClient,
   ) { }
   
   private API_URL = environment.API_URL;
-
 
   private setSearchNotes(updatedSearch) {
     this.searchNotes = updatedSearch;
