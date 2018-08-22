@@ -13,14 +13,13 @@ export class SearchPageComponent implements OnInit {
   pinned
   constructor(
     private mdNotesService: MdNotesService,
-    private mdBooksService: MdBooksService
+    private mdBooksService: MdBooksService,
   ) { }
 
   ngOnInit() {
-      this.mdNotesService.searchChange$.subscribe(updatedSearch => {
-        this.searchResult = updatedSearch;
-      });
-      
+    this.mdNotesService.searchChange$.subscribe(updatedSearch => {
+      this.searchResult = updatedSearch;
+    });
   }
 
   delete(mdNote, mdBook){

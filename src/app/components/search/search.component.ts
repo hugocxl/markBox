@@ -22,17 +22,29 @@ export class SearchComponent implements OnInit {
 
   ngOnInit() {
     this.router.events.subscribe((val) => {
-      if(this.searchContent.length > 2){
+      if(!this.searchContent && this.router.url === '/search' ){
         this.searchContent = '';
         document.getElementById('search-field').classList.remove('active');
       }
+
+      if(this.searchContent.length>1 && this.router.url === '/search' ){
+        this.searchContent = '';
+        document.getElementById('search-field').classList.remove('active');
+      }
+
+      if(!this.searchContent && this.router.url !== '/search' ){
+        this.searchContent = '';
+        document.getElementById('search-field').classList.remove('active');
+      }
+
+
+
+
     });
     document.getElementById('search-input').addEventListener( "keyup", ()=>{
       if (this.searchContent) { 
         this.router.navigate(['/search']);
         this.mdNotesService.updateSearch(this.searchContent);
-      } else {
-        this.router.navigate(['/home']);
       }
 
   })

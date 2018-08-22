@@ -6,34 +6,109 @@
   </div>
 
   <div class="right-side">
-    <div>
-      <h3>Autosave</h3>
-      <!-- {{user.settings.autoSave}} -->
-      <label class="switch switch_type1" role="switch">
-        <input type="checkbox" class="switch__toggle" checked>
-        <span class="switch__label"></span>
-      </label>
-    </div>
     
-    <button title="Save" (click)="saveChanges()">Save</button>
+    
     
     <div>
       <h4>Edit view</h4>
-      <textarea [(ngModel)]="user.settings.editView"></textarea>
+      <div id="buttons-viewMode" (click)="switchViewMode()">
+
+          <div class="inner-container">
+      
+              <div class="button-settings">
+                  <p>Edit mode</p>
+              </div>
+      
+              <div class="button-settings">
+                  <p>Html mode</p>
+              </div>
+      
+          </div>
+      
+          <div class="inner-container" id='toggle-buttons-viewMode'>
+      
+              <div class="button-settings">
+                  <p>Edit mode</p>
+              </div>
+      
+              <div class="button-settings">
+                  <p>Html mode</p>
+              </div>
+      
+          </div>
+      
+      </div>
     </div>
-    
-    <div>
-      <h4>Html view</h4>
-      <textarea [(ngModel)]="user.settings.htmlView"></textarea>
-    </div>
+
     
     <div>
       <h4>Autosave</h4>
-      <textarea [(ngModel)]="user.settings.autoSave"></textarea>
+      
+      <div id="buttons-autoSaveMode" (click)="switchAutoSaveMode()">
+        <div class="inner-container">
+          <div class="button-settings">
+            <p>Autosave On</p>
+          </div>
+
+          <div class="button-settings">
+            <p>Autosave Off</p>
+          </div>
+        </div>
+
+        <div class="inner-container" id='toggle-buttons-autoSaveMode'>
+          <div class="button-settings">
+            <p>Autosave On</p>
+          </div>
+
+          <div class="button-settings">
+            <p>Autosave Off</p>
+          </div>
+        </div>
+
+      </div>
     </div>
+
+    <div>
+      <h4>Preview</h4>
+      <div id="buttons-previewMode" (click)="switchPreviewMode()">
+          <div class="inner-container">
+            <div class="button-settings">
+                <p>Preview On</p>
+            </div>
+    
+            <div class="button-settings">
+                <p>Preview Off</p>
+            </div>
+          </div>
+      
+          <div class="inner-container" id='toggle-buttons-previewMode'>
+            <div class="button-settings">
+                <p>Preview On</p>
+            </div>
+    
+            <div class="button-settings">
+                <p>Preview Off</p>
+            </div>
+          </div>
+      
+      </div>
+    </div>
+
+    <button title="Save" (click)="saveChanges()">Save</button>
+
 
 
   </div>
 </div>
+
+
+
+
+
+
+
+
+
+
 
 
