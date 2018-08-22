@@ -30,7 +30,7 @@ export class MdNoteComponent implements OnInit {
     email: '',
     password: '',
     settings : {
-      editView: true, 
+      editView: false, 
       htmlView: false,
       autoSave: false,
       preview:  false
@@ -67,10 +67,11 @@ export class MdNoteComponent implements OnInit {
       this.user = user;
     });
     this.route.params.subscribe((val) => {
-      document.getElementById('md-note-view').classList.remove('active-preview');
+      if(!this.user.settings.preview) {document.getElementById('md-note-view').classList.remove('active-preview')};
       this.updatedUserSettings();
       this.getNote(val);
     });
+    if(this.user.settings.preview) {document.getElementById('md-note-view').classList.add('active-preview')}; 
   }
 
   updatedUserSettings(){
@@ -96,6 +97,7 @@ export class MdNoteComponent implements OnInit {
     this.setActiveMessage('Edit mode enabled');
     this.user.settings.editView = !this.user.settings.editView;
     this.user.settings.htmlView = !this.user.settings.htmlView;
+    if(this.user.settings.htmlView){this.user.settings.preview = false}
   };
 
 
@@ -141,6 +143,7 @@ export class MdNoteComponent implements OnInit {
   closeEdit(){
     this.user.settings.editView = !this.user.settings.editView
     this.user.settings.htmlView = !this.user.settings.htmlView 
+    this.user.settings.preview = false;
     document.getElementById('md-note-view').classList.remove('active-preview');
   }
 

@@ -42,6 +42,7 @@ export class SettingsPageComponent implements OnInit {
       }
     }
     this.authService.updateData(data);
+    console.log(this.user)
   };
 
 
