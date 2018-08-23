@@ -2,4 +2,6 @@
   width: 80%;
   margin: 0 auto;
   padding: 1em;
-}
+  min-height: 100vh;
+  background: white;
+} 

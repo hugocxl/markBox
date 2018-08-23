@@ -1,6 +1,6 @@
 .card-list-title{
-  /* border-bottom: 8px #4A5259 solid; */
-  margin: 2em 2em 0em 2em;
+  /* border-bottom: 4px #4A5259 solid; */
+  padding: 2rem 2rem 0rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: baseline;  
@@ -49,8 +49,8 @@
   text-align: right;
 }
 .my-md-books{
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.05);
+  min-height: 100vh;
+  background-color: #EDEDED;
 }
 
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */

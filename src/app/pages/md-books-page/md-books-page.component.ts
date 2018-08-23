@@ -4,7 +4,7 @@ import { ActivatedRoute } from '@angular/router';[]
 @Component({
   selector: 'app-md-books-page',
   templateUrl: './md-books-page.component.html',
-  styleUrls: ['./md-books-page.component.scss']
+  styleUrls: ['./md-books-page.component.css']
 })
 export class MdBooksPageComponent implements OnInit {
   mdNoteSelected: Boolean;

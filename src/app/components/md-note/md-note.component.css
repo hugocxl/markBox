@@ -37,7 +37,6 @@ app-md-note{
   width: 50%;
 }
 #md-note-view.active-preview .edit-mdnote{
-  background: url('.././../../assets/images/background-grid.png');
   padding: 3em 3em;
 }
 #md-note-view.active-preview{

@@ -35,7 +35,6 @@ export class PinnedPreviewComponent implements OnInit {
       this.mdNewnote = note
       this.mdNote = this.mdNewnote;
       this.markdown = this.mdNote.content;
-      console.log(this.markdown);
     })
     .catch(err => {
       console.error(err);

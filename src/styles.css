@@ -43,8 +43,10 @@ router-outlet ~ * {
 #pinned-notes-page router-outlet ~ * {
   position: static;
   height: 100vh;
-  width: 70%;
+  width: 75%;
   background: #fff;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 body.logged-in #app-document{
   margin-left: 45px;
@@ -158,7 +160,7 @@ table{
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   grid-gap: 2em;
-  padding: 2em;
+  padding: 0 2em;
 }
 #app-document.active .grid-row{
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -342,7 +344,7 @@ z-index: 100;
 
 body.night-mode{
   transition: background 1s ease-in-out;
-  background: rgba(50, 50, 50, 1) ;
+  background:url('./assets/images/background-grid-dark.png');
 }
 
 body.night-mode .navbar{
@@ -378,7 +380,7 @@ body.night-mode .page-content .help-cheetsheet {
 
 
 body.night-mode app-card .card {
-  background-color: black!important;
+  background-color: #303030!important;
   color: white;
 }
 
