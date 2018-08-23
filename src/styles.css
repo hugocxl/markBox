@@ -33,6 +33,13 @@ body{
   background:url('./assets/images/background-grid.png');
   color: #808080;
 }
+
+body.night-mode{
+  background: rgba(50, 50, 50, 1) ;
+
+}
+
+
 router-outlet ~ * {
   position: absolute;
   height: 100%;
@@ -325,7 +332,7 @@ z-index: 100;
     width: 180px;
     font-family: Barlow;
     font-size: 0.8rem;
-    margin-right: 10px;
+    margin-right: 20px;
   }
 
 }

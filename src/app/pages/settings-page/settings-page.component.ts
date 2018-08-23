@@ -1,27 +1,30 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
+import { Renderer2 } from '@angular/core';
 
 @Component({
   selector: 'app-settings-page',
   templateUrl: './settings-page.component.html',
   styleUrls: ['./settings-page.component.css']
 })
-export class SettingsPageComponent implements OnInit {
+export class SettingsPageComponent implements OnInit { 
+    
+  constructor(
+    private authService: AuthService,
+    private renderer: Renderer2
+  ) { }
 
-   user = {
+  user = {
     email: '',
     password: '',
     settings : {
       editView: true, 
       htmlView: true,
       autoSave: true,
-      preview:  true
+      preview:  true,
+      nightMode: true,
     }
-  };
-
-  constructor(
-    private authService: AuthService
-  ) { }
+  }
 
   ngOnInit() {
     this.authService.userChange$.subscribe((user) => {
@@ -39,10 +42,10 @@ export class SettingsPageComponent implements OnInit {
         htmlView: this.user.settings.htmlView,
         autoSave: this.user.settings.autoSave,
         preview: this.user.settings.preview,
+        nightMode: this.user.settings.nightMode,
       }
     }
     this.authService.updateData(data);
-    console.log(this.user)
   };
 
 
@@ -75,11 +78,23 @@ export class SettingsPageComponent implements OnInit {
     this.saveChanges();
   }
 
+  switchNightMode(){
+    this.user.settings.nightMode = !this.user.settings.nightMode;
+    this.drawFunction();
+    this.saveChanges();
+    if(document.getElementsByTagName('body')[0].classList.contains('night-mode')){
+      this.renderer.removeClass(document.body, 'night-mode');
+    } else {
+      this.renderer.addClass(document.body, 'night-mode');
+    }
+  }
+
 
   drawFunction(){
     let viewModeSetContainer = document.getElementById('toggle-buttons-viewMode');
     let autoSaveSetContainer = document.getElementById('toggle-buttons-autoSaveMode');
     let previewSetContainer = document.getElementById('toggle-buttons-previewMode');
+    let nightModeSetContainer = document.getElementById('toggle-buttons-nightMode');
 
 
     if (this.user.settings.editView) {
@@ -109,7 +124,20 @@ export class SettingsPageComponent implements OnInit {
       previewSetContainer.style.clipPath = 'inset(0 50% 0 0)';
       previewSetContainer.style.backgroundColor = '#909090';
     }
+
+    if (this.user.settings.nightMode) {
+      nightModeSetContainer.style.clipPath = 'inset(0 0 0 50%)';
+      nightModeSetContainer.style.backgroundColor = '#4F575E';
+    } 
+    if (!this.user.settings.nightMode) { 
+      nightModeSetContainer.style.clipPath = 'inset(0 50% 0 0)';
+      nightModeSetContainer.style.backgroundColor = '#909090';
+    }
+
   }
+
+
+
 
 
 }

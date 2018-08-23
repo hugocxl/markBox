@@ -1,29 +1,26 @@
-.main.info{
-  display: flex;
-  justify-content: center;
-}
 
-.main>.left-side{
-  width: 40%;
-}
-
-.main>.right-side{
-  width: 60%;
+.help-cheetsheet{
   max-height: 100vh;
   overflow: scroll;
-  background: #F1F1F1;
   -ms-overflow-style: none;
   overflow: -moz-scrollbars-none;
+  padding-top: 500px;
+  background-color: white;
 }
 
 .main>.right-side::-webkit-scrollbar{
   display: none;
 }
 
-.main>.right-side table{
+.help-cheetsheet table{
   width: 100%;
   margin: 1em 0;
 }
+
+.help-cheetsheet th, td{
+  border-bottom: 1px solid #ddd;
+}
+
 th{
   text-align: left;
 }
