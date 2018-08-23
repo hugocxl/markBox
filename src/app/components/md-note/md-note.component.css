@@ -2,6 +2,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  background: url('.././../../assets/images/background-grid.png');
 }
 app-md-note{
   margin: 0;
@@ -12,7 +13,7 @@ app-md-note{
   min-height: 100vh;
 }
 .render-mdnote, .render-preview{
-  padding: 3em;
+  padding: 3em 6em;
   width: 80%;
   background: #fff;
   /* height: 100vh;
@@ -26,11 +27,11 @@ app-md-note{
 }
 
 .edit-mdnote{
-  padding: 3em 9em;
-  width: 100%;
+  padding: 3em 6em;
+  width: 80%;
   min-height: 100vh;
   height: auto;
-  background: url('.././../../assets/images/background-grid.png');
+  background: #fff;
 }
 #md-note-view.active-preview .render-mdnote, #md-note-view.active-preview .edit-mdnote{
   width: 50%;

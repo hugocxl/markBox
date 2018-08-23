@@ -7,6 +7,9 @@
   <div class="flex-row">
     <p class="edit-date">Last edited:<br>{{mdNote.updatedAt|date : 'short'}}</p>
     <div class="buttons-bar">
+        <button title="Download note" (click)="exportFile(mdNote.content, mdNote.title)">
+            <img class="icon" src="../../../assets/images/export-icon.png">
+        </button>
       <button [routerLink]="['/mdBooks', mdBook_id, 'mdNotes', mdNote._id]" title="Edit">
         <img class="icon" src="../../../assets/images/edit-icon.png">
       </button>

@@ -13,6 +13,9 @@ export class LoginFormComponent implements OnInit {
     email: '',
     password: ''
   }
+  feedbackEnabled = false;
+  error = null;
+  processing = false;
 
   constructor(
     private authService: AuthService,
@@ -23,13 +26,21 @@ export class LoginFormComponent implements OnInit {
   }
 
   submitForm(form) {
-    this.authService.login(this.user)
-    .then(() => {
-        this.router.navigate(['/home']);
-    })
-    .catch(error => {
-        console.log(error);
-    });
+    this.error = '';
+    this.feedbackEnabled = true;
+    console.log(this.error);
+      if (form.valid) {
+        this.processing = true;
+      this.authService.login(this.user)
+      .then(() => {
+          this.router.navigate(['/home']);
+      })
+      .catch(error => {
+        this.error = error.statusText;
+        console.log(this.error);
+        this.processing = false;
+        this.feedbackEnabled = false;
+      });
+    }
   }
-
 }
