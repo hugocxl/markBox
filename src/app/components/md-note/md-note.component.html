@@ -1,10 +1,10 @@
 <section class="mdNote" id="md-note-view">
     <div class="edit-mdnote" *ngIf="user.settings.editView">
-        <header>
+        <!-- <header>
             <h2>#{{mdNote.title}}</h2>
             <p>{{mdNote.createdAt | date: M/d/yy }}</p>
             <p>{{mdNote.updatedAt }}</p>
-        </header>
+        </header> -->
         <textarea id="md-note-editor" (keypress)="autoSave()" [(ngModel)]="markdown" [ngClass]="{'active': user.settings.preview}" ></textarea>
     </div>
 

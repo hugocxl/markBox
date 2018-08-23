@@ -37,6 +37,8 @@ import { AuthService } from './services/auth.service';
 import { ProfileService } from './services/profile.service';
 import { MdBooksService } from './services/md-books.service';
 import { FilesaverService } from './services/filesaver.service';
+import { HighlightService } from './services/highlight.service';
+
 
 // Guards
 
@@ -131,7 +133,8 @@ const routes: Routes = [
     RequireUserGuard,
     MdBooksService,
     ProfileService,
-    FilesaverService
+    FilesaverService,
+    HighlightService
   ],
   bootstrap: [AppComponent]
 })
