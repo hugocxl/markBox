@@ -3,6 +3,7 @@ import { MdNotesService } from '../../services/md-notes.service';
 import { ActivatedRoute } from '@angular/router';
 import { FilesaverService } from '../../services/filesaver.service';
 import { AuthService } from '../../services/auth.service';
+import { HighlightService } from '../../services/highlight.service';
 
 @Component({
   selector: 'app-md-note',
@@ -20,6 +21,7 @@ export class MdNoteComponent implements OnInit {
   
   mdNewnote:any;
   markdown: any;
+  highlighted: boolean = false;
 
   public pipeMarkDown = '# Markdown';
   
@@ -43,10 +45,15 @@ export class MdNoteComponent implements OnInit {
     private renderer: Renderer2,
     private el: ElementRef,
     private filesaverService: FilesaverService,
-    private authService: AuthService
+    private authService: AuthService,
+    private highLightService: HighlightService
   ) { }
 
   public ngAfterViewChecked(): void {
+    if(this.markdown && !this.highlighted){
+      this.highLightService.highlightAll();
+      this.highlighted = true;
+    }
     if (this.user.settings.editView) {
       //this.renderer.selectRootElement('#md-note-editor').focus();
       this.autogrow();
