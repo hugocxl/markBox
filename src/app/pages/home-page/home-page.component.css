@@ -1,6 +1,7 @@
 #home{
   padding-bottom: 1em;
   background-color: #EDEDED;
+  min-height: 100vh;
 }
 h2{
   padding:1em 0 0.5em 1.2em;
@@ -9,4 +10,38 @@ h2{
 }
 .grid-row{
   padding: 0 2em;
+}
+
+
+
+
+@media (min-width:565px){
+  
+
+}
+
+@media (min-width:768px){
+  .grid-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(32%, 150px));
+    grid-gap: 15px;
+    padding: 15px;;
+  }
+}
+
+@media (min-width:992px){
+  .grid-row{
+    display: grid;
+    grid-gap: 2em;
+    padding: 0 2em;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+
+  }
+  #app-document.active .grid-row{
+    transition: all .3s linear;
+  }
+
+}
+@media (min-width:1800px){
+  
 }

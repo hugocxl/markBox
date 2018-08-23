@@ -41,6 +41,7 @@ h1{
 }
 
 @media (min-width:565px){
+  
   .logo{
     width: 25%;
   }

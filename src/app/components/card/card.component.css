@@ -18,9 +18,11 @@
   margin: 0;
   border-bottom:1px solid #d8d8d8;
   border-top:1px solid #d8d8d8;
-  height: auto;
-  min-height: 210px;
+  overflow: hidden;
+  max-height: 211px;
+  min-height: 211px;
 }
+
 .card:hover{
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
   cursor: pointer;
@@ -68,4 +70,8 @@ button:hover,button.saving{
 .active{
   transition: background-color 0.3s;
   background: rgb(172, 156, 126);
+}
+
+@media (min-width:768px){
+
 }

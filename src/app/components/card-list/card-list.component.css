@@ -1,11 +1,7 @@
 .card-list-title{
   /* border-bottom: 4px #4A5259 solid; */
-  padding: 2rem 2rem 0rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;  
+  padding: 1em
 }
-
 .book-title{
   width: auto;
   position: relative;
@@ -44,11 +40,6 @@
   cursor: pointer;
   opacity: .7;
 }
-
-.note-number{
-  width: 40%;
-  text-align: right;
-}
 .my-md-books{
   min-height: 100vh;
   background-color: #EDEDED;
@@ -68,4 +59,23 @@
 :-moz-placeholder { /* Firefox 18- */
   font-weight: 100;
   font-size: 1em;
+}
+.grid-row{
+  padding: 1em;
+}
+@media (min-width:768px){
+  .card-list-title{
+    /* border-bottom: 4px #4A5259 solid; */
+    padding: 2rem 2rem 0rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;  
+  }
+  .note-number{
+    width: 40%;
+    text-align: right;
+  }
+  .grid-row{
+    padding: 0 2em;
+  }
 }

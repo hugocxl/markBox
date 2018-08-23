@@ -1,12 +1,4 @@
 
-.help-cheetsheet{
-  max-height: 100vh;
-  overflow: scroll;
-  -ms-overflow-style: none;
-  overflow: -moz-scrollbars-none;
-  padding-top: 500px;
-  background-color: white;
-}
 
 .main>.right-side::-webkit-scrollbar{
   display: none;
@@ -30,4 +22,26 @@ td{
 tr{
   margin-bottom: 10px;
   overflow: hidden;
+}
+
+@media (min-width:768px){
+  .help-cheetsheet{
+    max-height: 100vh;
+    overflow: scroll;
+    -ms-overflow-style: none;
+    overflow: -moz-scrollbars-none;
+    padding-top: 280px;
+    background-color: white;
+  }
+}
+
+@media (min-width:768px){
+  .help-cheetsheet{
+    max-height: 100vh;
+    overflow: scroll;
+    -ms-overflow-style: none;
+    overflow: -moz-scrollbars-none;
+    padding-top: 500px;
+    background-color: white;
+  }
 }
