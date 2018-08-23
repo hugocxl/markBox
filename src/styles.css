@@ -27,10 +27,11 @@ time, mark, audio, video {
 	vertical-align: baseline;
 } */
 body{
-  font-family: 'PT Sans', sans-serif;
+  font-family: 'Barlow', sans-serif;
   font-size: .9em;
   line-height: 1.5;
   background:url('./assets/images/background-grid.png');
+  color: #808080;
 }
 router-outlet ~ * {
   position: absolute;
@@ -101,6 +102,16 @@ p{
   font-family: Barlow;
   margin: .8em 0;
 }
+strong{
+  font-weight: 500;
+}
+pre{
+  padding: 1em;
+    background: #ececec;
+}
+h1+ul, h2+ul, h2+ul, h4+ul, h5+ul, h6+ul{
+  margin-top: 1em;
+}
 .gutter-small{
   padding: 1em;
 }
@@ -110,7 +121,12 @@ p{
 .gutter-large{
   padding: 3em;
 }
-
+img{
+  max-width: 100%;
+}
+table{
+  margin: 1em 0;
+}
 
 .page-wrapper{
   border-left: 1px solid rgb(220,220,220);
@@ -265,10 +281,10 @@ opacity: 1;
 z-index: 100;
 }
 
-#home button, #search button{
+#home button:last-child, #search button:last-child{
   margin-right: 0;
 }
-#home button:nth-child(2),#search button:nth-child(2), #home button:last-child,#search button:last-child{
+#home button:nth-last-child(2), #search button:nth-last-child(2), #home button:last-child, #search button:last-child{
   display: none;
 }
 

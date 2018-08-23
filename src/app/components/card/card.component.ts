@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { MdNotesService } from '../../services/md-notes.service';
 import { MdBooksService } from '../../services/md-books.service';
+import { FilesaverService } from '../../services/filesaver.service';
 
 
 @Component({
@@ -15,7 +16,8 @@ export class CardComponent implements OnInit {
 
   constructor(
     private mdNotesService: MdNotesService,
-    private mdBooksService: MdBooksService
+    private mdBooksService: MdBooksService,
+    private filesaverService: FilesaverService,
   ) { }
 
   ngOnInit() {
@@ -44,6 +46,10 @@ export class CardComponent implements OnInit {
     .catch(error => {
       console.error(error);
     })
+  }
+
+  exportFile(content,title){
+    this.filesaverService.onTestSaveFile(content, title);
   }
 
 
