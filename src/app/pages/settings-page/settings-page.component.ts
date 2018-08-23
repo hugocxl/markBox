@@ -32,6 +32,7 @@ export class SettingsPageComponent implements OnInit {
     });
     this.user = this.authService.getUser();
     this.drawFunction();
+    console.log(this.user.settings)
   
   }
 
@@ -46,6 +47,7 @@ export class SettingsPageComponent implements OnInit {
       }
     }
     this.authService.updateData(data);
+    console.log(this.user.settings)
   };
 
 
@@ -125,11 +127,11 @@ export class SettingsPageComponent implements OnInit {
       previewSetContainer.style.backgroundColor = '#909090';
     }
 
-    if (this.user.settings.nightMode) {
+    if (!this.user.settings.nightMode) {
       nightModeSetContainer.style.clipPath = 'inset(0 0 0 50%)';
       nightModeSetContainer.style.backgroundColor = '#4F575E';
     } 
-    if (!this.user.settings.nightMode) { 
+    if (this.user.settings.nightMode) { 
       nightModeSetContainer.style.clipPath = 'inset(0 50% 0 0)';
       nightModeSetContainer.style.backgroundColor = '#909090';
     }

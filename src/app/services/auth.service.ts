@@ -86,6 +86,9 @@ export class AuthService {
       const updatedUser = {...user}
       this.setUser(updatedUser);
     })
+    .then(() => {
+      this.me();
+    })
     .catch(error => { 
       console.log(error)
     });

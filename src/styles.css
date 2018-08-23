@@ -31,13 +31,8 @@ body{
   font-size: .9em;
   line-height: 1.5;
   background:url('./assets/images/background-grid.png');
+  transition: background 1s ease-in-out;
 }
-
-body.night-mode{
-  background: rgba(50, 50, 50, 1) ;
-
-}
-
 
 router-outlet ~ * {
   position: absolute;
@@ -279,6 +274,14 @@ z-index: 100;
   display: none;
 }
 
+
+
+
+
+
+
+
+
 @media (min-width:768px) {
   .loading {
     background-size: 20%;
@@ -320,5 +323,60 @@ z-index: 100;
   }
 
 }
+
+body.night-mode{
+  transition: background 1s ease-in-out;
+  background: rgba(50, 50, 50, 1) ;
+}
+
+body.night-mode .navbar{
+  background-color: #36474e!important;
+}
+
+body.night-mode .navbar-item a.active{
+  background-color: #5d6c74!important;
+}
+body.night-mode #md-books-nav {
+  background-color: #2b3539!important;
+  color: white;
+}
+
+body.night-mode #md-books-nav.active {
+  background-color: #2b3539!important;
+  color: white;
+}
+
+body.night-mode #md-books-nav.active .md-books-list>li{
+  background-color: #20272a!important;
+}
+
+body.night-mode .page-info {
+  background-color: #1e2123!important;
+  color: white;
+}
+
+body.night-mode .page-content .help-cheetsheet {
+  background-color: black!important;
+  color: white;
+}
+
+
+body.night-mode app-card .card {
+  background-color: black!important;
+  color: white;
+}
+
+body.night-mode #md-note-view .render-mdnote{
+  background-color: #1e2123!important;
+  color: white!important;
+  border: none;
+}
+
+
+body.night-mode app-md-note #md-note-view .edit-mdnote{
+  background-color: black!important;
+}
+
+
 
 
