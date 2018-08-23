@@ -35,7 +35,7 @@ body{
   transition: background 1s ease-in-out;
   color: #808080;
 }
-.body.logged-in{
+body.logged-in{
   background:url('./assets/images/background-grid.png');
 }
 
