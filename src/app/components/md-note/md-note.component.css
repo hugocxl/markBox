@@ -76,7 +76,7 @@ button{
   border: none;
   margin-bottom: 5px;
   cursor: pointer;
-  transition: all .3s;
+  transition: all .2s ease-in-out;
   display: block
 }
 button:hover,button.saving{
@@ -96,11 +96,11 @@ button:active, button:focus{
 
 
 button.active{
-  transition: background-color 0.3s;
+  transition: background-color 0.2s ease-in-out;
   background: #A9A9A9;
 }
 .active-pinned{
-  transition: background-color 0.3s;
+  transition: background-color 0.2s ease-in-out;
   background: rgb(172, 156, 126);;
 }
 
