@@ -1,9 +1,6 @@
 *{
   box-sizing: border-box;
 }
-#landing{
-  padding: 15px 0;
-}
 h1{
   color: #4F575E;
   line-height: 1em;
@@ -24,6 +21,7 @@ h1{
 
 .form-wrapper{
   width: 100%;
+  min-height: 270px;
 }
 .flex-row-home{
   display: flex;
@@ -38,7 +36,9 @@ h1{
   padding-top: 40px;
 }
 
-
+#landing{
+  padding: 1em 0;
+}
 
 @media (min-width:565px){
   .logo{
@@ -47,7 +47,7 @@ h1{
 }
 
 @media (min-width:768px){
-  .logo[_ngcontent-c4] {
+  .logo {
     width: 22%;
 }
   .form-wrapper{
@@ -66,11 +66,11 @@ h1{
     height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    padding: 50px 0 400px;
+    justify-content: start;
   }
-  .flex-row-home{
+  .container.flex-row-home{
     flex-direction: row;
+    padding-top: 150px;
   }
 }
 
