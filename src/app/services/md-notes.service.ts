@@ -9,6 +9,7 @@ import { environment } from '../../environments/environment';
 export class MdNotesService {
     
   mdNote:any;
+  mdBooks:any;
 
   //OBSERVABLE FOR SEARCH RESULTS
   public searchNotes = [];
@@ -33,13 +34,33 @@ export class MdNotesService {
     const options = { withCredentials: true };
     const results = { search };
     return this.httpClient.post(`${this.API_URL}/mdnotes/search`, results, options).toPromise()
-    .then(notes => {
-      this.setSearchNotes(notes);
+    .then(mdBooks => {
+      this.mdBooks = mdBooks;
+      this.highlightSearchstring(this.mdBooks, search)
+      this.setSearchNotes(this.mdBooks);
     })
     .catch(err => {
       console.error(err);
     });
   }
+  mdNotesArr = [];
+
+  // PASS SEARCH STRING AND RETURNED CONTENT THROUGH HIGHLIGHT PARSER
+  highlightSearchstring(books: any, search: any): any {
+    if (search && books) {
+      books.forEach(mdBook => {
+        this.mdNotesArr = mdBook.mdNotes;
+        this.mdNotesArr.forEach(note=> {
+          note.content = String(note.content); // make sure its a string
+          let startIndex = note.content.toLowerCase().indexOf(search.toLowerCase());
+          let endLength = search.length;
+          let matchingString = note.content.substr(startIndex, endLength); 
+          note.content = note.content.replace(matchingString, "<mark>" + matchingString + "</mark>");
+        })
+      })
+    }
+    return books;
+}
 
   //GET ONE NOTE - ID: Note - REQ.PARAMS;
   getOne(id){

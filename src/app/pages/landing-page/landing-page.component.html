@@ -12,10 +12,10 @@
                 of markdown and just focus on your writing.</p>
         </div>
         <div class="form-wrapper">
-            <div *ngIf="!on" class="signup-form">
+            <div *ngIf="on" class="signup-form">
                 <app-signup-form></app-signup-form>
             </div>
-            <div *ngIf="on" class="login-form">
+            <div *ngIf="!on" class="login-form">
                 <app-login-form></app-login-form>
             </div>
             <p class="toggle-form" (click)="toggle()">{{toggleText}}</p> 
