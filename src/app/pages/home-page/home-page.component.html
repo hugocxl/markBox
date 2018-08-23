@@ -8,7 +8,7 @@
         </div>
     </div>
     <div class="pinned-notes">
-         <h2>Pinned notes</h2>
+        <h2>Pinned notes</h2>
         <div class="grid-row">
             <div *ngFor="let pinnedNote of pinnedNotes">
                 <app-card [mdNote]="pinnedNote" [mdBook_id]="pinnedNote.book_id"></app-card>
