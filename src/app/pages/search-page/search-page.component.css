@@ -1,19 +1,20 @@
 #search{
   min-height: 100vh;
-  background: #F1F1F1;
+  background:url('../../../assets/images/background-grid.png');
 }
-.title{
-  width: auto;
-  position: relative;
-  padding-right: 20px;
+.search-results{
+  padding-top: 1em;
 }
-.title h1{
-  padding: 0;
+h2{
+  padding-left: 1em;
+  margin-top: 1em;
+}
+.search-results p{
   margin: 0;
-  font-weight: 400;
-  font-size: 2.5em;
-  display: inline;
+    padding-left: 2.2em;
+    font-weight: 200;
 }
+
 /* .card-container{
   display: flex;
   flex-direction: column;
@@ -74,42 +75,3 @@ h2{
 }
 
  */
-h1,h2,h3{
-  font-size: 1em;
-}
-ul{
-  list-style:none;
-}
-
- button{
-  height: 20px;
-  width: 20px;
-  background: #4a5258;
-  border-radius: 20px;
-  border: none;
-  margin-bottom: 0;
-  cursor: pointer;
-  transition: all .3s;
-  margin-right: 5px;
-  position: relative;
-}
-
-.buttons-bar>:last-child{
-  margin-right: 1.5em;
-}
-button:hover,button.saving{
-  opacity: .7;
-}
-.icon{
-  width: 15px;
-  height: 15px;
-  padding: 1px;
-  position: absolute;
-  left: 3px;
-  top: 2px;
-}
-
-.active{
-  transition: background-color 0.3s;
-  background: rgb(78, 107, 156);
-}

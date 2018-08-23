@@ -10,7 +10,9 @@ import { MdBooksService } from '../../services/md-books.service';
 export class SearchPageComponent implements OnInit {
 
   searchResult: any;
-  pinned
+  searchResultsNum:Number;
+  pinned;
+
   constructor(
     private mdNotesService: MdNotesService,
     private mdBooksService: MdBooksService,
@@ -18,13 +20,12 @@ export class SearchPageComponent implements OnInit {
 
   ngOnInit() {
     this.mdNotesService.searchChange$.subscribe(updatedSearch => {
+      this.searchResultsNum = this.getSearchResutlsNumber(updatedSearch);
       this.searchResult = updatedSearch;
     });
   }
 
   delete(mdNote, mdBook){
-    console.log(mdNote);
-    console.log(mdBook);
     this.mdNotesService.delete(mdNote._id)
     .then(()=> {
       this.mdBooksService.updateCurrentMdBook(mdBook._id);
@@ -47,5 +48,30 @@ export class SearchPageComponent implements OnInit {
       console.error(error);
     })
   }
+
+  getSearchResutlsNumber(searchResult){
+    let num = 0;
+    searchResult.forEach(book => {
+      book.mdNotes.forEach(note => {
+        num++;
+      });
+    });
+    return num;
+  }
+
+//   // PASS SEARCH STRING AND RETURNED CONTENT THROUGH HIGHLIGHT PARSER
+//   highlightSearchstring(value: string, args: string): any {
+//     if (args && value) {
+//         value = String(value); // make sure its a string
+//         let startIndex = value.toLowerCase().indexOf(args.toLowerCase());
+//         if (startIndex != -1) {
+//             let endLength = args.length;
+//             let matchingString = value.substr(startIndex, endLength);
+//             return value.replace(matchingString, "<mark>" + matchingString + "</mark>");
+//         }
+
+//     }
+//     return value;
+// }
 
 }
