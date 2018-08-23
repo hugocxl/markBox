@@ -1,11 +1,16 @@
-<form (ngSubmit)="submitForm(form)" #form="ngForm">
-
-  <div class="field">
-    <input type="email" name="email" placeholder="Email" [(ngModel)]="user.email" #emailField="ngModel" required />
+<form (ngSubmit)="submitForm(form)" #form="ngForm" novalidate [ngClass]="{'is-processing': processing}">
+  <div class="field" [ngClass]="{'has-error': error}">
+    <input type="email" name="email" placeholder="Email" [(ngModel)]="user.email" #emailField="ngModel" required [disabled]="processing"/>
     <input type="password" name="password" placeholder="Password" [(ngModel)]="user.password" #passwordField="ngModel" required />
+    <div *ngIf="error" class="validation">
+        <p>{{error}}</p>
+      </div>
   </div>
 
   <div class="field submit">
-    <button type="submit">Login</button>
+    <button [disabled]="processing" type="submit">Login</button>
+    <div *ngIf="feedbackEnabled && form.invalid">
+        <p class="validation">There are errors in the form, please review the fields</p>
+      </div>
   </div>
 </form>
