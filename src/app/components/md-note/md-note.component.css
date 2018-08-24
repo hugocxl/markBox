@@ -133,7 +133,6 @@ div button:hover{
   }
   #md-note-view.active-preview .edit-mdnote{
     padding: 1.5em;
-    margin-top: 10px;
   }
   .render-mdnote.preview{
     padding: 2em 4em 1.5em 2em;
@@ -141,6 +140,8 @@ div button:hover{
   .edit-mdnote{
     padding: 4em 3em 0 1em;
     width: 80%;
+    border-left: 1px solid #F1F1F1;
+    border-right: 1px solid #F1F1F1;
   }
   #md-note-view.active-preview .render-mdnote, #md-note-view.active-preview .edit-mdnote{
     width: 50%;
