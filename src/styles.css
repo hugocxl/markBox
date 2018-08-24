@@ -447,7 +447,9 @@ body.night-mode div.render-mdnote{
 body.night-mode #pinned-notes-page router-outlet ~ *{
   background-color: black!important;
 }
-
+body.night-mode #search{
+  background:#000!important;
+}
 
 /* body.night-mode h1, h2, h3, h4, h5, h6, p{
   color: white;
