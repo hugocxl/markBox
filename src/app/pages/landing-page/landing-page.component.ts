@@ -10,7 +10,7 @@ import { ThrowStmt } from '../../../../node_modules/@angular/compiler';
 })
 export class LandingPageComponent implements OnInit {
   
-  toggleText = 'Already have an account? Log in';
+  toggleText = 'Not registered yet? Sign up';
   on = false;
 
   user: any;
@@ -26,10 +26,10 @@ export class LandingPageComponent implements OnInit {
     toggle(){
       this.on = !this.on;
       if(this.on){
-        this.toggleText = 'Not registered yet? Sign up';
+        this.toggleText = 'Already have an account? Log in';
       }
       else{
-        this.toggleText = 'Already have an account? Log in';
+        this.toggleText = 'Not registered yet? Sign up';
       }
     }
 

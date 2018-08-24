@@ -11,7 +11,7 @@
     </p>
   </div>
   <div *ngFor="let mdBook of searchResult">
-      <h2 class="book-title">Book: {{mdBook.title}}</h2>
+      <h2 class="book-title">MdBook: {{mdBook.title}}</h2>
       <div class="grid-row">
         <div *ngFor="let mdNote of mdBook.mdNotes">
          <app-card [mdNote]="mdNote" [mdBook_id]="mdBook._id"></app-card>
