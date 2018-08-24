@@ -90,7 +90,7 @@ export class AuthService {
       this.me();
     })
     .catch(error => { 
-      console.log(error)
+      console.error(error);
     });
   }
 

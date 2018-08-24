@@ -31,9 +31,7 @@ export class SettingsPageComponent implements OnInit {
       this.user = user;
     });
     this.user = this.authService.getUser();
-    this.drawFunction();
-    console.log(this.user.settings)
-  
+    this.drawFunction();  
   }
 
   saveChanges(){
@@ -47,7 +45,6 @@ export class SettingsPageComponent implements OnInit {
       }
     }
     this.authService.updateData(data);
-    console.log(this.user.settings)
   };
 
 

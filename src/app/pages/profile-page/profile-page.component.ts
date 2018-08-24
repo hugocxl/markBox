@@ -47,7 +47,6 @@ export class ProfilePageComponent implements OnInit {
       };
       this.setActiveMessage('Email succesfully changed!');
       this.resetFormInfo();
-      console.log(this.user);
       return this.authService.updateData(data);
     }
     if(this.passwordFirst === this.passwordSecond && this.passwordFirst){

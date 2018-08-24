@@ -32,6 +32,7 @@ export class NavbarComponent implements OnInit {
       document.getElementById('app-document').classList.remove('active');
       document.getElementById('search-field').classList.remove('active');
       this.renderer.removeClass(document.body, 'logged-in');
+      this.renderer.removeClass(document.body, 'night-mode');
 
       //LOGOUT:
       this.authService.logout();

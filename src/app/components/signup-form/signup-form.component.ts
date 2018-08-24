@@ -34,7 +34,7 @@ export class SignupFormComponent implements OnInit {
           this.router.navigate(['/home']);
       })
       .catch(error => {
-          console.log(error);
+          console.error(error);
       });
 
     }

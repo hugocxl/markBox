@@ -1,4 +1,4 @@
-import { Component, OnInit, Renderer2, AfterViewChecked } from '@angular/core';
+import { Component, OnInit, Renderer2, AfterViewChecked, OnDestroy } from '@angular/core';
 import { MdBooksService } from '../../services/md-books.service';
 import { ActivatedRoute } from '@angular/router';
 
@@ -48,6 +48,7 @@ export class CardListComponent implements OnInit, AfterViewChecked {
       this.mdBooksService.getOne(val.id)
     })
   }
+  
   setTitle(title){
     this.changeTitle = !this.changeTitle;
     this.newTitle.title = title;

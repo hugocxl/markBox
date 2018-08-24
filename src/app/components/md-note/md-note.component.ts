@@ -143,7 +143,7 @@ export class MdNoteComponent implements OnInit {
       this.setActiveMessage('MdNote saved!');
     })
     .catch(error => {
-      console.log('Fail Saving')
+      console.error(error);
     });
   };
   //CLOSE NOTE WITHOUT SAVING:

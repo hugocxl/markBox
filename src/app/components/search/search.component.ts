@@ -33,11 +33,12 @@ export class SearchComponent implements OnInit {
       }
 
       if(!this.searchContent && this.router.url !== '/search' ){
+        let searchDiv = document.getElementById('search-field');
         this.searchContent = '';
-        document.getElementById('search-field').classList.remove('active');
+        if(searchDiv){
+          searchDiv.classList.remove('active');
+        }
       }
-
-
 
 
     });
