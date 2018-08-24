@@ -354,12 +354,10 @@ body.night-mode{
 
 body.night-mode .page-info {
   background-color: #0e1114!important;
-  color: white;
 }
 
 body.night-mode .page-content .help-cheetsheet {
   background-color: black!important;
-  color: white;
 }
 
 
@@ -404,34 +402,35 @@ body.night-mode div.my-md-books{
 body.night-mode  div.card {
   background-color: #585858!important;
   color: white!important;
-  border: 1px solid grey;
 }
 
 body.night-mode p.note-content{
-  border: 1px solid grey;
+  border-right: 1px solid rgb(75, 75, 75);
 }
 
 /*NOTE VIEW*/
-body.night-mode app-md-note section#md-note-view.mdNote{
-  background-color: red!important;
+body.night-mode .mdNote{
+  background: black!important;
 }
 
 body.night-mode div.edit-mdnote{
   background: rgb(40, 40, 40);
-  border-right: 1px solid rgb(92, 92, 92);
+  border-right: 1px solid rgb(75, 75, 75);
+  border-left: 1px solid rgb(75, 75, 75);
 }
 
 body.night-mode #md-note-view .render-mdnote{
   background: rgb(40, 40, 40);  
+  border: none!important;
 } 
 
 
 
 body.night-mode div.render-mdnote{
-  background: red!important;
+  background: rgb(40, 40, 40)!important;
 }
 body.night-mode #pinned-notes-page router-outlet ~ *{
-  background: red!important;
+  background-color: black!important;
 }
 
 
@@ -443,7 +442,7 @@ body.night-mode h1, body.night-mode h2, body.night-mode h3, body.night-mode h4, 
 }
 
 body.night-mode p {
-  color: rgb(200, 200, 200);
+  color: rgb(177, 177, 177);
 }
 
 
@@ -455,6 +454,13 @@ body.night-mode button{
 /*PINNED VIEW*/
 body.night-mode div.pinned-card.gutter-small{
   background: rgb(71, 71, 71)!important;
+}
+
+body.night-mode .book-title h2{
+  background: rgb(50,50,50)!important;
+}
+body.night-mode div.pinned-list-column{
+  border-right: grey!important;
 }
 
 /* Prism.js css */
