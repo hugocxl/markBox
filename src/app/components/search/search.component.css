@@ -1,11 +1,11 @@
 #search-field{
   position: fixed;
   left: 45px;
-  top: 280px;
+  top: 250px;
   transform: translateX(-100%);
   transition: all 0.17s ease-in-out; 
 
-  height: 56px;
+  height: 50px;
   width: 190px;
 
   background-color:#2a3237;
