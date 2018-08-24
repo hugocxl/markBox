@@ -265,7 +265,7 @@ form .field.has-error input {
   background-size: 80%;
   text-align: center;
   z-index: -1;
-  transition: opacity ease-out;
+  transition: opacity 2 ease-in-out;
 }
 
 .save-button{
@@ -344,34 +344,16 @@ z-index: 100;
 
 }
 
+
+/*NIGHT MODE STYLING*/
 body.night-mode{
   transition: background 1s ease-in-out;
-  background:url('./assets/images/background-grid-dark.png');
-}
-
-body.night-mode .navbar{
-  background-color: #36474e!important;
-}
-
-body.night-mode .navbar-item a.active{
-  background-color: #5d6c74!important;
-}
-body.night-mode #md-books-nav {
-  background-color: #2b3539!important;
-  color: white;
-}
-
-body.night-mode #md-books-nav.active {
-  background-color: #2b3539!important;
-  color: white;
-}
-
-body.night-mode #md-books-nav.active .md-books-list>li{
-  background-color: #20272a!important;
+  /* background:url('./assets/images/background-grid-dark.png'); */
+  background: rgb(40, 40, 40);
 }
 
 body.night-mode .page-info {
-  background-color: #1e2123!important;
+  background-color: #0e1114!important;
   color: white;
 }
 
@@ -381,23 +363,99 @@ body.night-mode .page-content .help-cheetsheet {
 }
 
 
-body.night-mode app-card .card {
-  background-color: #303030!important;
-  color: white;
-}
 
-body.night-mode #md-note-view .render-mdnote{
+/* NAV BACKGROUND*/
+body.night-mode .navbar{
   background-color: #1e2123!important;
-  color: white!important;
-  border: none;
 }
-
-
-body.night-mode app-md-note #md-note-view .edit-mdnote{
+body.night-mode .navbar-item a.active{
   background-color: black!important;
 }
 
 
+/*MDBOOKS NAV BACKGROUND*/
+body.night-mode #md-books-nav {
+  background-color: #323538!important;
+}
+body.night-mode #md-books-nav.active {
+  background-color: #323538!important;
+}
+body.night-mode #md-books-nav.active .md-books-list>li{
+  background-color: #323538!important;
+}
+body.night-mode #md-books-nav .md-books-list>li{
+  background-color: #323538!important;
+}
+
+
+/*HOME BACKGROUND*/
+body.night-mode div#home {
+  background-color: #0e1114!important;
+  color: white!important;
+}
+
+
+/*MDBOOKS CARD VIEW BACKGROUND*/
+body.night-mode div.my-md-books{
+  background-color: #0e1114!important;
+  color: white;
+}
+
+body.night-mode  div.card {
+  background-color: #585858!important;
+  color: white!important;
+  border: 1px solid grey;
+}
+
+body.night-mode p.note-content{
+  border: 1px solid grey;
+}
+
+/*NOTE VIEW*/
+body.night-mode app-md-note section#md-note-view.mdNote{
+  background-color: red!important;
+}
+
+body.night-mode div.edit-mdnote{
+  background: rgb(40, 40, 40);
+  border-right: 1px solid rgb(92, 92, 92);
+}
+
+body.night-mode #md-note-view .render-mdnote{
+  background: rgb(40, 40, 40);  
+} 
+
+
+
+body.night-mode div.render-mdnote{
+  background: red!important;
+}
+body.night-mode #pinned-notes-page router-outlet ~ *{
+  background: red!important;
+}
+
+
+/* body.night-mode h1, h2, h3, h4, h5, h6, p{
+  color: white;
+} */
+body.night-mode h1, body.night-mode h2, body.night-mode h3, body.night-mode h4, body.night-mode h5, body.night-mode h6 {
+  color: white;
+}
+
+body.night-mode p {
+  color: rgb(200, 200, 200);
+}
+
+
+body.night-mode button{
+  background: grey!important;
+}
+
+
+/*PINNED VIEW*/
+body.night-mode div.pinned-card.gutter-small{
+  background: rgb(71, 71, 71)!important;
+}
 
 /* Prism.js css */
 
